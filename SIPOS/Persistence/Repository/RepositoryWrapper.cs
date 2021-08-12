@@ -15,15 +15,15 @@ namespace SIPOS.Persistence.Repository
             repoContext = repositoryContext;
         }
 
-        private IUserRepository _userReposository;
+        private ISiposUserRepository _userReposository;
 
-        public IUserRepository UserRepository
+        public ISiposUserRepository UserRepository
         {
             get
             {
                 if (_userReposository == null)
                 {
-                    _userReposository = new UserRepository(repoContext);
+                    _userReposository = new SiposUserRepository(repoContext);
                 }
                 return _userReposository;
             }

@@ -33,7 +33,7 @@ namespace SIPOS
             services.AddScoped<FormLogin>();
 
             services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-            //        .AddScoped<IBusinessLayer, CBusinessLayer>()
+
             services.AddDbContext<RepositoryContext>(options =>
                options.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True"));
         }

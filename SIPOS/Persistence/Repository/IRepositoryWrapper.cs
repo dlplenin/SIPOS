@@ -2,7 +2,7 @@
 {
     public interface IRepositoryWrapper
     {
-        IUserRepository UserRepository { get; }
+        ISiposUserRepository UserRepository { get; }
         void Save();
     }
 }

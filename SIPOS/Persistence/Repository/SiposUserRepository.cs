@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace SIPOS.Persistence.Repository
 {
-    public class UserRepository : RepositoryBase<User>, IUserRepository
+    public class SiposUserRepository : RepositoryBase<SiposUser>, ISiposUserRepository
     {
-        public UserRepository(RepositoryContext repositoryContext) : base(repositoryContext)
+        public SiposUserRepository(RepositoryContext repositoryContext) : base(repositoryContext)
         {
         }
     }

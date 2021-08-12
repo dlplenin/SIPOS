@@ -2,7 +2,7 @@
 
 namespace SIPOS.Entities
 {
-    public class User
+    public class SiposUser
     {
         [Key]
         public int Id { get; set; }

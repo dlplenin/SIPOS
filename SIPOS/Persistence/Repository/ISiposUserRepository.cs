@@ -2,7 +2,7 @@
 
 namespace SIPOS.Persistence.Repository
 {
-    public interface IUserRepository : IRepositoryBase<User>
+    public interface ISiposUserRepository : IRepositoryBase<SiposUser>
     {
     }
 }

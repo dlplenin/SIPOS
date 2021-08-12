@@ -12,6 +12,6 @@ namespace SIPOS.Persistence
     {
         public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options) { }
 
-        public DbSet<User> User { get; set; }
+        public DbSet<SiposUser> User { get; set; }
     }
 }
