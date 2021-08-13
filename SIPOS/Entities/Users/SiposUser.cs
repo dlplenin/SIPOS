@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIPOS.Entities
 {
@@ -12,5 +13,7 @@ namespace SIPOS.Entities
 
         [Required]
         public string Password {  get; set; }
+
+        public virtual ICollection<SiposUserRol> SiposUserRol { get; set; }
     }
 }
