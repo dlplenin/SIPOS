@@ -86,6 +86,7 @@ namespace SIPOS
             this.Txt_password.TabIndex = 3;
             this.Txt_password.Text = "Contraseña";
             this.Txt_password.Enter += new System.EventHandler(this.Txt_password_Enter);
+            this.Txt_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txt_password_KeyDown);
             this.Txt_password.Leave += new System.EventHandler(this.Txt_password_Leave);
             // 
             // Btn_login

@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
+using SIPOS.Services;
 using System.Windows.Forms;
 
 namespace SIPOS
@@ -32,7 +33,8 @@ namespace SIPOS
         {
             services.AddScoped<FormLogin>();
 
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>()
+                    .AddScoped<ISiposUserService, SiposUserService>();
 
             services.AddDbContext<RepositoryContext>(options =>
                options.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True"));

@@ -1,4 +1,5 @@
 ﻿using SIPOS.Persistence.Repository;
+using SIPOS.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,11 @@ namespace SIPOS
 {
     public partial class FormLogin : Form
     {
-        private readonly IRepositoryWrapper repoWrapper;
+        private readonly ISiposUserService siposUserService;
 
-        public FormLogin(IRepositoryWrapper repoWrapper)
+        public FormLogin(ISiposUserService siposUserService)
         {
-            this.repoWrapper = repoWrapper;
+            this.siposUserService = siposUserService;
             InitializeComponent();
         }
 
@@ -70,8 +71,8 @@ namespace SIPOS
             {
                 if (Txt_password.Text.ToLower() != "contraseña")
                 {
-                    var validUser = true;
-                    if(validUser)
+                    var validUser = siposUserService.Login(txt_user.Text, Txt_password.Text);
+                    if(validUser is not null)
                     {
                         MDIParent mDIParent= new();
                         mDIParent.Show();
@@ -98,6 +99,12 @@ namespace SIPOS
         {
             Lbl_mensaje.Text = message;
             Lbl_mensaje.Visible = true;
+        }
+
+        private void Txt_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                Btn_login.PerformClick();
         }
     }
 }
