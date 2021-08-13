@@ -3,20 +3,14 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIPOS.Entities
 {
-    public class OrderDetail
+    public class OrderDetail : EntityBase<Guid>
     {
-        public Guid Id {  get; set; }
-
         [Required]
         public int Quantity { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
         public decimal Price { get; set; }
-
-        [Required]
-        [Column(TypeName = "decimal(18, 4)")]
-        public decimal SubTotal { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]

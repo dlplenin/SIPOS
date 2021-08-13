@@ -108,6 +108,29 @@ namespace SIPOS
         {
             using var context = new SiposContext();
             context.Database.Migrate();
+
+            //var q = new A();
+            //var a = new
+            //{
+            //    uno = "a", 
+            //    dos = q.B.C.MyProperty,
+            //    tres = 5
+            //};
         }
     }
+
+    //public class A
+    //{
+    //    public B B { get; set; }
+    //}
+
+    //public class B
+    //{
+    //    public C C { get; set; } = null;
+    //}
+
+    //public class C
+    //{
+    //    public int MyProperty { get; set; } = 10;
+    //}
 }

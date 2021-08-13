@@ -1,10 +1,11 @@
-﻿namespace SIPOS.Entities
+﻿namespace SIPOS.Entities.Goods
 {
-    public class Suplier
+    public class Suplier : EntityBase<Guid>
     {
-        public Guid Id { get; set; }
         public string Name {  get; set; }
         public string Phone {  get; set; }  
         public string Email {  get; set; }
+
+        public virtual ICollection<GoodsOrder> GoodsOrder { get; set; }
     }
 }

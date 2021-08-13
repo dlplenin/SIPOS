@@ -1,4 +1,4 @@
-﻿using SIPOS.Entities;
+﻿using SIPOS.Entities.User;
 
 namespace SIPOS.Services
 {

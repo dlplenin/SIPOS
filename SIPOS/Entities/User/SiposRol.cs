@@ -1,8 +1,7 @@
-﻿namespace SIPOS.Entities
+﻿namespace SIPOS.Entities.User
 {
-    public class SiposRol
+    public class SiposRol : EntityBase<Guid>
     {
-        public Guid Id { get; set; }
         public string Name {  get; set; }
 
         public virtual ICollection<SiposUserRol> SiposUserRol { get; set; }

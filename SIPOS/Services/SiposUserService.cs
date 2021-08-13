@@ -1,4 +1,4 @@
-﻿using SIPOS.Entities;
+﻿using SIPOS.Entities.User;
 using SIPOS.Persistence.Repository;
 
 namespace SIPOS.Services

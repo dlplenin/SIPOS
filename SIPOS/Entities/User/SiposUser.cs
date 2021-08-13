@@ -1,12 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SIPOS.Entities
+namespace SIPOS.Entities.User
 {
-    public class SiposUser
+    public class SiposUser : EntityBase<Guid>
     {
-        [Key]
-        public Guid Id { get; set; }
-
         [Required]
         public string UserName { get; set; }
 
