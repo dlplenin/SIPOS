@@ -13,5 +13,8 @@ namespace SIPOS.Persistence
         }
 
         public DbSet<SiposUser> SiposUser { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<OrderDetail> OrderDetail { get; set; }
     }
 }

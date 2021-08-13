@@ -23,11 +23,11 @@ namespace SIPOS.Entities
         public decimal Total { get; set; }
 
         [ForeignKey("Order")]
-        public int OrderId { get; set; }
+        public Guid OrderId { get; set; }
         public virtual Order Order { get; set; }
 
         [ForeignKey("Product")]
-        public int ProductId { get; set; }
+        public Guid ProductId { get; set; }
         public virtual Product Product { get; set; }
     }
 }
