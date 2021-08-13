@@ -7,7 +7,7 @@ using SIPOS.Persistence;
 
 namespace SIPOS.Migrations
 {
-    [DbContext(typeof(RepositoryContext))]
+    [DbContext(typeof(SiposContext))]
     partial class RepositoryContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

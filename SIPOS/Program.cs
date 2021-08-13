@@ -45,7 +45,7 @@ namespace SIPOS
         {
             services.AddScoped<FormLogin>();
 
-            services.AddSingleton<RepositoryContext>()
+            services.AddSingleton<SiposContext>()
                     .AddScoped<IRepositoryWrapper, RepositoryWrapper>()
                     .AddScoped<ISiposUserService, SiposUserService>();
 

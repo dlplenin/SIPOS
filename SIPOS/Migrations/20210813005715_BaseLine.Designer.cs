@@ -8,7 +8,7 @@ using SIPOS.Persistence;
 
 namespace SIPOS.Migrations
 {
-    [DbContext(typeof(RepositoryContext))]
+    [DbContext(typeof(SiposContext))]
     [Migration("20210813005715_BaseLine")]
     partial class BaseLine
     {

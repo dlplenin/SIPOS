@@ -9,8 +9,8 @@ namespace SIPOS.Persistence.Repository
 {
     public class RepositoryWrapper : IRepositoryWrapper
     {
-        private readonly RepositoryContext repoContext;
-        public RepositoryWrapper(RepositoryContext repositoryContext)
+        private readonly SiposContext repoContext;
+        public RepositoryWrapper(SiposContext repositoryContext)
         {
             repoContext = repositoryContext;
         }

@@ -106,7 +106,7 @@ namespace SIPOS
 
         private void FormLogin_Load(object sender, EventArgs e)
         {
-            using var context = new RepositoryContext();
+            using var context = new SiposContext();
             context.Database.Migrate();
         }
     }

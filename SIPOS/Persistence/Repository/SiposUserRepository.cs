@@ -9,7 +9,7 @@ namespace SIPOS.Persistence.Repository
 {
     public class SiposUserRepository : RepositoryBase<SiposUser>, ISiposUserRepository
     {
-        public SiposUserRepository(RepositoryContext repositoryContext) : base(repositoryContext)
+        public SiposUserRepository(SiposContext repositoryContext) : base(repositoryContext)
         {
         }
     }

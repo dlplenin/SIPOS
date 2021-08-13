@@ -10,8 +10,8 @@ namespace SIPOS.Persistence.Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        protected RepositoryContext RepositoryContext { get; set; }
-        public RepositoryBase(RepositoryContext repositoryContext)
+        protected SiposContext RepositoryContext { get; set; }
+        public RepositoryBase(SiposContext repositoryContext)
         {
             this.RepositoryContext = repositoryContext;
         }
