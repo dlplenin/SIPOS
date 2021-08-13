@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
 using SIPOS.Services;
@@ -27,17 +29,28 @@ namespace SIPOS
             Application.Run(initForm);
 
             //Application.Run(new FormLogin());
+
+            //var builder = new HostBuilder()
+            // .ConfigureServices((hostContext, services) =>
+            // {
+            //     services.AddSingleton<FormLogin>();
+            //     services.AddLogging(configure => configure.AddConsole());
+            //     services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
+            //     services.AddScoped<ISiposUserService, SiposUserService>();
+            // })
+            // .Build();
         }
 
         private static void ConfigureServices(ServiceCollection services)
         {
             services.AddScoped<FormLogin>();
 
-            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>()
+            services.AddSingleton<RepositoryContext>()
+                    .AddScoped<IRepositoryWrapper, RepositoryWrapper>()
                     .AddScoped<ISiposUserService, SiposUserService>();
 
-            services.AddDbContext<RepositoryContext>(options =>
-               options.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True"));
+            //services.AddDbContext<RepositoryContext>(options =>
+            //   options.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True"));
         }
     }
 }

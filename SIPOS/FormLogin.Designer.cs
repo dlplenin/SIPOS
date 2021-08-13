@@ -31,7 +31,7 @@ namespace SIPOS
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbl_login = new System.Windows.Forms.Label();
-            this.txt_user = new System.Windows.Forms.TextBox();
+            this.Txt_userName = new System.Windows.Forms.TextBox();
             this.Txt_password = new System.Windows.Forms.TextBox();
             this.Btn_login = new System.Windows.Forms.Button();
             this.Btn_cerrar = new System.Windows.Forms.Button();
@@ -60,19 +60,19 @@ namespace SIPOS
             this.lbl_login.TabIndex = 1;
             this.lbl_login.Text = "INICIO DE SESIÓN";
             // 
-            // txt_user
+            // Txt_userName
             // 
-            this.txt_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.txt_user.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txt_user.ForeColor = System.Drawing.Color.Silver;
-            this.txt_user.Location = new System.Drawing.Point(297, 105);
-            this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(408, 24);
-            this.txt_user.TabIndex = 2;
-            this.txt_user.Text = "Usuario";
-            this.txt_user.Enter += new System.EventHandler(this.Txt_user_Enter);
-            this.txt_user.Leave += new System.EventHandler(this.Txt_user_Leave);
+            this.Txt_userName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.Txt_userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Txt_userName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Txt_userName.ForeColor = System.Drawing.Color.Silver;
+            this.Txt_userName.Location = new System.Drawing.Point(297, 105);
+            this.Txt_userName.Name = "Txt_userName";
+            this.Txt_userName.Size = new System.Drawing.Size(408, 24);
+            this.Txt_userName.TabIndex = 2;
+            this.Txt_userName.Text = "Usuario";
+            this.Txt_userName.Enter += new System.EventHandler(this.Txt_user_Enter);
+            this.Txt_userName.Leave += new System.EventHandler(this.Txt_user_Leave);
             // 
             // Txt_password
             // 
@@ -156,7 +156,7 @@ namespace SIPOS
             this.Controls.Add(this.Btn_cerrar);
             this.Controls.Add(this.Btn_login);
             this.Controls.Add(this.Txt_password);
-            this.Controls.Add(this.txt_user);
+            this.Controls.Add(this.Txt_userName);
             this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -164,6 +164,7 @@ namespace SIPOS
             this.Opacity = 0.95D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,7 +174,7 @@ namespace SIPOS
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_login;
-        private System.Windows.Forms.TextBox txt_user;
+        private System.Windows.Forms.TextBox Txt_userName;
         private System.Windows.Forms.TextBox Txt_password;
         private System.Windows.Forms.Button Btn_login;
         private System.Windows.Forms.Button Btn_cerrar;

@@ -1,13 +1,7 @@
-﻿using SIPOS.Persistence.Repository;
+﻿using Microsoft.EntityFrameworkCore;
+using SIPOS.Persistence;
 using SIPOS.Services;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIPOS
@@ -24,19 +18,19 @@ namespace SIPOS
 
         private void Txt_user_Enter(object sender, EventArgs e)
         {
-            if (txt_user.Text.ToLower() == "usuario")
+            if (Txt_userName.Text.ToLower() == "usuario")
             {
-                txt_user.Text = "";
-                txt_user.ForeColor = Color.LightGray;
+                Txt_userName.Text = "";
+                Txt_userName.ForeColor = Color.LightGray;
             }
         }
 
         private void Txt_user_Leave(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txt_user.Text))
+            if (string.IsNullOrWhiteSpace(Txt_userName.Text))
             {
-                txt_user.Text = "Usuario";
-                txt_user.ForeColor = Color.Silver;
+                Txt_userName.Text = "Usuario";
+                Txt_userName.ForeColor = Color.Silver;
             }
         }
 
@@ -67,11 +61,14 @@ namespace SIPOS
 
         private void Btn_login_Click(object sender, EventArgs e)
         {
-            if (txt_user.Text.ToLower() != "usuario")
+            Txt_userName.Text = "diego";
+            Txt_password.Text = "diego";
+
+            if (Txt_userName.Text.ToLower() != "usuario")
             {
                 if (Txt_password.Text.ToLower() != "contraseña")
                 {
-                    var validUser = siposUserService.Login(txt_user.Text, Txt_password.Text);
+                    var validUser = siposUserService.Login(Txt_userName.Text, Txt_password.Text);
                     if(validUser is not null)
                     {
                         MDIParent mDIParent= new();
@@ -105,6 +102,12 @@ namespace SIPOS
         {
             if (e.KeyCode == Keys.Enter)
                 Btn_login.PerformClick();
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            using var context = new RepositoryContext();
+            context.Database.Migrate();
         }
     }
 }

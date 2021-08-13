@@ -16,7 +16,7 @@ namespace SIPOS.Services
         {
             return repoWrapper.UserRepository
                 .FindByCondition(x => x.UserName == user && x.Password == password)
-                .First();
+                .FirstOrDefault();
         }
     }
 }
