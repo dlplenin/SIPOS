@@ -2,6 +2,7 @@
 using SIPOS.Entities;
 using SIPOS.Entities.Goods;
 using SIPOS.Entities.User;
+using SIPOS.Persistence.Seed;
 
 namespace SIPOS.Persistence
 {
@@ -18,6 +19,13 @@ namespace SIPOS.Persistence
         {
             modelBuilder.Entity<SiposUserRol>()
                 .HasKey(ur => new { ur.SiposRolId, ur.SiposUserId });
+
+            Seed(modelBuilder);
+        }
+
+        private void Seed(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new SiposRolSeed());
         }
 
         public DbSet<SiposUser> SiposUser { get; set; }
