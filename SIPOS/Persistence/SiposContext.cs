@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SIPOS.Entities;
+using SIPOS.Entities.Goods;
 using SIPOS.Entities.User;
 
 namespace SIPOS.Persistence
@@ -20,8 +21,15 @@ namespace SIPOS.Persistence
         }
 
         public DbSet<SiposUser> SiposUser { get; set; }
-        public DbSet<Product> Product { get; set; }
+        public DbSet<SiposRol> SiposRol { get; set; }
+        public DbSet<SiposUserRol> SiposUserRol { get; set; }
+
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<Product> Product { get; set; }
+
+        public DbSet<Suplier> Suplier { get; set; }
+        public DbSet<GoodsOrder> GoodsOrder { get; set; }
+        public DbSet<GoodsOrderDetail> GoodsOrderDetail { get; set; }
     }
 }
