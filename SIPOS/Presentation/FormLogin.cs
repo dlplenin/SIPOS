@@ -4,7 +4,7 @@ using SIPOS.Services;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SIPOS
+namespace SIPOS.Presentation
 {
     public partial class FormLogin : Form
     {
@@ -71,8 +71,10 @@ namespace SIPOS
                     var validUser = siposUserService.Login(Txt_userName.Text, Txt_password.Text);
                     if(validUser is not null)
                     {
-                        MDIParent mDIParent= new();
-                        mDIParent.Show();
+                        //MDIParent mDIParent= new();
+                        //mDIParent.Show();
+                        MainForm mForm = new();
+                        mForm.Show();
                         this.Hide();
                     }
                     else

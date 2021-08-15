@@ -1,5 +1,5 @@
 ﻿
-namespace SIPOS
+namespace SIPOS.Presentation
 {
     partial class MDIParent
     {

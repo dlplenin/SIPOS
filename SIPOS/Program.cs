@@ -1,9 +1,7 @@
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
+using SIPOS.Presentation;
 using SIPOS.Services;
 using System.Windows.Forms;
 
