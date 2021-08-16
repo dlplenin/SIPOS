@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Services;
 using System.Drawing;
@@ -8,11 +9,13 @@ namespace SIPOS.Presentation
 {
     public partial class FormLogin : Form
     {
-        private readonly ISiposUserService siposUserService;
+        private readonly ISiposUserManagementService siposUserService;
+        private readonly MainForm mainForm;
 
-        public FormLogin(ISiposUserService siposUserService)
+        public FormLogin(ISiposUserManagementService siposUserService, MainForm mainForm)
         {
             this.siposUserService = siposUserService;
+            this.mainForm = mainForm;
             InitializeComponent();
         }
 
@@ -73,7 +76,8 @@ namespace SIPOS.Presentation
                     {
                         //MDIParent mDIParent= new();
                         //mDIParent.Show();
-                        MainForm mForm = new();
+                        //MainForm mForm = new();
+                        MainForm mForm = mainForm;
                         mForm.Show();
                         this.Hide();
                     }

@@ -2,8 +2,9 @@
 
 namespace SIPOS.Services
 {
-    public interface ISiposUserService
+    public interface ISiposUserManagementService
     {
         SiposUser Login(string userName, string password);
+        IQueryable<SiposRol> Rol();
     }
 }

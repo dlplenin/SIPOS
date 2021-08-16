@@ -3,6 +3,8 @@
     public interface IRepositoryWrapper
     {
         ISiposUserRepository UserRepository { get; }
+        ISiposRolRepository RolRepository { get; }
+
         void Save();
     }
 }

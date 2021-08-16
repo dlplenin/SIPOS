@@ -1,4 +1,6 @@
-﻿using System.Drawing;
+﻿using Microsoft.Extensions.DependencyInjection;
+using SIPOS.Presentation.Seguridad;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
@@ -6,8 +8,15 @@ namespace SIPOS.Presentation
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        //private readonly ServiceCollection services;
+        private readonly FormUserManagement formUserManagement;
+
+        public MainForm(IServiceCollection services, FormUserManagement formUserManagement)
         {
+            this.services = services;
+            this.formUserManagement = formUserManagement;
+            //this.services = services;
+
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
             this.SetStyle(ControlStyles.ResizeRedraw, true);
@@ -19,14 +28,16 @@ namespace SIPOS.Presentation
 
         }
 
-        private void OpenInnerForm<MyChildForm>() where MyChildForm : Form, new()
+        private void OpenFormAsChild<ChildForm>(ChildForm formUserManagement) where ChildForm : Form
         {
             Form formulario;
-            formulario = FormsPanel.Controls.OfType<MyChildForm>().FirstOrDefault();//Busca en la colecion el formulario
-                                                                                     //si el formulario/instancia no existe
-            if (formulario == null)
-            {
-                formulario = new MyChildForm();
+            //Busca en la colecion el formulario
+            formulario = FormsPanel.Controls.OfType<ChildForm>().FirstOrDefault();
+                                                                                  
+            //si el formulario/instancia no existe
+            if (formulario is null)
+            { 
+                formulario = formUserManagement;
                 formulario.TopLevel = false;
                 formulario.FormBorderStyle = FormBorderStyle.None;
                 formulario.Dock = DockStyle.Fill;
@@ -39,6 +50,7 @@ namespace SIPOS.Presentation
             else
             {
                 formulario.BringToFront();
+                formulario.Show();
             }
         }
 
@@ -47,6 +59,7 @@ namespace SIPOS.Presentation
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
         private const int HTBOTTOMRIGHT = 17;
+        private readonly IServiceCollection services;
         private Rectangle sizeGripRectangle;
 
         protected override void WndProc(ref Message m)
@@ -135,7 +148,12 @@ namespace SIPOS.Presentation
 
         private void BtnSupplier_Click(object sender, EventArgs e)
         {
-            OpenInnerForm<Form1>();
+            //OpenFormAsChild<Form1>();
+        }
+
+        private void BtnUsermanagement_Click(object sender, EventArgs e)
+        {
+            OpenFormAsChild(formUserManagement);
         }
     }
 }

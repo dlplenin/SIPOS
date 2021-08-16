@@ -32,9 +32,9 @@ namespace SIPOS.Presentation
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.FormsPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.BtnUsermanagement = new System.Windows.Forms.Button();
             this.BtnSupplier = new System.Windows.Forms.Button();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -68,25 +68,12 @@ namespace SIPOS.Presentation
             // FormsPanel
             // 
             this.FormsPanel.BackColor = System.Drawing.SystemColors.Control;
-            this.FormsPanel.Controls.Add(this.label1);
             this.FormsPanel.Controls.Add(this.PbLogo);
             this.FormsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormsPanel.Location = new System.Drawing.Point(240, 40);
             this.FormsPanel.Name = "FormsPanel";
             this.FormsPanel.Size = new System.Drawing.Size(860, 560);
             this.FormsPanel.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label1.Font = new System.Drawing.Font("Segoe Print", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.label1.Location = new System.Drawing.Point(0, 504);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 56);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Abrrotes San Ignacio";
             // 
             // PbLogo
             // 
@@ -102,12 +89,30 @@ namespace SIPOS.Presentation
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.MenuPanel.Controls.Add(this.BtnUsermanagement);
             this.MenuPanel.Controls.Add(this.BtnSupplier);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 40);
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(240, 560);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // BtnUsermanagement
+            // 
+            this.BtnUsermanagement.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnUsermanagement.FlatAppearance.BorderSize = 0;
+            this.BtnUsermanagement.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnUsermanagement.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnUsermanagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnUsermanagement.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnUsermanagement.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnUsermanagement.Location = new System.Drawing.Point(0, 45);
+            this.BtnUsermanagement.Name = "BtnUsermanagement";
+            this.BtnUsermanagement.Size = new System.Drawing.Size(240, 45);
+            this.BtnUsermanagement.TabIndex = 1;
+            this.BtnUsermanagement.Text = "Usuarios";
+            this.BtnUsermanagement.UseVisualStyleBackColor = true;
+            this.BtnUsermanagement.Click += new System.EventHandler(this.BtnUsermanagement_Click);
             // 
             // BtnSupplier
             // 
@@ -147,9 +152,9 @@ namespace SIPOS.Presentation
             this.label2.ForeColor = System.Drawing.Color.GreenYellow;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(117, 20);
+            this.label2.Size = new System.Drawing.Size(196, 20);
             this.label2.TabIndex = 4;
-            this.label2.Text = "San Ignacio POS";
+            this.label2.Text = "Abarrotes San Ignacio - POS";
             // 
             // PbRestart
             // 
@@ -214,7 +219,6 @@ namespace SIPOS.Presentation
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContainerPanel.ResumeLayout(false);
             this.FormsPanel.ResumeLayout(false);
-            this.FormsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             this.MenuPanel.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
@@ -239,7 +243,7 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.PictureBox PbRestart;
         private System.Windows.Forms.Button BtnSupplier;
         private System.Windows.Forms.PictureBox PbLogo;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtnUsermanagement;
     }
 }

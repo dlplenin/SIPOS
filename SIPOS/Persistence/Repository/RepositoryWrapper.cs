@@ -16,6 +16,7 @@ namespace SIPOS.Persistence.Repository
         }
 
         private ISiposUserRepository _userReposository;
+        private ISiposRolRepository _rolRepository;
 
         public ISiposUserRepository UserRepository
         {
@@ -26,6 +27,18 @@ namespace SIPOS.Persistence.Repository
                     _userReposository = new SiposUserRepository(repoContext);
                 }
                 return _userReposository;
+            }
+        }
+
+        public ISiposRolRepository RolRepository
+        {
+            get
+            {
+                if (_rolRepository == null)
+                {
+                    _rolRepository = new SiposRolRepository(repoContext);
+                }
+                return _rolRepository;
             }
         }
 

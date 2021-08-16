@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
 using SIPOS.Presentation;
+using SIPOS.Presentation.Seguridad;
 using SIPOS.Services;
 using System.Windows.Forms;
 
@@ -41,11 +42,17 @@ namespace SIPOS
 
         private static void ConfigureServices(ServiceCollection services)
         {
-            services.AddScoped<FormLogin>();
+            services
+                .AddScoped<FormLogin>()
+                .AddScoped<MainForm>()
+                .AddScoped<FormUserManagement>()
+                ;
 
             services.AddSingleton<SiposContext>()
                     .AddScoped<IRepositoryWrapper, RepositoryWrapper>()
-                    .AddScoped<ISiposUserService, SiposUserService>();
+                    .AddScoped<ISiposUserManagementService, SiposUserManagementService>()
+                    .AddScoped<IServiceCollection, ServiceCollection>()
+                    ;
 
             //services.AddDbContext<RepositoryContext>(options =>
             //   options.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True"));
