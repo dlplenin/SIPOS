@@ -86,6 +86,7 @@ namespace SIPOS.Presentation.Seguridad
             // 
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BtnCerrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.BtnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
@@ -131,6 +132,8 @@ namespace SIPOS.Presentation.Seguridad
             // 
             this.DgvUsuarios.AllowUserToAddRows = false;
             this.DgvUsuarios.AllowUserToDeleteRows = false;
+            this.DgvUsuarios.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.UserId,
@@ -144,7 +147,7 @@ namespace SIPOS.Presentation.Seguridad
             this.DgvUsuarios.RowHeadersWidth = 49;
             this.DgvUsuarios.RowTemplate.Height = 28;
             this.DgvUsuarios.ShowCellToolTips = false;
-            this.DgvUsuarios.Size = new System.Drawing.Size(778, 180);
+            this.DgvUsuarios.Size = new System.Drawing.Size(793, 290);
             this.DgvUsuarios.TabIndex = 9;
             this.DgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellContentClick);
             this.DgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvUsuarios_CellFormatting);
