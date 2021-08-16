@@ -36,6 +36,7 @@ namespace SIPOS.Presentation
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.lbl_login = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +62,7 @@ namespace SIPOS.Presentation
             this.ColProductPVP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductInvested = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColproductActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColProductUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
@@ -175,6 +177,7 @@ namespace SIPOS.Presentation
             this.ColProductPVP,
             this.ColProductStock,
             this.ColProductInvested,
+            this.ColProductProfit,
             this.ColproductActive,
             this.ColProductUpdate});
             this.DgvProducts.Location = new System.Drawing.Point(12, 353);
@@ -314,6 +317,16 @@ namespace SIPOS.Presentation
             this.ColProductInvested.ReadOnly = true;
             this.ColProductInvested.Width = 120;
             // 
+            // ColProductProfit
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductProfit.DefaultCellStyle = dataGridViewCellStyle6;
+            this.ColProductProfit.HeaderText = "Ganancia";
+            this.ColProductProfit.MinimumWidth = 6;
+            this.ColProductProfit.Name = "ColProductProfit";
+            this.ColProductProfit.ReadOnly = true;
+            this.ColProductProfit.Width = 120;
+            // 
             // ColproductActive
             // 
             this.ColproductActive.HeaderText = "Activo";
@@ -387,6 +400,7 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductPVP;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductInvested;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProductProfit;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColproductActive;
         private System.Windows.Forms.DataGridViewImageColumn ColProductUpdate;
     }

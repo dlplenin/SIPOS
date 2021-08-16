@@ -41,7 +41,8 @@ namespace SIPOS.Presentation
             foreach (var item in productsInDB)
             {
                 var investedMoney = item.Stock * item.PricePurchase;
-                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.SugestedPriceToSell, item.PriceSell, item.Stock, investedMoney, item.Activo);
+                var profitMoney = item.Stock * item.PriceSell - investedMoney;
+                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.SugestedPriceToSell, item.PriceSell, item.Stock, investedMoney, profitMoney, item.Activo);
             }
         }
 
