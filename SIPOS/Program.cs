@@ -5,6 +5,7 @@ using SIPOS.Presentation;
 using SIPOS.Presentation.Goods;
 using SIPOS.Presentation.Security;
 using SIPOS.Services;
+using System.Globalization;
 using System.Windows.Forms;
 
 namespace SIPOS
@@ -17,6 +18,13 @@ namespace SIPOS
         [STAThread]
         static void Main()
         {
+            var culture = CultureInfo.GetCultureInfo("en-US");
+            //Culture for any thread
+            CultureInfo.DefaultThreadCurrentCulture = culture;
+            //Culture for UI in any thread
+            CultureInfo.DefaultThreadCurrentUICulture = culture;
+
+
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
@@ -28,17 +36,6 @@ namespace SIPOS
             var initForm = serviceProvider.GetRequiredService<FormLogin>();
             Application.Run(initForm);
 
-            //Application.Run(new FormLogin());
-
-            //var builder = new HostBuilder()
-            // .ConfigureServices((hostContext, services) =>
-            // {
-            //     services.AddSingleton<FormLogin>();
-            //     services.AddLogging(configure => configure.AddConsole());
-            //     services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
-            //     services.AddScoped<ISiposUserService, SiposUserService>();
-            // })
-            // .Build();
         }
 
         private static void ConfigureServices(ServiceCollection services)

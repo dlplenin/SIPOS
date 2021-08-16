@@ -46,18 +46,49 @@ namespace SIPOS.Presentation
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            if (AnyMissingRequiredTextBox())
+                return;
+
             var newProduct = new Product
             {
                 Name = TxtName.Text,
                 Description = TxtDescription.Text,
-                PricePurchase =  Convert.ToDecimal(TxtPricePurchase.Text),
-                //SugestedPriceToSell = Convert.ToDecimal(TxtSugestedPriceToSell.Text),
-                //PriceSell = Convert.ToDecimal(TxtPriceSell)
+                PricePurchase = Convert.ToDecimal(TxtPricePurchase.TextOrDefault),
+                SugestedPriceToSell = Convert.ToDecimal(TxtSugestedPriceToSell.TextOrDefault),
+                PriceSell = Convert.ToDecimal(TxtPriceSell.TextOrDefault)
             };
             repositoryWrapper.ProductRepository.Create(newProduct);
             repositoryWrapper.Save();
 
+            ClearTextBox();
+
             LoadProducts();
+        }
+
+        private void ClearTextBox()
+        {
+            var boxesToClear = Controls.OfType<TextBox>();
+            foreach (var box in boxesToClear)
+            {
+                box.Text = string.Empty;
+            }
+        }
+
+        private bool AnyMissingRequiredTextBox()
+        {
+            errorProvider.Clear();
+            var requiredBoxes = Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == "required");
+            var anyMissingRequired = false;
+            foreach (var box in requiredBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    anyMissingRequired = true;
+                    errorProvider.SetError(box, "Es un campo requerido");
+                }
+            }
+
+            return anyMissingRequired;
         }
 
         private void DgvProduct_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
@@ -96,5 +127,18 @@ namespace SIPOS.Presentation
                 }
             }
         }
+
+        //private void TxtName_Validating(object sender, CancelEventArgs e)
+        //{
+        //    if (string.IsNullOrWhiteSpace(TxtName.Text))
+        //    {
+        //        TxtName.Focus();
+        //        errorProvider.SetError(TxtName, "Es requerido");
+        //    }
+        //    else
+        //    {
+        //        errorProvider.Clear();
+        //    }
+        //}
     }
 }

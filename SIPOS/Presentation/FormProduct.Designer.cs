@@ -29,6 +29,7 @@ namespace SIPOS.Presentation
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduct));
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.lbl_login = new System.Windows.Forms.Label();
@@ -36,9 +37,7 @@ namespace SIPOS.Presentation
             this.TxtName = new System.Windows.Forms.TextBox();
             this.TxtDescription = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TxtSugestedPriceToSell = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TxtPriceSell = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DgvProducts = new System.Windows.Forms.DataGridView();
@@ -50,9 +49,13 @@ namespace SIPOS.Presentation
             this.ColProductPVP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColproductActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColProductUpdate = new System.Windows.Forms.DataGridViewImageColumn();
-            this.TxtPricePurchase = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtSugestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCerrar
@@ -99,6 +102,7 @@ namespace SIPOS.Presentation
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(248, 26);
             this.TxtName.TabIndex = 25;
+            this.TxtName.Tag = "required";
             // 
             // TxtDescription
             // 
@@ -116,13 +120,6 @@ namespace SIPOS.Presentation
             this.label1.TabIndex = 27;
             this.label1.Text = "Descripción";
             // 
-            // TxtSugestedPriceToSell
-            // 
-            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 202);
-            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
-            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 26);
-            this.TxtSugestedPriceToSell.TabIndex = 28;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -131,13 +128,6 @@ namespace SIPOS.Presentation
             this.label3.Size = new System.Drawing.Size(96, 20);
             this.label3.TabIndex = 29;
             this.label3.Text = "PVP sugerido";
-            // 
-            // TxtPriceSell
-            // 
-            this.TxtPriceSell.Location = new System.Drawing.Point(201, 234);
-            this.TxtPriceSell.Name = "TxtPriceSell";
-            this.TxtPriceSell.Size = new System.Drawing.Size(248, 26);
-            this.TxtPriceSell.TabIndex = 30;
             // 
             // label4
             // 
@@ -241,13 +231,6 @@ namespace SIPOS.Presentation
             this.ColProductUpdate.Name = "ColProductUpdate";
             this.ColProductUpdate.Width = 120;
             // 
-            // TxtPricePurchase
-            // 
-            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 170);
-            this.TxtPricePurchase.Name = "TxtPricePurchase";
-            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 26);
-            this.TxtPricePurchase.TabIndex = 34;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -257,19 +240,50 @@ namespace SIPOS.Presentation
             this.label5.TabIndex = 35;
             this.label5.Text = "Precio de compra";
             // 
+            // TxtPricePurchase
+            // 
+            this.TxtPricePurchase.DecimalPlaces = 4;
+            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 167);
+            this.TxtPricePurchase.Name = "TxtPricePurchase";
+            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 26);
+            this.TxtPricePurchase.TabIndex = 36;
+            this.TxtPricePurchase.Tag = "required";
+            // 
+            // TxtSugestedPriceToSell
+            // 
+            this.TxtSugestedPriceToSell.DecimalPlaces = 4;
+            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 199);
+            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
+            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 26);
+            this.TxtSugestedPriceToSell.TabIndex = 37;
+            // 
+            // TxtPriceSell
+            // 
+            this.TxtPriceSell.DecimalPlaces = 4;
+            this.TxtPriceSell.Location = new System.Drawing.Point(201, 231);
+            this.TxtPriceSell.Name = "TxtPriceSell";
+            this.TxtPriceSell.Size = new System.Drawing.Size(248, 26);
+            this.TxtPriceSell.TabIndex = 38;
+            this.TxtPriceSell.Tag = "required";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 200;
+            this.errorProvider.ContainerControl = this;
+            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1008, 589);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.TxtPriceSell);
+            this.Controls.Add(this.TxtSugestedPriceToSell);
             this.Controls.Add(this.TxtPricePurchase);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.DgvProducts);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.TxtPriceSell);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.TxtSugestedPriceToSell);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TxtDescription);
             this.Controls.Add(this.TxtName);
@@ -280,6 +294,7 @@ namespace SIPOS.Presentation
             this.Text = "FormProduct";
             this.Load += new System.EventHandler(this.FormProduct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,13 +308,10 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.TextBox TxtDescription;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxtSugestedPriceToSell;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TxtPriceSell;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView DgvProducts;
-        private System.Windows.Forms.TextBox TxtPricePurchase;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductName;
@@ -309,5 +321,9 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductPVP;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColproductActive;
         private System.Windows.Forms.DataGridViewImageColumn ColProductUpdate;
+        private UserControls.DecimalTextBox TxtPricePurchase;
+        private UserControls.DecimalTextBox TxtSugestedPriceToSell;
+        private UserControls.DecimalTextBox TxtPriceSell;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
