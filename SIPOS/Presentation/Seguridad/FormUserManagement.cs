@@ -49,7 +49,7 @@ namespace SIPOS.Presentation.Seguridad
 
                     var userId = userRow["UserId"].Value.ToString();
                     var userName = userRow["UserName"].EditedFormattedValue.ToString();
-                    var password = userRow["Password"].EditedFormattedValue.ToString();
+                    var password = userRow["Password"].Value.ToString();
                     var rol = userRow["DgvcRol"].Value.ToString();
                     var active = (bool)userRow["Active"].EditedFormattedValue;
 
@@ -59,10 +59,32 @@ namespace SIPOS.Presentation.Seguridad
                     userToUpdate.Activo = active;
                     userToUpdate.SiposRolId = new Guid(rol);
 
+
                     siposUserService.Update(userToUpdate);
                     repositoryWrapper.Save();
                 }
             }
+        }
+
+        private void DgvUsuarios_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == this.Password.Index && e.Value != null)
+            {
+                DgvUsuarios.Rows[e.RowIndex].Tag = e.Value;
+                e.Value = new String('\u25CF', e.Value.ToString().Length);
+            }
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            var newUser = new SiposUser
+            {
+                UserName = TxtUserName.Text,
+                Password = TxtPassword.Text,
+                SiposRolId = new Guid(CbRol.SelectedValue.ToString())
+            };
+            repositoryWrapper.UserRepository.Create(newUser);
+            repositoryWrapper.Save();
         }
     }
 }

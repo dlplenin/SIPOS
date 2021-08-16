@@ -89,8 +89,8 @@ namespace SIPOS.Presentation
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
-            this.MenuPanel.Controls.Add(this.BtnUsermanagement);
             this.MenuPanel.Controls.Add(this.BtnSupplier);
+            this.MenuPanel.Controls.Add(this.BtnUsermanagement);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 40);
             this.MenuPanel.Name = "MenuPanel";
@@ -106,7 +106,7 @@ namespace SIPOS.Presentation
             this.BtnUsermanagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUsermanagement.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnUsermanagement.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnUsermanagement.Location = new System.Drawing.Point(0, 45);
+            this.BtnUsermanagement.Location = new System.Drawing.Point(0, 0);
             this.BtnUsermanagement.Name = "BtnUsermanagement";
             this.BtnUsermanagement.Size = new System.Drawing.Size(240, 45);
             this.BtnUsermanagement.TabIndex = 1;
@@ -123,7 +123,7 @@ namespace SIPOS.Presentation
             this.BtnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSupplier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSupplier.Location = new System.Drawing.Point(0, 0);
+            this.BtnSupplier.Location = new System.Drawing.Point(0, 45);
             this.BtnSupplier.Name = "BtnSupplier";
             this.BtnSupplier.Size = new System.Drawing.Size(240, 45);
             this.BtnSupplier.TabIndex = 0;

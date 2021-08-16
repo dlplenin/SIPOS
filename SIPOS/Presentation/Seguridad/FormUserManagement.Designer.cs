@@ -88,6 +88,7 @@ namespace SIPOS.Presentation.Seguridad
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(248, 26);
             this.TxtPassword.TabIndex = 4;
+            this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // BtnCerrar
             // 
@@ -127,6 +128,7 @@ namespace SIPOS.Presentation.Seguridad
             this.BtnAgregar.TabIndex = 8;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // DgvUsuarios
             // 
@@ -147,6 +149,7 @@ namespace SIPOS.Presentation.Seguridad
             this.DgvUsuarios.Size = new System.Drawing.Size(778, 180);
             this.DgvUsuarios.TabIndex = 9;
             this.DgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellContentClick);
+            this.DgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvUsuarios_CellFormatting);
             // 
             // UserId
             // 
