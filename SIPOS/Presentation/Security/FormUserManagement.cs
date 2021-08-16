@@ -47,6 +47,9 @@ namespace SIPOS.Presentation.Security
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            if (AnyMissingRequiredTextBox())
+                return;
+
             var newUser = new SiposUser
             {
                 UserName = TxtUserName.Text,
@@ -56,7 +59,35 @@ namespace SIPOS.Presentation.Security
             repositoryWrapper.UserRepository.Create(newUser);
             repositoryWrapper.Save();
 
+            ClearTextBox();
+
             LoadUsers();
+        }
+
+        private void ClearTextBox()
+        {
+            var boxesToClear = Controls.OfType<TextBox>();
+            foreach (var box in boxesToClear)
+            {
+                box.Text = string.Empty;
+            }
+        }
+
+        private bool AnyMissingRequiredTextBox()
+        {
+            errorProvider.Clear();
+            var requiredBoxes = Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == "required");
+            var anyMissingRequired = false;
+            foreach (var box in requiredBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    anyMissingRequired = true;
+                    errorProvider.SetError(box, "Es un campo requerido");
+                }
+            }
+
+            return anyMissingRequired;
         }
 
         private void DgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -29,6 +29,7 @@ namespace SIPOS.Presentation.Security
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserManagement));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +47,9 @@ namespace SIPOS.Presentation.Security
             this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.DgviUpdate = new System.Windows.Forms.DataGridViewImageColumn();
             this.lbl_login = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -73,6 +76,7 @@ namespace SIPOS.Presentation.Security
             this.TxtUserName.Name = "TxtUserName";
             this.TxtUserName.Size = new System.Drawing.Size(248, 26);
             this.TxtUserName.TabIndex = 3;
+            this.TxtUserName.Tag = "required";
             // 
             // TxtPassword
             // 
@@ -80,6 +84,7 @@ namespace SIPOS.Presentation.Security
             this.TxtPassword.Name = "TxtPassword";
             this.TxtPassword.Size = new System.Drawing.Size(248, 26);
             this.TxtPassword.TabIndex = 4;
+            this.TxtPassword.Tag = "required";
             this.TxtPassword.UseSystemPasswordChar = true;
             // 
             // BtnCerrar
@@ -208,6 +213,10 @@ namespace SIPOS.Presentation.Security
             this.lbl_login.TabIndex = 10;
             this.lbl_login.Text = "USUARIO";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // FormUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -227,6 +236,7 @@ namespace SIPOS.Presentation.Security
             this.Text = "FormUser";
             this.Load += new System.EventHandler(this.FormUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -249,5 +259,6 @@ namespace SIPOS.Presentation.Security
         private System.Windows.Forms.DataGridViewCheckBoxColumn Active;
         private System.Windows.Forms.DataGridViewImageColumn DgviUpdate;
         private System.Windows.Forms.Label lbl_login;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
