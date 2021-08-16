@@ -12,16 +12,19 @@ namespace SIPOS.Presentation
         //private readonly ServiceCollection services;
         private readonly FormUserManagement formUserManagement;
         private readonly FormSupplier formSupplier;
+        private readonly FormProduct formProduct;
 
         public MainForm(
             IServiceCollection services, 
             FormUserManagement formUserManagement,
-            FormSupplier formSupplier
+            FormSupplier formSupplier,
+            FormProduct formProduct
             )
         {
             this.services = services;
             this.formUserManagement = formUserManagement;
             this.formSupplier = formSupplier;
+            this.formProduct = formProduct;
             //this.services = services;
 
             InitializeComponent();
@@ -151,6 +154,11 @@ namespace SIPOS.Presentation
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
         #endregion
+
+        private void BtnProducto_Click(object sender, EventArgs e)
+        {
+            OpenFormAsChild(formProduct);
+        }
 
         private void BtnSupplier_Click(object sender, EventArgs e)
         {

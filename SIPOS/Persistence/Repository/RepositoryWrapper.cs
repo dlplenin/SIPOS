@@ -19,6 +19,7 @@ namespace SIPOS.Persistence.Repository
         private ISiposRolRepository _rolRepository;
 
         private ISupplierRepository _supplierRepository;
+        private IProductRepository productRepository;
 
         public ISiposUserRepository UserRepository
         {
@@ -53,6 +54,18 @@ namespace SIPOS.Persistence.Repository
                     _supplierRepository = new SupplierRepository(repoContext);
                 }
                 return _supplierRepository;
+            }
+        }
+
+        public IProductRepository ProductRepository
+        {
+            get
+            {
+                if (productRepository == null)
+                {
+                    productRepository = new ProductRepository(repoContext);
+                }
+                return productRepository;
             }
         }
 

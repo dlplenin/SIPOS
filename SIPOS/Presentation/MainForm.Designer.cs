@@ -42,6 +42,7 @@ namespace SIPOS.Presentation
             this.PbMin = new System.Windows.Forms.PictureBox();
             this.PbMax = new System.Windows.Forms.PictureBox();
             this.PbClose = new System.Windows.Forms.PictureBox();
+            this.BtnProducto = new System.Windows.Forms.Button();
             this.ContainerPanel.SuspendLayout();
             this.FormsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
@@ -89,6 +90,7 @@ namespace SIPOS.Presentation
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.MenuPanel.Controls.Add(this.BtnProducto);
             this.MenuPanel.Controls.Add(this.BtnSupplier);
             this.MenuPanel.Controls.Add(this.BtnUsermanagement);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -205,6 +207,23 @@ namespace SIPOS.Presentation
             this.PbClose.TabStop = false;
             this.PbClose.Click += new System.EventHandler(this.PbClose_Click);
             // 
+            // BtnProducto
+            // 
+            this.BtnProducto.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnProducto.FlatAppearance.BorderSize = 0;
+            this.BtnProducto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnProducto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnProducto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnProducto.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnProducto.Location = new System.Drawing.Point(0, 90);
+            this.BtnProducto.Name = "BtnProducto";
+            this.BtnProducto.Size = new System.Drawing.Size(240, 45);
+            this.BtnProducto.TabIndex = 2;
+            this.BtnProducto.Text = "Producto";
+            this.BtnProducto.UseVisualStyleBackColor = true;
+            this.BtnProducto.Click += new System.EventHandler(this.BtnProducto_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -245,5 +264,6 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.PictureBox PbLogo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button BtnUsermanagement;
+        private System.Windows.Forms.Button BtnProducto;
     }
 }
