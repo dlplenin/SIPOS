@@ -1,25 +1,23 @@
 ﻿using SIPOS.Entities.User;
 using SIPOS.Persistence.Repository;
-using SIPOS.Services;
 using System.Windows.Forms;
 
 namespace SIPOS.Presentation.Seguridad
 {
     public partial class FormUserManagement : Form
     {
-        private readonly ISiposUserManagementService siposUserService;
         private readonly IRepositoryWrapper repositoryWrapper;
 
-        public FormUserManagement(ISiposUserManagementService siposUserService, IRepositoryWrapper repositoryWrapper)
+        public FormUserManagement(IRepositoryWrapper repositoryWrapper)
         {
-            this.siposUserService = siposUserService;
             this.repositoryWrapper = repositoryWrapper;
             InitializeComponent();
         }
 
         private void FormUser_Load(object sender, EventArgs e)
         {
-            var rols = siposUserService.Rol().ToList();
+            var rols = repositoryWrapper.RolRepository.GetAll().ToList();
+
             CbRol.DataSource = rols;
             CbRol.DisplayMember = "Name";
             CbRol.ValueMember = "Id";
@@ -28,7 +26,8 @@ namespace SIPOS.Presentation.Seguridad
             DgvcRol.DisplayMember = "Name";
             DgvcRol.ValueMember = "Id";
 
-            foreach (var user in siposUserService.GetAllUsers().ToList())
+            var usersInDB = repositoryWrapper.UserRepository.GetAll().ToList();
+            foreach (var user in usersInDB)
             {
                 DgvUsuarios.Rows.Add(user.Id, user.UserName, user.Password, user.SiposRol.Id, user.Activo);
             }
@@ -53,14 +52,13 @@ namespace SIPOS.Presentation.Seguridad
                     var rol = userRow["DgvcRol"].Value.ToString();
                     var active = (bool)userRow["Active"].EditedFormattedValue;
 
-                    var userToUpdate = siposUserService.GetUser(userId);
+                    var userToUpdate = repositoryWrapper.UserRepository.GetById(new Guid(userId));
                     userToUpdate.UserName = userName;
                     userToUpdate.Password = password;
                     userToUpdate.Activo = active;
                     userToUpdate.SiposRolId = new Guid(rol);
 
-
-                    siposUserService.Update(userToUpdate);
+                    repositoryWrapper.UserRepository.Update(userToUpdate);
                     repositoryWrapper.Save();
                 }
             }

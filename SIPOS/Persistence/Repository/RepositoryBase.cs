@@ -15,7 +15,7 @@ namespace SIPOS.Persistence.Repository
         {
             this.RepositoryContext = repositoryContext;
         }
-        public IQueryable<T> FindAll()
+        public IQueryable<T> GetAll()
         {
             return this.RepositoryContext.Set<T>();
         }
@@ -23,6 +23,7 @@ namespace SIPOS.Persistence.Repository
         {
             return this.RepositoryContext.Set<T>().Where(expression);
         }
+
         public void Create(T entity)
         {
             this.RepositoryContext.Set<T>().Add(entity);
@@ -34,6 +35,11 @@ namespace SIPOS.Persistence.Repository
         public void Delete(T entity)
         {
             this.RepositoryContext.Set<T>().Remove(entity);
+        }
+
+        public T GetById(object guid)
+        {
+            return this.RepositoryContext.Set<T>().Find(guid);
         }
     }
 }
