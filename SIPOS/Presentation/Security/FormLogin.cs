@@ -1,11 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Services;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace SIPOS.Presentation
+namespace SIPOS.Presentation.Security
 {
     public partial class FormLogin : Form
     {

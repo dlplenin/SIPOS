@@ -1,5 +1,5 @@
 ﻿
-namespace SIPOS.Presentation
+namespace SIPOS.Presentation.Security
 {
     partial class FormLogin
     {

@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using SIPOS.Presentation.Seguridad;
+using SIPOS.Presentation.Security;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;

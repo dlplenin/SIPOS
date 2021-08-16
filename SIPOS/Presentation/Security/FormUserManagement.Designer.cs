@@ -1,5 +1,5 @@
 ﻿
-namespace SIPOS.Presentation.Seguridad
+namespace SIPOS.Presentation.Security
 {
     partial class FormUserManagement
     {

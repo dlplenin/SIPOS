@@ -34,8 +34,8 @@ namespace SIPOS.Presentation
             this.FormsPanel = new System.Windows.Forms.Panel();
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
-            this.BtnUsermanagement = new System.Windows.Forms.Button();
             this.BtnSupplier = new System.Windows.Forms.Button();
+            this.BtnUsermanagement = new System.Windows.Forms.Button();
             this.TopMenu = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.PbRestart = new System.Windows.Forms.PictureBox();
@@ -97,6 +97,23 @@ namespace SIPOS.Presentation
             this.MenuPanel.Size = new System.Drawing.Size(240, 560);
             this.MenuPanel.TabIndex = 1;
             // 
+            // BtnSupplier
+            // 
+            this.BtnSupplier.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSupplier.FlatAppearance.BorderSize = 0;
+            this.BtnSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnSupplier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSupplier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnSupplier.Location = new System.Drawing.Point(0, 45);
+            this.BtnSupplier.Name = "BtnSupplier";
+            this.BtnSupplier.Size = new System.Drawing.Size(240, 45);
+            this.BtnSupplier.TabIndex = 0;
+            this.BtnSupplier.Text = "Proveedores";
+            this.BtnSupplier.UseVisualStyleBackColor = true;
+            this.BtnSupplier.Click += new System.EventHandler(this.BtnSupplier_Click);
+            // 
             // BtnUsermanagement
             // 
             this.BtnUsermanagement.Dock = System.Windows.Forms.DockStyle.Top;
@@ -113,23 +130,6 @@ namespace SIPOS.Presentation
             this.BtnUsermanagement.Text = "Usuarios";
             this.BtnUsermanagement.UseVisualStyleBackColor = true;
             this.BtnUsermanagement.Click += new System.EventHandler(this.BtnUsermanagement_Click);
-            // 
-            // BtnSupplier
-            // 
-            this.BtnSupplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnSupplier.FlatAppearance.BorderSize = 0;
-            this.BtnSupplier.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.BtnSupplier.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.BtnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSupplier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSupplier.Location = new System.Drawing.Point(0, 45);
-            this.BtnSupplier.Name = "BtnSupplier";
-            this.BtnSupplier.Size = new System.Drawing.Size(240, 45);
-            this.BtnSupplier.TabIndex = 0;
-            this.BtnSupplier.Text = "Proveedor";
-            this.BtnSupplier.UseVisualStyleBackColor = true;
-            this.BtnSupplier.Click += new System.EventHandler(this.BtnSupplier_Click);
             // 
             // TopMenu
             // 

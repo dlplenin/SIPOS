@@ -2,7 +2,7 @@
 using SIPOS.Persistence.Repository;
 using System.Windows.Forms;
 
-namespace SIPOS.Presentation.Seguridad
+namespace SIPOS.Presentation.Security
 {
     public partial class FormUserManagement : Form
     {

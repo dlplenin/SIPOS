@@ -2,7 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
 using SIPOS.Presentation;
-using SIPOS.Presentation.Seguridad;
+using SIPOS.Presentation.Security;
 using SIPOS.Services;
 using System.Windows.Forms;
 
