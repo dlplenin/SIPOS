@@ -17,8 +17,12 @@ namespace SIPOS.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<SiposUserRol>()
-                .HasKey(ur => new { ur.SiposRolId, ur.SiposUserId });
+            //modelBuilder.Entity<SiposUserRol>()
+            //    .HasKey(ur => new { ur.SiposRolId, ur.SiposUserId });
+
+            modelBuilder.Entity<SiposUser>()
+                .HasIndex(su => su.UserName)
+                .IsUnique();
 
             Seed(modelBuilder);
         }
@@ -30,7 +34,7 @@ namespace SIPOS.Persistence
 
         public DbSet<SiposUser> SiposUser { get; set; }
         public DbSet<SiposRol> SiposRol { get; set; }
-        public DbSet<SiposUserRol> SiposUserRol { get; set; }
+        //public DbSet<SiposUserRol> SiposUserRol { get; set; }
 
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }

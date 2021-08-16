@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SIPOS.Entities.User
 {
@@ -10,6 +12,8 @@ namespace SIPOS.Entities.User
         [Required]
         public string Password {  get; set; }
 
-        public virtual ICollection<SiposUserRol> SiposUserRol { get; set; }
+        [ForeignKey("SiposRol")]
+        public Guid SiposRolId { get; set; }
+        public virtual SiposRol SiposRol { get; set; }
     }
 }

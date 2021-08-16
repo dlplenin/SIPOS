@@ -4,6 +4,6 @@
     {
         public string Name {  get; set; }
 
-        public virtual ICollection<SiposUserRol> SiposUserRol { get; set; }
+        public virtual ICollection<SiposUser> SiposUser { get; set; }
     }
 }

@@ -10,8 +10,8 @@ using SIPOS.Persistence;
 namespace SIPOS.Migrations
 {
     [DbContext(typeof(SiposContext))]
-    [Migration("20210815213603_AddRoles")]
-    partial class AddRoles
+    [Migration("20210816031936_UnserNameAsUnique")]
+    partial class UnserNameAsUnique
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -252,28 +252,21 @@ namespace SIPOS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SiposUser");
-                });
-
-            modelBuilder.Entity("SIPOS.Entities.User.SiposUserRol", b =>
-                {
                     b.Property<Guid>("SiposRolId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("SiposUserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("SiposRolId", "SiposUserId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("SiposUserId");
+                    b.HasIndex("SiposRolId");
 
-                    b.ToTable("SiposUserRol");
+                    b.HasIndex("UserName")
+                        .IsUnique();
+
+                    b.ToTable("SiposUser");
                 });
 
             modelBuilder.Entity("SIPOS.Entities.Goods.GoodsOrder", b =>
@@ -325,23 +318,15 @@ namespace SIPOS.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("SIPOS.Entities.User.SiposUserRol", b =>
+            modelBuilder.Entity("SIPOS.Entities.User.SiposUser", b =>
                 {
                     b.HasOne("SIPOS.Entities.User.SiposRol", "SiposRol")
-                        .WithMany("SiposUserRol")
+                        .WithMany("SiposUser")
                         .HasForeignKey("SiposRolId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SIPOS.Entities.User.SiposUser", "SiposUser")
-                        .WithMany("SiposUserRol")
-                        .HasForeignKey("SiposUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("SiposRol");
-
-                    b.Navigation("SiposUser");
                 });
 
             modelBuilder.Entity("SIPOS.Entities.Goods.GoodsOrder", b =>
@@ -361,12 +346,7 @@ namespace SIPOS.Migrations
 
             modelBuilder.Entity("SIPOS.Entities.User.SiposRol", b =>
                 {
-                    b.Navigation("SiposUserRol");
-                });
-
-            modelBuilder.Entity("SIPOS.Entities.User.SiposUser", b =>
-                {
-                    b.Navigation("SiposUserRol");
+                    b.Navigation("SiposUser");
                 });
 #pragma warning restore 612, 618
         }

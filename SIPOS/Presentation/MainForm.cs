@@ -30,9 +30,8 @@ namespace SIPOS.Presentation
 
         private void OpenFormAsChild<ChildForm>(ChildForm formUserManagement) where ChildForm : Form
         {
-            Form formulario;
             //Busca en la colecion el formulario
-            formulario = FormsPanel.Controls.OfType<ChildForm>().FirstOrDefault();
+            Form formulario = FormsPanel.Controls.OfType<ChildForm>().FirstOrDefault();
                                                                                   
             //si el formulario/instancia no existe
             if (formulario is null)

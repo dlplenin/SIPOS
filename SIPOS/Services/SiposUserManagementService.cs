@@ -1,4 +1,5 @@
-﻿using SIPOS.Entities.User;
+﻿using Microsoft.EntityFrameworkCore;
+using SIPOS.Entities.User;
 using SIPOS.Persistence.Repository;
 using System.Linq;
 
@@ -13,6 +14,20 @@ namespace SIPOS.Services
             this.repoWrapper = repoWrapper;
         }
 
+        public IQueryable<SiposUser> GetAllUsers()
+        {
+            return repoWrapper.UserRepository
+                .FindAll()
+                .Include(x => x.SiposRol);
+        }
+
+        public SiposUser GetUser(string id)
+        {
+            return repoWrapper.UserRepository
+                .FindByCondition( x => x.Id.ToString() == id)
+                .FirstOrDefault();
+        }
+
         public SiposUser Login(string user, string password)
         {
             return repoWrapper.UserRepository
@@ -24,6 +39,12 @@ namespace SIPOS.Services
         {
             return repoWrapper.RolRepository
                 .FindAll();
+        }
+
+        public void Update(SiposUser userToUpdate)
+        {
+            repoWrapper.UserRepository
+                .Update(userToUpdate);
         }
     }
 }
