@@ -53,30 +53,15 @@ namespace SIPOS.Presentation.Seguridad
                     var rol = userRow["DgvcRol"].Value.ToString();
                     var active = (bool)userRow["Active"].EditedFormattedValue;
 
-                    var a = siposUserService.GetUser(userId);
-                    a.UserName = userName;
-                    a.Password = password;
-                    a.Activo = active;
-                    a.SiposRolId = new Guid(rol);
+                    var userToUpdate = siposUserService.GetUser(userId);
+                    userToUpdate.UserName = userName;
+                    userToUpdate.Password = password;
+                    userToUpdate.Activo = active;
+                    userToUpdate.SiposRolId = new Guid(rol);
 
-                    //var userToUpdate = new SiposUser
-                    //{
-                    //    Id = new Guid(userId),
-                    //    Activo = active,
-                    //    Password = password,
-                    //    UserName = userName,
-                    //    SiposRolId = new Guid(rol)
-                    //};
-
-
-                    siposUserService.Update(a);
+                    siposUserService.Update(userToUpdate);
                     repositoryWrapper.Save();
                 }
-                //else if (e.ColumnIndex == this.colEdit.Index)
-                //{
-                //    var pallet = this.dataGridView1.Rows[e.RowIndex].DataBoundItem as PrimalPallet;
-                //    // etc.
-                //}
             }
         }
     }
