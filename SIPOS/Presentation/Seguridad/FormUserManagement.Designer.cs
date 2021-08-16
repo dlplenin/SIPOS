@@ -29,7 +29,7 @@ namespace SIPOS.Presentation.Seguridad
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUserManagement));
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtUserName = new System.Windows.Forms.TextBox();
@@ -44,18 +44,10 @@ namespace SIPOS.Presentation.Seguridad
             this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DgvcRol = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.Active = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.DgvbUpdate = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.DgviUpdate = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lbl_login = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuarios)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(338, 20);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
             // 
             // label2
             // 
@@ -93,13 +85,18 @@ namespace SIPOS.Presentation.Seguridad
             // BtnCerrar
             // 
             this.BtnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCerrar.BackColor = System.Drawing.Color.SkyBlue;
+            this.BtnCerrar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
+            this.BtnCerrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.BtnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCerrar.Location = new System.Drawing.Point(816, 12);
+            this.BtnCerrar.ForeColor = System.Drawing.Color.LightGray;
+            this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
+            this.BtnCerrar.Location = new System.Drawing.Point(876, 12);
             this.BtnCerrar.Name = "BtnCerrar";
-            this.BtnCerrar.Size = new System.Drawing.Size(90, 28);
+            this.BtnCerrar.Size = new System.Drawing.Size(30, 28);
             this.BtnCerrar.TabIndex = 5;
-            this.BtnCerrar.Text = "Cerrar";
-            this.BtnCerrar.UseVisualStyleBackColor = true;
+            this.BtnCerrar.UseVisualStyleBackColor = false;
             this.BtnCerrar.Click += new System.EventHandler(this.BtnCerrar_Click);
             // 
             // label4
@@ -141,15 +138,17 @@ namespace SIPOS.Presentation.Seguridad
             this.Password,
             this.DgvcRol,
             this.Active,
-            this.DgvbUpdate});
+            this.DgviUpdate});
             this.DgvUsuarios.Location = new System.Drawing.Point(30, 272);
             this.DgvUsuarios.Name = "DgvUsuarios";
             this.DgvUsuarios.RowHeadersWidth = 49;
             this.DgvUsuarios.RowTemplate.Height = 28;
+            this.DgvUsuarios.ShowCellToolTips = false;
             this.DgvUsuarios.Size = new System.Drawing.Size(778, 180);
             this.DgvUsuarios.TabIndex = 9;
             this.DgvUsuarios.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellContentClick);
             this.DgvUsuarios.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.DgvUsuarios_CellFormatting);
+            this.DgvUsuarios.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuarios_CellMouseEnter);
             // 
             // UserId
             // 
@@ -187,18 +186,31 @@ namespace SIPOS.Presentation.Seguridad
             this.Active.Name = "Active";
             this.Active.Width = 120;
             // 
-            // DgvbUpdate
+            // DgviUpdate
             // 
-            this.DgvbUpdate.HeaderText = "Actualizar";
-            this.DgvbUpdate.MinimumWidth = 6;
-            this.DgvbUpdate.Name = "DgvbUpdate";
-            this.DgvbUpdate.Width = 120;
+            this.DgviUpdate.HeaderText = "Actualizar";
+            this.DgviUpdate.Image = ((System.Drawing.Image)(resources.GetObject("DgviUpdate.Image")));
+            this.DgviUpdate.MinimumWidth = 6;
+            this.DgviUpdate.Name = "DgviUpdate";
+            this.DgviUpdate.Width = 120;
+            // 
+            // lbl_login
+            // 
+            this.lbl_login.AutoSize = true;
+            this.lbl_login.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_login.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.lbl_login.Location = new System.Drawing.Point(399, 12);
+            this.lbl_login.Name = "lbl_login";
+            this.lbl_login.Size = new System.Drawing.Size(119, 32);
+            this.lbl_login.TabIndex = 10;
+            this.lbl_login.Text = "USUARIO";
             // 
             // FormUserManagement
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(918, 574);
+            this.Controls.Add(this.lbl_login);
             this.Controls.Add(this.DgvUsuarios);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.CbRol);
@@ -208,7 +220,6 @@ namespace SIPOS.Presentation.Seguridad
             this.Controls.Add(this.TxtUserName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormUserManagement";
             this.Text = "FormUser";
             this.Load += new System.EventHandler(this.FormUser_Load);
@@ -219,8 +230,6 @@ namespace SIPOS.Presentation.Seguridad
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtUserName;
@@ -235,6 +244,7 @@ namespace SIPOS.Presentation.Seguridad
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
         private System.Windows.Forms.DataGridViewComboBoxColumn DgvcRol;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Active;
-        private System.Windows.Forms.DataGridViewButtonColumn DgvbUpdate;
+        private System.Windows.Forms.DataGridViewImageColumn DgviUpdate;
+        private System.Windows.Forms.Label lbl_login;
     }
 }

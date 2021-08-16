@@ -57,6 +57,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAShJREFUOE/N
+        UctSwkAQXP9wdyH8CVwg2XD0RHlQFAKIflAe/oNWmWCVEBM8wfTWBBIp8EpXpWoy3dM7D3FdiLU2cav1
+        wL8nAAcN/zZB5F06GGy+hsNt0m7Pd0LcMCUQJ46zAAcNtEwdQc7Bp+sW5Wi0y4z5ibR+ZEpQ8RNy4Mig
+        IIMJU01EUgap6+bWxPO2b44TJJ3O88qYX1tMXKjUlOWnQKuRUq9UXHJBkfm+7YriMtR6ydLzsCZSvqSe
+        Z1u2xRTTy8v6Xi6CZhxXo/DrOS7A9GVEVJxx8Z8R/jchAZZo5yeTdSjlPT7EbFJCw/ImYqUm1dw4Gc7K
+        FLqa1c6Y1098AG3Yf+92VyT4xqucPgC5tN9ff/R6GbScboJEt+e2XV0HGk5dBYTYAze78LhGkHXkAAAA
+        AElFTkSuQmCC
+</value>
+  </data>
   <metadata name="UserId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -72,7 +84,15 @@
   <metadata name="Active.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="DgvbUpdate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="DgviUpdate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="DgviUpdate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAKVJREFUOE9j
+        oAroLl34HxkX103/n1bZj4FLamf8n1C5tAaqDQFAmu5c/QTGx3Y9Ayt++PoTBgaJT21c/W1C9ZI6qFYI
+        IGRARfccuAFXz77+P61l7Zf+qmVtUO2kGQBSc+XMK7BXodpRDTh94OX/uu4lYMXouHnicrg6nAYQi2ln
+        ACFAHwMOvcCOQYAoA/ABogzAZjsIgwBRBuADOA0gB0O1UwIYGAAd6YKUu/JV2gAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

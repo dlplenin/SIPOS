@@ -42,7 +42,7 @@ namespace SIPOS.Presentation.Seguridad
         {
             if (e.RowIndex >= 0)
             {
-                if (e.ColumnIndex == this.DgvbUpdate.Index)
+                if (e.ColumnIndex == this.DgviUpdate.Index)
                 {
                     var userRow = this.DgvUsuarios.Rows[e.RowIndex].Cells;
 
@@ -83,6 +83,16 @@ namespace SIPOS.Presentation.Seguridad
             };
             repositoryWrapper.UserRepository.Create(newUser);
             repositoryWrapper.Save();
+        }
+
+        private void DgvUsuarios_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DgvUsuarios.Cursor = Cursors.Default;
+            
+            if (e.ColumnIndex == DgviUpdate.Index)
+            {
+                DgvUsuarios.Cursor = Cursors.Hand;
+            }
         }
     }
 }
