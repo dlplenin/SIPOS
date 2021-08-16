@@ -21,6 +21,6 @@ namespace SIPOS.Entities.Goods
 
         [ForeignKey("Suplier")]
         public Guid SuplierId { get; set; }
-        public virtual Suplier Suplier { get; set; }
+        public virtual Supplier Suplier { get; set; }
     }
 }

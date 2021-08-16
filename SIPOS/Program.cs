@@ -2,6 +2,7 @@ using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
 using SIPOS.Presentation;
+using SIPOS.Presentation.Goods;
 using SIPOS.Presentation.Security;
 using SIPOS.Services;
 using System.Windows.Forms;
@@ -46,6 +47,7 @@ namespace SIPOS
                 .AddScoped<FormLogin>()
                 .AddScoped<MainForm>()
                 .AddScoped<FormUserManagement>()
+                .AddScoped<SupplierForm>()
                 ;
 
             services.AddSingleton<SiposContext>()

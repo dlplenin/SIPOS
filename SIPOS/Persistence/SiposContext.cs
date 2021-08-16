@@ -40,7 +40,7 @@ namespace SIPOS.Persistence
         public DbSet<OrderDetail> OrderDetail { get; set; }
         public DbSet<Product> Product { get; set; }
 
-        public DbSet<Suplier> Suplier { get; set; }
+        public DbSet<Supplier> Supplier { get; set; }
         public DbSet<GoodsOrder> GoodsOrder { get; set; }
         public DbSet<GoodsOrderDetail> GoodsOrderDetail { get; set; }
     }

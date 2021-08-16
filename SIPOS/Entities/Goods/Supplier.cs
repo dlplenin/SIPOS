@@ -1,6 +1,6 @@
 ﻿namespace SIPOS.Entities.Goods
 {
-    public class Suplier : EntityBase<Guid>
+    public class Supplier : EntityBase<Guid>
     {
         public string Name {  get; set; }
         public string Phone {  get; set; }  
