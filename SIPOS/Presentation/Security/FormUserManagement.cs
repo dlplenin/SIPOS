@@ -22,6 +22,13 @@ namespace SIPOS.Presentation.Security
             CbRol.DisplayMember = "Name";
             CbRol.ValueMember = "Id";
 
+            LoadUsers();
+        }
+
+        private void LoadUsers()
+        {
+            var rols = repositoryWrapper.RolRepository.GetAll().ToList();
+
             DgvcRol.DataSource = rols;
             DgvcRol.DisplayMember = "Name";
             DgvcRol.ValueMember = "Id";
@@ -36,6 +43,20 @@ namespace SIPOS.Presentation.Security
         private void BtnCerrar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            var newUser = new SiposUser
+            {
+                UserName = TxtUserName.Text,
+                Password = TxtPassword.Text,
+                SiposRolId = new Guid(CbRol.SelectedValue.ToString())
+            };
+            repositoryWrapper.UserRepository.Create(newUser);
+            repositoryWrapper.Save();
+
+            LoadUsers();
         }
 
         private void DgvUsuarios_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -71,18 +92,6 @@ namespace SIPOS.Presentation.Security
                 DgvUsuarios.Rows[e.RowIndex].Tag = e.Value;
                 e.Value = new String('\u25CF', e.Value.ToString().Length);
             }
-        }
-
-        private void BtnAgregar_Click(object sender, EventArgs e)
-        {
-            var newUser = new SiposUser
-            {
-                UserName = TxtUserName.Text,
-                Password = TxtPassword.Text,
-                SiposRolId = new Guid(CbRol.SelectedValue.ToString())
-            };
-            repositoryWrapper.UserRepository.Create(newUser);
-            repositoryWrapper.Save();
         }
 
         private void DgvUsuarios_CellMouseEnter(object sender, DataGridViewCellEventArgs e)

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using SIPOS.Presentation.Goods;
 using SIPOS.Presentation.Security;
 using System.Drawing;
 using System.Runtime.InteropServices;
@@ -10,11 +11,17 @@ namespace SIPOS.Presentation
     {
         //private readonly ServiceCollection services;
         private readonly FormUserManagement formUserManagement;
+        private readonly FormSupplier formSupplier;
 
-        public MainForm(IServiceCollection services, FormUserManagement formUserManagement)
+        public MainForm(
+            IServiceCollection services, 
+            FormUserManagement formUserManagement,
+            FormSupplier formSupplier
+            )
         {
             this.services = services;
             this.formUserManagement = formUserManagement;
+            this.formSupplier = formSupplier;
             //this.services = services;
 
             InitializeComponent();
@@ -147,7 +154,7 @@ namespace SIPOS.Presentation
 
         private void BtnSupplier_Click(object sender, EventArgs e)
         {
-            //OpenFormAsChild<Form1>();
+            OpenFormAsChild(formSupplier);
         }
 
         private void BtnUsermanagement_Click(object sender, EventArgs e)

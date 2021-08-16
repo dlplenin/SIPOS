@@ -5,6 +5,8 @@
         ISiposUserRepository UserRepository { get; }
         ISiposRolRepository RolRepository { get; }
 
+        ISupplierRepository SupplierRepository { get; }
+
         void Save();
     }
 }
