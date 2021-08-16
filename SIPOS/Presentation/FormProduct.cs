@@ -40,7 +40,8 @@ namespace SIPOS.Presentation
 
             foreach (var item in productsInDB)
             {
-                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.SugestedPriceToSell, item.PriceSell, item.Activo);
+                var investedMoney = item.Stock * item.PricePurchase;
+                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.SugestedPriceToSell, item.PriceSell, item.Stock, investedMoney, item.Activo);
             }
         }
 
@@ -55,7 +56,8 @@ namespace SIPOS.Presentation
                 Description = TxtDescription.Text,
                 PricePurchase = Convert.ToDecimal(TxtPricePurchase.TextOrDefault),
                 SugestedPriceToSell = Convert.ToDecimal(TxtSugestedPriceToSell.TextOrDefault),
-                PriceSell = Convert.ToDecimal(TxtPriceSell.TextOrDefault)
+                PriceSell = Convert.ToDecimal(TxtPriceSell.TextOrDefault),
+                Stock = Convert.ToDecimal(TxtStock.TextOrDefault),
             };
             repositoryWrapper.ProductRepository.Create(newProduct);
             repositoryWrapper.Save();
@@ -112,6 +114,7 @@ namespace SIPOS.Presentation
                     var pricePurchase = userRow[ColProductPricePurchase.Name].Value.ToString();
                     var suggestedPrice = userRow[ColProductSuggestedPrice.Name].Value.ToString();
                     var priceSell = userRow[ColProductPVP.Name].Value.ToString();
+                    var stock = userRow[ColProductStock.Name].Value.ToString();
                     var active = (bool)userRow[ColproductActive.Name].Value;
 
                     var productToUpdate = repositoryWrapper.ProductRepository.GetById(new Guid(userId));
@@ -120,6 +123,7 @@ namespace SIPOS.Presentation
                     productToUpdate.PricePurchase = Convert.ToDecimal(pricePurchase);
                     productToUpdate.SugestedPriceToSell = Convert.ToDecimal(suggestedPrice);
                     productToUpdate.PriceSell = Convert.ToDecimal(priceSell);
+                    productToUpdate.Stock = Convert.ToDecimal(stock);
                     productToUpdate.Activo = active;
 
                     repositoryWrapper.ProductRepository.Update(productToUpdate);

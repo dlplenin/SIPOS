@@ -31,6 +31,11 @@ namespace SIPOS.Presentation
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProduct));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnCerrar = new System.Windows.Forms.Button();
             this.lbl_login = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -41,19 +46,23 @@ namespace SIPOS.Presentation
             this.label4 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DgvProducts = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtSugestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.ColProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductPricePurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductSuggestedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductPVP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductStock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductInvested = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColproductActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColProductUpdate = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.TxtSugestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +78,7 @@ namespace SIPOS.Presentation
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.ForeColor = System.Drawing.Color.LightGray;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(963, 10);
+            this.BtnCerrar.Location = new System.Drawing.Point(1143, 10);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(30, 28);
             this.BtnCerrar.TabIndex = 22;
@@ -101,7 +110,7 @@ namespace SIPOS.Presentation
             this.TxtName.Location = new System.Drawing.Point(201, 106);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(248, 26);
-            this.TxtName.TabIndex = 25;
+            this.TxtName.TabIndex = 0;
             this.TxtName.Tag = "required";
             // 
             // TxtDescription
@@ -109,7 +118,7 @@ namespace SIPOS.Presentation
             this.TxtDescription.Location = new System.Drawing.Point(201, 138);
             this.TxtDescription.Name = "TxtDescription";
             this.TxtDescription.Size = new System.Drawing.Size(248, 26);
-            this.TxtDescription.TabIndex = 26;
+            this.TxtDescription.TabIndex = 1;
             // 
             // label1
             // 
@@ -141,10 +150,10 @@ namespace SIPOS.Presentation
             // BtnAgregar
             // 
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Location = new System.Drawing.Point(201, 266);
+            this.BtnAgregar.Location = new System.Drawing.Point(201, 303);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(90, 31);
-            this.BtnAgregar.TabIndex = 32;
+            this.BtnAgregar.TabIndex = 6;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
@@ -153,6 +162,9 @@ namespace SIPOS.Presentation
             // 
             this.DgvProducts.AllowUserToAddRows = false;
             this.DgvProducts.AllowUserToDeleteRows = false;
+            this.DgvProducts.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.DgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvProducts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColProductId,
@@ -161,17 +173,77 @@ namespace SIPOS.Presentation
             this.ColProductPricePurchase,
             this.ColProductSuggestedPrice,
             this.ColProductPVP,
+            this.ColProductStock,
+            this.ColProductInvested,
             this.ColproductActive,
             this.ColProductUpdate});
-            this.DgvProducts.Location = new System.Drawing.Point(12, 327);
+            this.DgvProducts.Location = new System.Drawing.Point(12, 353);
             this.DgvProducts.Name = "DgvProducts";
             this.DgvProducts.RowHeadersWidth = 49;
             this.DgvProducts.RowTemplate.Height = 28;
             this.DgvProducts.ShowCellToolTips = false;
-            this.DgvProducts.Size = new System.Drawing.Size(975, 250);
+            this.DgvProducts.Size = new System.Drawing.Size(1161, 340);
             this.DgvProducts.TabIndex = 33;
             this.DgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellContentClick);
             this.DgvProducts.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellMouseEnter);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 173);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 20);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Precio de compra";
+            // 
+            // TxtPricePurchase
+            // 
+            this.TxtPricePurchase.DecimalPlaces = 4;
+            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 167);
+            this.TxtPricePurchase.Name = "TxtPricePurchase";
+            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 26);
+            this.TxtPricePurchase.TabIndex = 2;
+            this.TxtPricePurchase.Tag = "required";
+            // 
+            // TxtSugestedPriceToSell
+            // 
+            this.TxtSugestedPriceToSell.DecimalPlaces = 4;
+            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 199);
+            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
+            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 26);
+            this.TxtSugestedPriceToSell.TabIndex = 3;
+            // 
+            // TxtPriceSell
+            // 
+            this.TxtPriceSell.DecimalPlaces = 4;
+            this.TxtPriceSell.Location = new System.Drawing.Point(201, 231);
+            this.TxtPriceSell.Name = "TxtPriceSell";
+            this.TxtPriceSell.Size = new System.Drawing.Size(248, 26);
+            this.TxtPriceSell.TabIndex = 4;
+            this.TxtPriceSell.Tag = "required";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 200;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // TxtStock
+            // 
+            this.TxtStock.DecimalPlaces = 4;
+            this.TxtStock.Location = new System.Drawing.Point(201, 263);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.Size = new System.Drawing.Size(248, 26);
+            this.TxtStock.TabIndex = 5;
+            this.TxtStock.Tag = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 266);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Cantidad";
             // 
             // ColProductId
             // 
@@ -197,6 +269,8 @@ namespace SIPOS.Presentation
             // 
             // ColProductPricePurchase
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductPricePurchase.DefaultCellStyle = dataGridViewCellStyle1;
             this.ColProductPricePurchase.HeaderText = "Precio compra";
             this.ColProductPricePurchase.MinimumWidth = 6;
             this.ColProductPricePurchase.Name = "ColProductPricePurchase";
@@ -204,6 +278,8 @@ namespace SIPOS.Presentation
             // 
             // ColProductSuggestedPrice
             // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductSuggestedPrice.DefaultCellStyle = dataGridViewCellStyle2;
             this.ColProductSuggestedPrice.HeaderText = "PVP sugerido";
             this.ColProductSuggestedPrice.MinimumWidth = 6;
             this.ColProductSuggestedPrice.Name = "ColProductSuggestedPrice";
@@ -211,10 +287,32 @@ namespace SIPOS.Presentation
             // 
             // ColProductPVP
             // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductPVP.DefaultCellStyle = dataGridViewCellStyle3;
             this.ColProductPVP.HeaderText = "PVP";
             this.ColProductPVP.MinimumWidth = 6;
             this.ColProductPVP.Name = "ColProductPVP";
             this.ColProductPVP.Width = 120;
+            // 
+            // ColProductStock
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductStock.DefaultCellStyle = dataGridViewCellStyle4;
+            this.ColProductStock.HeaderText = "Stock";
+            this.ColProductStock.MinimumWidth = 6;
+            this.ColProductStock.Name = "ColProductStock";
+            this.ColProductStock.ReadOnly = true;
+            this.ColProductStock.Width = 120;
+            // 
+            // ColProductInvested
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColProductInvested.DefaultCellStyle = dataGridViewCellStyle5;
+            this.ColProductInvested.HeaderText = "Invertido";
+            this.ColProductInvested.MinimumWidth = 6;
+            this.ColProductInvested.Name = "ColProductInvested";
+            this.ColProductInvested.ReadOnly = true;
+            this.ColProductInvested.Width = 120;
             // 
             // ColproductActive
             // 
@@ -231,51 +329,13 @@ namespace SIPOS.Presentation
             this.ColProductUpdate.Name = "ColProductUpdate";
             this.ColProductUpdate.Width = 120;
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 173);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Precio de compra";
-            // 
-            // TxtPricePurchase
-            // 
-            this.TxtPricePurchase.DecimalPlaces = 4;
-            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 167);
-            this.TxtPricePurchase.Name = "TxtPricePurchase";
-            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 26);
-            this.TxtPricePurchase.TabIndex = 36;
-            this.TxtPricePurchase.Tag = "required";
-            // 
-            // TxtSugestedPriceToSell
-            // 
-            this.TxtSugestedPriceToSell.DecimalPlaces = 4;
-            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 199);
-            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
-            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 26);
-            this.TxtSugestedPriceToSell.TabIndex = 37;
-            // 
-            // TxtPriceSell
-            // 
-            this.TxtPriceSell.DecimalPlaces = 4;
-            this.TxtPriceSell.Location = new System.Drawing.Point(201, 231);
-            this.TxtPriceSell.Name = "TxtPriceSell";
-            this.TxtPriceSell.Size = new System.Drawing.Size(248, 26);
-            this.TxtPriceSell.TabIndex = 38;
-            this.TxtPriceSell.Tag = "required";
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkRate = 200;
-            this.errorProvider.ContainerControl = this;
-            // 
             // FormProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 589);
+            this.ClientSize = new System.Drawing.Size(1188, 705);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.TxtStock);
             this.Controls.Add(this.TxtPriceSell);
             this.Controls.Add(this.TxtSugestedPriceToSell);
             this.Controls.Add(this.TxtPricePurchase);
@@ -313,17 +373,21 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.Button BtnAgregar;
         private System.Windows.Forms.DataGridView DgvProducts;
         private System.Windows.Forms.Label label5;
+        private UserControls.DecimalTextBox TxtPricePurchase;
+        private UserControls.DecimalTextBox TxtSugestedPriceToSell;
+        private UserControls.DecimalTextBox TxtPriceSell;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.Label label6;
+        private UserControls.DecimalTextBox TxtStock;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductId;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductDescription;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductPricePurchase;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductSuggestedPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColProductPVP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProductStock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColProductInvested;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColproductActive;
         private System.Windows.Forms.DataGridViewImageColumn ColProductUpdate;
-        private UserControls.DecimalTextBox TxtPricePurchase;
-        private UserControls.DecimalTextBox TxtSugestedPriceToSell;
-        private UserControls.DecimalTextBox TxtPriceSell;
-        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

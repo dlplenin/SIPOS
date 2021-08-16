@@ -21,5 +21,9 @@ namespace SIPOS.Entities
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
         public decimal PricePurchase { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18, 4)")]
+        public decimal Stock { get; set; }
     }
 }
