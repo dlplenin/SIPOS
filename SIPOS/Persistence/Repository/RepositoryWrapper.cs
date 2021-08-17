@@ -73,5 +73,20 @@ namespace SIPOS.Persistence.Repository
         {
             repoContext.SaveChanges();
         }
+
+        public void BeginTransaction()
+        {
+            repoContext.BeginTransaction();
+        }
+
+        public void CommitTransaction()
+        {
+            repoContext.CommitTransaction();
+        }
+
+        public void RollbackTransaction()
+        {
+            repoContext.RollbackTransaction();
+        }
     }
 }

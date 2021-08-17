@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage;
 using SIPOS.Entities;
 using SIPOS.Entities.Goods;
 using SIPOS.Entities.User;
@@ -11,6 +12,7 @@ namespace SIPOS.Persistence
     {
         //public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options) { }
 
+        private IDbContextTransaction contextTransaction;
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=SIPOS;Integrated Security=True");
@@ -100,6 +102,33 @@ namespace SIPOS.Persistence
             modelBuilder.ApplyConfiguration(new SiposRolSeed());
         }
 
+        public virtual void BeginTransaction()
+        {
+            contextTransaction = Database.BeginTransaction();
+        }
+
+        public virtual void CommitTransaction()
+        {
+            try
+            {
+                SaveChanges();
+                contextTransaction.Commit();
+            }
+            finally
+            {
+                contextTransaction.Dispose();
+            }
+        }
+
+        public virtual void RollbackTransaction()
+        {
+            if (contextTransaction is not null)
+            {
+                contextTransaction.Rollback();
+                contextTransaction.Dispose();
+            }
+        }
+
         public DbSet<SiposUser> SiposUser { get; set; }
         public DbSet<SiposRol> SiposRol { get; set; }
 
@@ -110,5 +139,6 @@ namespace SIPOS.Persistence
         public DbSet<Supplier> Supplier { get; set; }
         public DbSet<GoodsOrder> GoodsOrder { get; set; }
         public DbSet<GoodsOrderDetail> GoodsOrderDetail { get; set; }
+
     }
 }

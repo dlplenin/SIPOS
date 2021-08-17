@@ -8,6 +8,9 @@
         ISupplierRepository SupplierRepository { get; }
         IProductRepository ProductRepository { get; }
 
+        void BeginTransaction();
+        void CommitTransaction();
+        void RollbackTransaction();
         void Save();
     }
 }

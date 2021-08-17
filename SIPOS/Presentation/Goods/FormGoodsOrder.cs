@@ -64,7 +64,7 @@ namespace SIPOS.Presentation.Goods
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
-            if (AnyMissingRequiredProductTextBox())
+            if (AnyMissingRequiredTextBox("requiredProd"))
                 return;
 
             var selectedProduct = CbProducts.SelectedItem as Product;
@@ -75,10 +75,18 @@ namespace SIPOS.Presentation.Goods
             UpdateTotalInvoice();
         }
 
-        private bool AnyMissingRequiredProductTextBox()
+        private bool AnyMissingRequiredTextBox(string tag)
         {
             errorProviderProd.Clear();
-            var requiredBoxes = Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == "requiredProd");
+
+            var requiredBoxes = Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == tag);
+            
+            // find into group boxes
+            foreach (var textBox in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == tag)))
+            {
+                requiredBoxes = requiredBoxes.Append(textBox);
+            }
+
             var anyMissingRequired = false;
             foreach (var box in requiredBoxes)
             {
@@ -104,6 +112,25 @@ namespace SIPOS.Presentation.Goods
 
             LblTotalInvested.Text = $"Inversion: $ {totalInvested:N2}";
             LblTotalProfit.Text = $"Ganancia: $ {totalProfit:N2}";
+        }
+
+        private void BtnSaveGoodsOrder_Click(object sender, EventArgs e)
+        {
+            if (AnyMissingRequiredTextBox("requiredGoodsOrder"))
+                return;
+
+            try
+            {
+                repositoryWrapper.BeginTransaction();
+
+                //repositoryWrapper.GoodsRepository
+
+                repositoryWrapper.CommitTransaction();
+            }
+            catch
+            {
+                repositoryWrapper.RollbackTransaction();
+            }
         }
     }
 }

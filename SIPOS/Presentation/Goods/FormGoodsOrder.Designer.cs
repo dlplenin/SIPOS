@@ -30,12 +30,12 @@ namespace SIPOS.Presentation.Goods
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGoodsOrder));
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
@@ -75,7 +75,7 @@ namespace SIPOS.Presentation.Goods
             this.label7 = new System.Windows.Forms.Label();
             this.CbProducts = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BtnSaveGoodsOrder = new System.Windows.Forms.Button();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TxtCurrentPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.LblCurrentPricePurchace = new System.Windows.Forms.Label();
@@ -83,11 +83,13 @@ namespace SIPOS.Presentation.Goods
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderGoods = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFiltrar
@@ -214,8 +216,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsPricePurchase
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsPricePurchase.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsPricePurchase.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColGoodsPricePurchase.HeaderText = "Precio compra";
             this.ColGoodsPricePurchase.MinimumWidth = 6;
             this.ColGoodsPricePurchase.Name = "ColGoodsPricePurchase";
@@ -223,8 +225,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsSuggestedPrice
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsSuggestedPrice.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsSuggestedPrice.DefaultCellStyle = dataGridViewCellStyle14;
             this.ColGoodsSuggestedPrice.HeaderText = "PVP sugerido";
             this.ColGoodsSuggestedPrice.MinimumWidth = 6;
             this.ColGoodsSuggestedPrice.Name = "ColGoodsSuggestedPrice";
@@ -232,8 +234,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsPVP
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsPVP.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsPVP.DefaultCellStyle = dataGridViewCellStyle15;
             this.ColGoodsPVP.HeaderText = "PVP";
             this.ColGoodsPVP.MinimumWidth = 6;
             this.ColGoodsPVP.Name = "ColGoodsPVP";
@@ -241,8 +243,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsQty
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsQty.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsQty.DefaultCellStyle = dataGridViewCellStyle16;
             this.ColGoodsQty.HeaderText = "Cantidad";
             this.ColGoodsQty.MinimumWidth = 6;
             this.ColGoodsQty.Name = "ColGoodsQty";
@@ -251,8 +253,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsInvested
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsInvested.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsInvested.DefaultCellStyle = dataGridViewCellStyle17;
             this.ColGoodsInvested.HeaderText = "Invertido";
             this.ColGoodsInvested.MinimumWidth = 6;
             this.ColGoodsInvested.Name = "ColGoodsInvested";
@@ -261,8 +263,8 @@ namespace SIPOS.Presentation.Goods
             // 
             // ColGoodsProfit
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsProfit.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsProfit.DefaultCellStyle = dataGridViewCellStyle18;
             this.ColGoodsProfit.HeaderText = "Ganancia";
             this.ColGoodsProfit.MinimumWidth = 6;
             this.ColGoodsProfit.Name = "ColGoodsProfit";
@@ -321,7 +323,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtFactura.Name = "TxtFactura";
             this.TxtFactura.Size = new System.Drawing.Size(248, 26);
             this.TxtFactura.TabIndex = 40;
-            this.TxtFactura.Tag = "required";
+            this.TxtFactura.Tag = "requiredGoodsOrder";
             // 
             // label2
             // 
@@ -473,15 +475,16 @@ namespace SIPOS.Presentation.Goods
             this.label1.TabIndex = 62;
             this.label1.Text = "PVP";
             // 
-            // button1
+            // BtnSaveGoodsOrder
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(1136, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(129, 31);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "Guardar factura";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnSaveGoodsOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSaveGoodsOrder.Location = new System.Drawing.Point(1136, 344);
+            this.BtnSaveGoodsOrder.Name = "BtnSaveGoodsOrder";
+            this.BtnSaveGoodsOrder.Size = new System.Drawing.Size(129, 31);
+            this.BtnSaveGoodsOrder.TabIndex = 63;
+            this.BtnSaveGoodsOrder.Text = "Guardar factura";
+            this.BtnSaveGoodsOrder.UseVisualStyleBackColor = true;
+            this.BtnSaveGoodsOrder.Click += new System.EventHandler(this.BtnSaveGoodsOrder_Click);
             // 
             // TxtCurrentPricePurchase
             // 
@@ -533,6 +536,10 @@ namespace SIPOS.Presentation.Goods
             this.errorProvider2.BlinkRate = 200;
             this.errorProvider2.ContainerControl = this;
             // 
+            // errorProviderGoods
+            // 
+            this.errorProviderGoods.ContainerControl = this;
+            // 
             // FormGoodsOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -542,7 +549,7 @@ namespace SIPOS.Presentation.Goods
             this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtCurrentPricePurchase);
             this.Controls.Add(this.LblCurrentPricePurchace);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.BtnSaveGoodsOrder);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.CbProducts);
             this.Controls.Add(this.groupBox1);
@@ -569,6 +576,7 @@ namespace SIPOS.Presentation.Goods
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,7 +610,7 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.ComboBox CbSuppliers;
         private System.Windows.Forms.ComboBox CbProducts;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button BtnSaveGoodsOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsDetailId;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColGoodsProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPricePurchase;
@@ -622,5 +630,6 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.Label LblTotalProfit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
+        private System.Windows.Forms.ErrorProvider errorProviderGoods;
     }
 }
