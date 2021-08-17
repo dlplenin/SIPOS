@@ -1,4 +1,5 @@
 ﻿using SIPOS.Entities;
+using SIPOS.Persistence.Repository.Contracts;
 
 namespace SIPOS.Persistence.Repository
 {

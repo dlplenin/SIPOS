@@ -1,5 +1,5 @@
 ﻿using SIPOS.Entities.User;
-using SIPOS.Persistence.Repository;
+using SIPOS.Persistence.Repository.Contracts;
 using System.Windows.Forms;
 
 namespace SIPOS.Presentation.Security

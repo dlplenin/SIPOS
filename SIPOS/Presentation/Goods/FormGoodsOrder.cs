@@ -1,5 +1,5 @@
 ﻿using SIPOS.Entities;
-using SIPOS.Persistence.Repository;
+using SIPOS.Persistence.Repository.Contracts;
 using System.Windows.Forms;
 
 namespace SIPOS.Presentation.Goods

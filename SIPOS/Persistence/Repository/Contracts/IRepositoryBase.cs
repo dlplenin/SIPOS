@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace SIPOS.Persistence.Repository
+namespace SIPOS.Persistence.Repository.Contracts
 {
     public interface IRepositoryBase<T>
     {

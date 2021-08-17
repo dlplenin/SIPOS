@@ -1,6 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SIPOS.Entities.User;
-using SIPOS.Persistence.Repository;
+﻿using SIPOS.Entities.User;
+using SIPOS.Persistence.Repository.Contracts;
 
 namespace SIPOS.Services
 {

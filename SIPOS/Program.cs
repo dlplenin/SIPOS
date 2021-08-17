@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Persistence;
 using SIPOS.Persistence.Repository;
+using SIPOS.Persistence.Repository.Contracts;
 using SIPOS.Presentation;
 using SIPOS.Presentation.Goods;
 using SIPOS.Presentation.Security;
