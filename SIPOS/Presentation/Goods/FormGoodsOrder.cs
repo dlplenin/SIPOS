@@ -45,20 +45,53 @@ namespace SIPOS.Presentation.Goods
 
             var products = repositoryWrapper.ProductRepository
                 .GetAll()
-                //.Select(s => new { s.Id, Name = $"{s.Name} || {s.Description}", s.SugestedPriceToSell, s.PriceSell })
                 .ToList();
             CbProducts.DataSource = products;
             CbProducts.DisplayMember = "FullDescription";
             CbProducts.ValueMember = "Id";
+
+
+            ColGoodsProduct.DataSource = products;
+            ColGoodsProduct.DisplayMember = "FullDescription";
+            ColGoodsProduct.ValueMember = "Id";
         }
 
         private void CbProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedProduct = CbProducts.SelectedItem as Product;
             TxtPriceSell.Text = selectedProduct.PriceSell.ToString();
-            TxtSugestedPriceToSell.Text = selectedProduct.SugestedPriceToSell.ToString();
+            TxtSuggestedPriceToSell.Text = selectedProduct.SugestedPriceToSell.ToString();
             TxtCurrentPricePurchase.Text = selectedProduct.PricePurchase.ToString();
             TxtStock.Text = selectedProduct.Stock.ToString();
+
+            TxtQty.Focus();
+            TxtQty.Text = "1";
+            TxtQty.SelectAll();
+
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            var selectedProduct = CbProducts.SelectedItem as Product;
+            var investedMoney = TxtQty.DecimalValue * TxtPricePurchase.DecimalValue;
+            var profitMoney = TxtQty.DecimalValue * TxtPriceSell.DecimalValue - investedMoney;
+            DgvGoods.Rows.Add("", selectedProduct.Id, TxtPricePurchase.Text, TxtSuggestedPriceToSell.Text, TxtPriceSell.Text, TxtQty.Text, investedMoney, profitMoney);
+
+            UpdateTotalInvoice();
+        }
+
+        private void UpdateTotalInvoice()
+        {
+            var totalInvested = 0M;
+            var totalProfit = 0M;
+            foreach (DataGridViewRow row in DgvGoods.Rows)
+            {
+                totalInvested += Convert.ToDecimal(row.Cells[ColGoodsInvested.Name].Value);
+                totalProfit += Convert.ToDecimal(row.Cells[ColGoodsProfit.Name].Value);
+            }
+
+            LblTotalInvested.Text = $"Inversion: $ {totalInvested:N2}";
+            LblTotalProfit.Text = $"Ganancia: $ {totalProfit:N2}";
         }
     }
 }

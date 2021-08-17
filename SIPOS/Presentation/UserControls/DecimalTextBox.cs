@@ -22,6 +22,15 @@ namespace SIPOS.Presentation.UserControls
             }
         }
 
+        public decimal DecimalValue
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(Text))
+                    return 0M;
+                return Convert.ToDecimal(Text);
+            }
+        }
 
         protected override void OnTextChanged(EventArgs e)
 		{
@@ -44,7 +53,7 @@ namespace SIPOS.Presentation.UserControls
             if (MoreThanOneDecimalSymbol(e, decimalSymbol))
                 e.Handled = true;
 
-			if (Text.Split(decimalSymbol).Last().Length >= DecimalPlaces)
+			if (Text.Split(decimalSymbol).Last().Length >= DecimalPlaces && (Keys)e.KeyChar != Keys.Back && this.SelectionLength <= 0)
 				e.Handled = true;
 
             base.OnKeyPress(e);
