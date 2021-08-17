@@ -58,6 +58,7 @@ namespace SIPOS.Presentation.Goods
             TxtPriceSell.Text = selectedProduct.PriceSell.ToString();
             TxtSugestedPriceToSell.Text = selectedProduct.SugestedPriceToSell.ToString();
             TxtCurrentPricePurchase.Text = selectedProduct.PricePurchase.ToString();
+            TxtStock.Text = selectedProduct.Stock.ToString();
         }
     }
 }

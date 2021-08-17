@@ -78,6 +78,8 @@ namespace SIPOS.Presentation.Goods
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.TxtCurrentPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.LblCurrentPricePurchace = new System.Windows.Forms.Label();
+            this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -281,7 +283,7 @@ namespace SIPOS.Presentation.Goods
             // BtnAgregar
             // 
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAgregar.Location = new System.Drawing.Point(833, 275);
+            this.BtnAgregar.Location = new System.Drawing.Point(833, 280);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(140, 31);
             this.BtnAgregar.TabIndex = 46;
@@ -482,11 +484,33 @@ namespace SIPOS.Presentation.Goods
             this.LblCurrentPricePurchace.TabIndex = 65;
             this.LblCurrentPricePurchace.Text = "PCA";
             // 
+            // TxtStock
+            // 
+            this.TxtStock.DecimalPlaces = 4;
+            this.TxtStock.Location = new System.Drawing.Point(853, 248);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.ReadOnly = true;
+            this.TxtStock.Size = new System.Drawing.Size(120, 26);
+            this.TxtStock.TabIndex = 66;
+            this.TxtStock.Tag = "required";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label5.Location = new System.Drawing.Point(802, 251);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(45, 20);
+            this.label5.TabIndex = 67;
+            this.label5.Text = "Stock";
+            // 
             // FormGoodsOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1277, 711);
+            this.Controls.Add(this.TxtStock);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.TxtCurrentPricePurchase);
             this.Controls.Add(this.LblCurrentPricePurchace);
             this.Controls.Add(this.button1);
@@ -562,5 +586,7 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.ToolTip toolTip;
         private UserControls.DecimalTextBox TxtCurrentPricePurchase;
         private System.Windows.Forms.Label LblCurrentPricePurchace;
+        private UserControls.DecimalTextBox TxtStock;
+        private System.Windows.Forms.Label label5;
     }
 }
