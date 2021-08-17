@@ -46,6 +46,7 @@ namespace SIPOS
                 .AddScoped<FormUserManagement>()
                 .AddScoped<FormSupplier>()
                 .AddScoped<FormProduct>()
+                .AddScoped<FormGoodsOrder>()
                 ;
 
             services.AddSingleton<SiposContext>()

@@ -13,18 +13,21 @@ namespace SIPOS.Presentation
         private readonly FormUserManagement formUserManagement;
         private readonly FormSupplier formSupplier;
         private readonly FormProduct formProduct;
+        private readonly FormGoodsOrder formGoodsOrder;
 
         public MainForm(
             IServiceCollection services, 
             FormUserManagement formUserManagement,
             FormSupplier formSupplier,
-            FormProduct formProduct
+            FormProduct formProduct,
+            FormGoodsOrder formGoodsOrder
             )
         {
             this.services = services;
             this.formUserManagement = formUserManagement;
             this.formSupplier = formSupplier;
             this.formProduct = formProduct;
+            this.formGoodsOrder = formGoodsOrder;
             //this.services = services;
 
             InitializeComponent();
@@ -158,6 +161,11 @@ namespace SIPOS.Presentation
         private void BtnProducto_Click(object sender, EventArgs e)
         {
             OpenFormAsChild(formProduct);
+        }
+
+        private void BtnGoods_Click(object sender, EventArgs e)
+        {
+            OpenFormAsChild(formGoodsOrder);
         }
 
         private void BtnSupplier_Click(object sender, EventArgs e)

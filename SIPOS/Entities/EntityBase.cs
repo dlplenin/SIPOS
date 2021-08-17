@@ -7,5 +7,6 @@ namespace SIPOS.Entities
         [Key]
         public T Id { get; set; }
         public bool Activo { get; set; } = true;
+        public DateTime CreationDate { get; set; }
     }
 }

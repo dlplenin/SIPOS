@@ -5,12 +5,9 @@ namespace SIPOS.Entities
 {
     public class Order : EntityBase<Guid>
     {
-        public string Number {  get; set; }
-        public DateTime CreationDate {  get; set; } = DateTime.UtcNow;
+        public string Invoice {  get; set; }
+        public DateTime ModificationDate {  get; set; } = DateTime.Now;
 
-        [Required]
-        [Column(TypeName = "decimal(18, 4)")]
-        public decimal SubTotal { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]

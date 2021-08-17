@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 using SIPOS.Entities;
 using SIPOS.Entities.Goods;
 using SIPOS.Entities.User;
@@ -20,9 +21,76 @@ namespace SIPOS.Persistence
             //modelBuilder.Entity<SiposUserRol>()
             //    .HasKey(ur => new { ur.SiposRolId, ur.SiposUserId });
 
-            modelBuilder.Entity<SiposUser>()
+            modelBuilder.Entity<SiposUser>(entity =>
+            {
+                entity
                 .HasIndex(su => su.UserName)
                 .IsUnique();
+
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+            modelBuilder.Entity<SiposRol>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+
+            modelBuilder.Entity<Order>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+            modelBuilder.Entity<OrderDetail>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+            modelBuilder.Entity<Product>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+
+            modelBuilder.Entity<Supplier>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+            modelBuilder.Entity<GoodsOrder>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
+            modelBuilder.Entity<GoodsOrderDetail>(entity =>
+            {
+                entity
+                .Property(x => x.CreationDate)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate()
+                .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
+            });
 
             Seed(modelBuilder);
         }
@@ -34,7 +102,6 @@ namespace SIPOS.Persistence
 
         public DbSet<SiposUser> SiposUser { get; set; }
         public DbSet<SiposRol> SiposRol { get; set; }
-        //public DbSet<SiposUserRol> SiposUserRol { get; set; }
 
         public DbSet<Order> Order { get; set; }
         public DbSet<OrderDetail> OrderDetail { get; set; }
