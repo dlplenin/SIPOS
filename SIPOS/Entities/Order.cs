@@ -7,7 +7,7 @@ namespace SIPOS.Entities
     {
         public string Invoice {  get; set; }
         public DateTime ModificationDate {  get; set; } = DateTime.Now;
-
+        public DateTime InvoiceDate { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]

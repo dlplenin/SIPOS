@@ -7,6 +7,7 @@ namespace SIPOS.Entities.Goods
     {
         public string Invoice { get; set; }
         public DateTime ModificationDate { get; set; } = DateTime.Now;
+        public DateTime InvoiceDate { get; set; }
 
         [MaxLength(5000)]
         public string Notes { get; set; }

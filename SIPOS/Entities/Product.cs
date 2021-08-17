@@ -10,6 +10,12 @@ namespace SIPOS.Entities
 
         public string Description {  get; set; }
 
+        public string FullDescription
+        {
+            get { return $"{Name} || {Description}"; }
+        }
+
+
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
         public decimal SugestedPriceToSell { get; set; }

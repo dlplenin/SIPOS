@@ -34,6 +34,7 @@ namespace SIPOS.Presentation
             this.FormsPanel = new System.Windows.Forms.Panel();
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.BtnGoods = new System.Windows.Forms.Button();
             this.BtnProducto = new System.Windows.Forms.Button();
             this.BtnSupplier = new System.Windows.Forms.Button();
             this.BtnUsermanagement = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace SIPOS.Presentation
             this.PbMin = new System.Windows.Forms.PictureBox();
             this.PbMax = new System.Windows.Forms.PictureBox();
             this.PbClose = new System.Windows.Forms.PictureBox();
-            this.BtnGoods = new System.Windows.Forms.Button();
             this.ContainerPanel.SuspendLayout();
             this.FormsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
@@ -64,7 +64,7 @@ namespace SIPOS.Presentation
             this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerPanel.Location = new System.Drawing.Point(0, 0);
             this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(1100, 600);
+            this.ContainerPanel.Size = new System.Drawing.Size(1024, 768);
             this.ContainerPanel.TabIndex = 0;
             // 
             // FormsPanel
@@ -74,7 +74,7 @@ namespace SIPOS.Presentation
             this.FormsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FormsPanel.Location = new System.Drawing.Point(240, 40);
             this.FormsPanel.Name = "FormsPanel";
-            this.FormsPanel.Size = new System.Drawing.Size(860, 560);
+            this.FormsPanel.Size = new System.Drawing.Size(784, 728);
             this.FormsPanel.TabIndex = 2;
             // 
             // PbLogo
@@ -83,7 +83,7 @@ namespace SIPOS.Presentation
             this.PbLogo.Image = ((System.Drawing.Image)(resources.GetObject("PbLogo.Image")));
             this.PbLogo.Location = new System.Drawing.Point(0, 0);
             this.PbLogo.Name = "PbLogo";
-            this.PbLogo.Size = new System.Drawing.Size(860, 560);
+            this.PbLogo.Size = new System.Drawing.Size(784, 728);
             this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PbLogo.TabIndex = 0;
             this.PbLogo.TabStop = false;
@@ -98,8 +98,25 @@ namespace SIPOS.Presentation
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuPanel.Location = new System.Drawing.Point(0, 40);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(240, 560);
+            this.MenuPanel.Size = new System.Drawing.Size(240, 728);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // BtnGoods
+            // 
+            this.BtnGoods.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnGoods.FlatAppearance.BorderSize = 0;
+            this.BtnGoods.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnGoods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGoods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnGoods.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnGoods.Location = new System.Drawing.Point(0, 135);
+            this.BtnGoods.Name = "BtnGoods";
+            this.BtnGoods.Size = new System.Drawing.Size(240, 45);
+            this.BtnGoods.TabIndex = 3;
+            this.BtnGoods.Text = "Recepción mercadería";
+            this.BtnGoods.UseVisualStyleBackColor = true;
+            this.BtnGoods.Click += new System.EventHandler(this.BtnGoods_Click);
             // 
             // BtnProducto
             // 
@@ -163,7 +180,7 @@ namespace SIPOS.Presentation
             this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopMenu.Location = new System.Drawing.Point(0, 0);
             this.TopMenu.Name = "TopMenu";
-            this.TopMenu.Size = new System.Drawing.Size(1100, 40);
+            this.TopMenu.Size = new System.Drawing.Size(1024, 40);
             this.TopMenu.TabIndex = 0;
             this.TopMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseMove);
             // 
@@ -182,7 +199,7 @@ namespace SIPOS.Presentation
             this.PbRestart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbRestart.Image = ((System.Drawing.Image)(resources.GetObject("PbRestart.Image")));
-            this.PbRestart.Location = new System.Drawing.Point(1046, 12);
+            this.PbRestart.Location = new System.Drawing.Point(970, 12);
             this.PbRestart.Name = "PbRestart";
             this.PbRestart.Size = new System.Drawing.Size(16, 16);
             this.PbRestart.TabIndex = 3;
@@ -195,7 +212,7 @@ namespace SIPOS.Presentation
             this.PbMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbMin.Image = ((System.Drawing.Image)(resources.GetObject("PbMin.Image")));
-            this.PbMin.Location = new System.Drawing.Point(1020, 12);
+            this.PbMin.Location = new System.Drawing.Point(944, 12);
             this.PbMin.Name = "PbMin";
             this.PbMin.Size = new System.Drawing.Size(16, 16);
             this.PbMin.TabIndex = 2;
@@ -207,7 +224,7 @@ namespace SIPOS.Presentation
             this.PbMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbMax.Image = ((System.Drawing.Image)(resources.GetObject("PbMax.Image")));
-            this.PbMax.Location = new System.Drawing.Point(1046, 12);
+            this.PbMax.Location = new System.Drawing.Point(970, 12);
             this.PbMax.Name = "PbMax";
             this.PbMax.Size = new System.Drawing.Size(16, 16);
             this.PbMax.TabIndex = 1;
@@ -219,35 +236,18 @@ namespace SIPOS.Presentation
             this.PbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbClose.Image = ((System.Drawing.Image)(resources.GetObject("PbClose.Image")));
-            this.PbClose.Location = new System.Drawing.Point(1072, 12);
+            this.PbClose.Location = new System.Drawing.Point(996, 12);
             this.PbClose.Name = "PbClose";
             this.PbClose.Size = new System.Drawing.Size(16, 16);
             this.PbClose.TabIndex = 0;
             this.PbClose.TabStop = false;
             this.PbClose.Click += new System.EventHandler(this.PbClose_Click);
             // 
-            // BtnGoods
-            // 
-            this.BtnGoods.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BtnGoods.FlatAppearance.BorderSize = 0;
-            this.BtnGoods.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
-            this.BtnGoods.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
-            this.BtnGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGoods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnGoods.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnGoods.Location = new System.Drawing.Point(0, 135);
-            this.BtnGoods.Name = "BtnGoods";
-            this.BtnGoods.Size = new System.Drawing.Size(240, 45);
-            this.BtnGoods.TabIndex = 3;
-            this.BtnGoods.Text = "Recepción mercadería";
-            this.BtnGoods.UseVisualStyleBackColor = true;
-            this.BtnGoods.Click += new System.EventHandler(this.BtnGoods_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 600);
+            this.ClientSize = new System.Drawing.Size(1024, 768);
             this.Controls.Add(this.ContainerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(680, 500);
