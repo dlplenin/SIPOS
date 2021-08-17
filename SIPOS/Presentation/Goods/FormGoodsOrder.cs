@@ -1,13 +1,5 @@
 ﻿using SIPOS.Entities;
 using SIPOS.Persistence.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SIPOS.Presentation.Goods
@@ -72,12 +64,32 @@ namespace SIPOS.Presentation.Goods
 
         private void BtnAgregar_Click(object sender, EventArgs e)
         {
+            if (AnyMissingRequiredProductTextBox())
+                return;
+
             var selectedProduct = CbProducts.SelectedItem as Product;
             var investedMoney = TxtQty.DecimalValue * TxtPricePurchase.DecimalValue;
             var profitMoney = TxtQty.DecimalValue * TxtPriceSell.DecimalValue - investedMoney;
             DgvGoods.Rows.Add("", selectedProduct.Id, TxtPricePurchase.Text, TxtSuggestedPriceToSell.Text, TxtPriceSell.Text, TxtQty.Text, investedMoney, profitMoney);
 
             UpdateTotalInvoice();
+        }
+
+        private bool AnyMissingRequiredProductTextBox()
+        {
+            errorProviderProd.Clear();
+            var requiredBoxes = Controls.OfType<TextBox>().Where(x => (x.Tag ?? "").ToString() == "requiredProd");
+            var anyMissingRequired = false;
+            foreach (var box in requiredBoxes)
+            {
+                if (string.IsNullOrWhiteSpace(box.Text))
+                {
+                    anyMissingRequired = true;
+                    errorProviderProd.SetError(box, "Es un campo requerido");
+                }
+            }
+
+            return anyMissingRequired;
         }
 
         private void UpdateTotalInvoice()

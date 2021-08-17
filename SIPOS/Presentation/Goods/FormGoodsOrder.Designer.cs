@@ -40,7 +40,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtQty = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderProd = new System.Windows.Forms.ErrorProvider(this.components);
             this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.TxtSuggestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
@@ -81,9 +81,13 @@ namespace SIPOS.Presentation.Goods
             this.LblCurrentPricePurchace = new System.Windows.Forms.Label();
             this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFiltrar
@@ -114,13 +118,13 @@ namespace SIPOS.Presentation.Goods
             this.TxtQty.Name = "TxtQty";
             this.TxtQty.Size = new System.Drawing.Size(76, 26);
             this.TxtQty.TabIndex = 45;
-            this.TxtQty.Tag = "required";
+            this.TxtQty.Tag = "requiredProd";
             this.TxtQty.Text = "1";
             // 
-            // errorProvider
+            // errorProviderProd
             // 
-            this.errorProvider.BlinkRate = 200;
-            this.errorProvider.ContainerControl = this;
+            this.errorProviderProd.BlinkRate = 200;
+            this.errorProviderProd.ContainerControl = this;
             // 
             // TxtPriceSell
             // 
@@ -129,7 +133,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtPriceSell.Name = "TxtPriceSell";
             this.TxtPriceSell.Size = new System.Drawing.Size(70, 26);
             this.TxtPriceSell.TabIndex = 44;
-            this.TxtPriceSell.Tag = "required";
+            this.TxtPriceSell.Tag = "requiredProd";
             // 
             // TxtSuggestedPriceToSell
             // 
@@ -146,7 +150,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtPricePurchase.Name = "TxtPricePurchase";
             this.TxtPricePurchase.Size = new System.Drawing.Size(70, 26);
             this.TxtPricePurchase.TabIndex = 42;
-            this.TxtPricePurchase.Tag = "required";
+            this.TxtPricePurchase.Tag = "requiredProd";
             // 
             // lblPricePurchase
             // 
@@ -382,7 +386,7 @@ namespace SIPOS.Presentation.Goods
             this.LblTotalProfit.AutoSize = true;
             this.LblTotalProfit.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LblTotalProfit.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.LblTotalProfit.Location = new System.Drawing.Point(787, 93);
+            this.LblTotalProfit.Location = new System.Drawing.Point(784, 93);
             this.LblTotalProfit.Name = "LblTotalProfit";
             this.LblTotalProfit.Size = new System.Drawing.Size(29, 36);
             this.LblTotalProfit.TabIndex = 62;
@@ -507,7 +511,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtStock.ReadOnly = true;
             this.TxtStock.Size = new System.Drawing.Size(110, 26);
             this.TxtStock.TabIndex = 66;
-            this.TxtStock.Tag = "required";
+            this.TxtStock.Tag = "";
             // 
             // label5
             // 
@@ -518,6 +522,16 @@ namespace SIPOS.Presentation.Goods
             this.label5.Size = new System.Drawing.Size(45, 20);
             this.label5.TabIndex = 67;
             this.label5.Text = "Stock";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.BlinkRate = 200;
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // errorProvider2
+            // 
+            this.errorProvider2.BlinkRate = 200;
+            this.errorProvider2.ContainerControl = this;
             // 
             // FormGoodsOrder
             // 
@@ -549,10 +563,12 @@ namespace SIPOS.Presentation.Goods
             this.Name = "FormGoodsOrder";
             this.Text = "GoodsOrder";
             this.Load += new System.EventHandler(this.FormGoodsOrder_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -563,7 +579,7 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.Button BtnFiltrar;
         private System.Windows.Forms.Label label6;
         private UserControls.DecimalTextBox TxtQty;
-        private System.Windows.Forms.ErrorProvider errorProvider;
+        private System.Windows.Forms.ErrorProvider errorProviderProd;
         private UserControls.DecimalTextBox TxtPriceSell;
         private UserControls.DecimalTextBox TxtSuggestedPriceToSell;
         private UserControls.DecimalTextBox TxtPricePurchase;
@@ -604,5 +620,7 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblTotalInvested;
         private System.Windows.Forms.Label LblTotalProfit;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ErrorProvider errorProvider2;
     }
 }
