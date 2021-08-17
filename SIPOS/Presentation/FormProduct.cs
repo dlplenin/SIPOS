@@ -36,7 +36,20 @@ namespace SIPOS.Presentation
         {
             DgvProducts.Rows.Clear();
 
-            var productsInDB = repositoryWrapper.ProductRepository.GetAll().ToList();
+            var productsInDBTemp = repositoryWrapper.ProductRepository;
+            List<Product> productsInDB;
+            if (string.IsNullOrWhiteSpace(TxtFilterName.Text))
+            {
+                productsInDB = productsInDBTemp
+                    .GetAll()
+                    .ToList();
+            }
+            else
+            {
+                productsInDB = productsInDBTemp
+                    .FindByCondition(x => x.Name.Contains(TxtFilterName.Text))
+                    .ToList();
+            }
 
             foreach (var item in productsInDB)
             {
@@ -131,6 +144,11 @@ namespace SIPOS.Presentation
                     repositoryWrapper.Save();
                 }
             }
+        }
+
+        private void BtnFiltrar_Click(object sender, EventArgs e)
+        {
+            LoadProducts();
         }
 
         //private void TxtName_Validating(object sender, CancelEventArgs e)
