@@ -7,6 +7,8 @@
 
         ISupplierRepository SupplierRepository { get; }
         IProductRepository ProductRepository { get; }
+        IGoodsOrderRepository GoodsOrderRepository { get; }
+        IGoodsOrderDetailRepository GoodsOrderDetailRepository { get; }
 
         void BeginTransaction();
         void CommitTransaction();

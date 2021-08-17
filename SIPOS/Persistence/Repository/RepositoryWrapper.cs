@@ -15,6 +15,8 @@ namespace SIPOS.Persistence.Repository
 
         private ISupplierRepository _supplierRepository;
         private IProductRepository productRepository;
+        private IGoodsOrderRepository goodsOrderRepository;
+        private IGoodsOrderDetailRepository goodsOrderDetailRepository;
 
         public ISiposUserRepository UserRepository
         {
@@ -61,6 +63,30 @@ namespace SIPOS.Persistence.Repository
                     productRepository = new ProductRepository(repoContext);
                 }
                 return productRepository;
+            }
+        }
+
+        public IGoodsOrderRepository GoodsOrderRepository
+        {
+            get
+            {
+                if (goodsOrderRepository == null)
+                {
+                    goodsOrderRepository = new GoodsOrderRepository(repoContext);
+                }
+                return goodsOrderRepository;
+            }
+        }
+
+        public IGoodsOrderDetailRepository GoodsOrderDetailRepository
+        {
+            get
+            {
+                if (goodsOrderDetailRepository == null)
+                {
+                    goodsOrderDetailRepository = new GoodsOrderDetailRepository(repoContext);
+                }
+                return goodsOrderDetailRepository;
             }
         }
 
