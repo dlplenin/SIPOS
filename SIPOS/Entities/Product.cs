@@ -15,21 +15,20 @@ namespace SIPOS.Entities
             get { return $"{Name} || {Description}"; }
         }
 
+        [Required]
+        [Column(TypeName = "decimal(18, 4)")]
+        public decimal PriceSugestedToSell { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
-        public decimal SugestedPriceToSell { get; set; }
-
-        [Required]
-        [Column(TypeName = "decimal(18, 4)")]
-        public decimal PriceSell { get; set; }
+        public decimal PriceToSell { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
         public decimal PricePurchase { get; set; }
 
         [Required]
-        [Column(TypeName = "decimal(18, 4)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Stock { get; set; }
     }
 }

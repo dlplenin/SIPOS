@@ -6,11 +6,12 @@ namespace SIPOS.Entities
     public class OrderDetail : EntityBase<Guid>
     {
         [Required]
-        public int Quantity { get; set; }
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Quantity { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
-        public decimal Price { get; set; }
+        public decimal PriceToSell { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]

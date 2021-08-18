@@ -6,11 +6,20 @@ namespace SIPOS.Entities.Goods
     public class GoodsOrderDetail : EntityBase<Guid>
     {
         [Required]
-        public int Quantity { get; set; }
+        [Column(TypeName = "decimal(18, 2)")]
+        public decimal Quantity { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
-        public decimal UnitPrice { get; set; }
+        public decimal PriceSugestedToSell { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18, 4)")]
+        public decimal PriceToSell { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(18, 4)")]
+        public decimal PricePurchase { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(18, 4)")]

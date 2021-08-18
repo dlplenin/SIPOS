@@ -1,4 +1,5 @@
 ﻿using SIPOS.Entities;
+using SIPOS.Entities.Goods;
 using SIPOS.Persistence.Repository.Contracts;
 using System.Windows.Forms;
 
@@ -6,6 +7,7 @@ namespace SIPOS.Presentation.Goods
 {
     public partial class FormGoodsOrder : Form
     {
+        private decimal TotalInvested { get; set; }
         private readonly IRepositoryWrapper repositoryWrapper;
 
         public FormGoodsOrder(IRepositoryWrapper repositoryWrapper)
@@ -27,9 +29,16 @@ namespace SIPOS.Presentation.Goods
             toolTip.SetToolTip(this.LblCurrentPricePurchace, "Precio de compra actual");
             toolTip.SetToolTip(this.TxtCurrentPricePurchase, "Precio de compra actual");
 
+            toolTip.SetToolTip(this.BtnSaveGoodsOrder, "Guardar factura");
+
+            LoadSuppliersAndProducts();
+        }
+
+        private void LoadSuppliersAndProducts()
+        {
             var suppliers = repositoryWrapper.SupplierRepository
-                .GetAll()
-                .ToList();
+                            .GetAll()
+                            .ToList();
 
             CbSuppliers.DataSource = suppliers;
             CbSuppliers.DisplayMember = "Name";
@@ -51,15 +60,14 @@ namespace SIPOS.Presentation.Goods
         private void CbProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedProduct = CbProducts.SelectedItem as Product;
-            TxtPriceSell.Text = selectedProduct.PriceSell.ToString();
-            TxtSuggestedPriceToSell.Text = selectedProduct.SugestedPriceToSell.ToString();
+            TxtPriceSell.Text = selectedProduct.PriceToSell.ToString();
+            TxtSuggestedPriceToSell.Text = selectedProduct.PriceSugestedToSell.ToString();
             TxtCurrentPricePurchase.Text = selectedProduct.PricePurchase.ToString();
             TxtStock.Text = selectedProduct.Stock.ToString();
 
             TxtQty.Focus();
             TxtQty.Text = "1";
             TxtQty.SelectAll();
-
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -112,6 +120,8 @@ namespace SIPOS.Presentation.Goods
 
             LblTotalInvested.Text = $"Inversion: $ {totalInvested:N2}";
             LblTotalProfit.Text = $"Ganancia: $ {totalProfit:N2}";
+
+            TotalInvested = totalInvested;
         }
 
         private void BtnSaveGoodsOrder_Click(object sender, EventArgs e)
@@ -123,13 +133,79 @@ namespace SIPOS.Presentation.Goods
             {
                 repositoryWrapper.BeginTransaction();
 
-                //repositoryWrapper.GoodsRepository
+                var order = new GoodsOrder
+                {
+                    Invoice = TxtInvoice.Text,
+                    InvoiceDate = DtpInvoice.Value,
+                    Notes = TxtNotes.Text,
+                    Total = TotalInvested,
+                    SuplierId = new Guid(CbSuppliers.SelectedValue.ToString())
+                };
+                repositoryWrapper.GoodsOrderRepository.Create(order);
+
+                foreach (DataGridViewRow row in DgvGoods.Rows)
+                {
+                    var productId = row.Cells[ColGoodsProduct.Name].Value.ToString();
+                    var qty = Convert.ToDecimal(row.Cells[ColGoodsQty.Name].Value);
+                    var priceToSell = Convert.ToDecimal(row.Cells[ColGoodsPVP.Name].Value);
+                    var purchasePrice = Convert.ToDecimal(row.Cells[ColGoodsPricePurchase.Name].Value);
+                    var suggestedPrice = Convert.ToDecimal(row.Cells[ColGoodsSuggestedPrice.Name].Value);
+                    var totalInvested = Convert.ToDecimal(row.Cells[ColGoodsInvested.Name].Value);
+
+                    var detail = new GoodsOrderDetail
+                    {
+                        GoodsOrderId = order.Id,
+                        ProductId= new Guid(productId),
+                        Quantity = qty,
+                        PriceToSell = priceToSell,
+                        PricePurchase = purchasePrice,
+                        PriceSugestedToSell = suggestedPrice,
+                        Total = totalInvested
+                    };
+                    repositoryWrapper.GoodsOrderDetailRepository.Create(detail);
+
+                    // Update Product stock & prices
+                    var productoToUpdate = repositoryWrapper.ProductRepository.GetById(new Guid(productId));
+                    productoToUpdate.PricePurchase = purchasePrice;
+                    productoToUpdate.PriceSugestedToSell = suggestedPrice;
+                    productoToUpdate.PriceToSell = priceToSell;
+                    productoToUpdate.Stock += qty;
+
+                    repositoryWrapper.ProductRepository.Update(productoToUpdate);
+
+                }
+
+                ClearTextBox();
+                LoadSuppliersAndProducts();
+                DgvGoods.Rows.Clear();
+
+                TotalInvested = 0;
+                LblTotalInvested.Text = "$";
+                LblTotalProfit.Text = "$";
 
                 repositoryWrapper.CommitTransaction();
+
+                MessageBox.Show("La orden se ingresó correctamente", "Mercadería");
             }
-            catch
+            catch(Exception ex)
             {
+
                 repositoryWrapper.RollbackTransaction();
+            }
+        }
+
+        private void ClearTextBox()
+        {
+            var boxesToClear = Controls.OfType<TextBox>();
+
+            foreach (var textBox in Controls.OfType<GroupBox>().SelectMany(groupBox => groupBox.Controls.OfType<TextBox>()))
+            {
+                boxesToClear = boxesToClear.Append(textBox);
+            }
+
+            foreach (var box in boxesToClear)
+            {
+                box.Text = string.Empty;
             }
         }
     }

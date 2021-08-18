@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SIPOS.Persistence;
 
 namespace SIPOS.Migrations
 {
     [DbContext(typeof(SiposContext))]
-    partial class SiposContextModelSnapshot : ModelSnapshot
+    [Migration("20210818010958_SetQtyAndStockTheSameType")]
+    partial class SetQtyAndStockTheSameType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,15 +80,6 @@ namespace SIPOS.Migrations
                     b.Property<Guid>("GoodsOrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("PricePurchase")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<decimal>("PriceSugestedToSell")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<decimal>("PriceToSell")
-                        .HasColumnType("decimal(18,4)");
-
                     b.Property<Guid>("ProductId")
                         .HasColumnType("uniqueidentifier");
 
@@ -94,6 +87,9 @@ namespace SIPOS.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Total")
+                        .HasColumnType("decimal(18,4)");
+
+                    b.Property<decimal>("UnitPrice")
                         .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
@@ -189,7 +185,7 @@ namespace SIPOS.Migrations
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<decimal>("PriceToSell")
+                    b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<Guid>("ProductId")
@@ -235,14 +231,14 @@ namespace SIPOS.Migrations
                     b.Property<decimal>("PricePurchase")
                         .HasColumnType("decimal(18,4)");
 
-                    b.Property<decimal>("PriceSugestedToSell")
-                        .HasColumnType("decimal(18,4)");
-
-                    b.Property<decimal>("PriceToSell")
+                    b.Property<decimal>("PriceSell")
                         .HasColumnType("decimal(18,4)");
 
                     b.Property<decimal>("Stock")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("SugestedPriceToSell")
+                        .HasColumnType("decimal(18,4)");
 
                     b.HasKey("Id");
 
