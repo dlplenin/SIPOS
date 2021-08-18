@@ -101,7 +101,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnFiltrar.Location = new System.Drawing.Point(215, 349);
             this.BtnFiltrar.Name = "BtnFiltrar";
             this.BtnFiltrar.Size = new System.Drawing.Size(44, 26);
-            this.BtnFiltrar.TabIndex = 57;
+            this.BtnFiltrar.TabIndex = 14;
             this.BtnFiltrar.UseVisualStyleBackColor = true;
             // 
             // label6
@@ -119,7 +119,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtQty.Location = new System.Drawing.Point(101, 280);
             this.TxtQty.Name = "TxtQty";
             this.TxtQty.Size = new System.Drawing.Size(76, 26);
-            this.TxtQty.TabIndex = 45;
+            this.TxtQty.TabIndex = 6;
             this.TxtQty.Tag = "requiredProd";
             this.TxtQty.Text = "1";
             // 
@@ -134,7 +134,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtPriceSell.Location = new System.Drawing.Point(777, 280);
             this.TxtPriceSell.Name = "TxtPriceSell";
             this.TxtPriceSell.Size = new System.Drawing.Size(70, 26);
-            this.TxtPriceSell.TabIndex = 44;
+            this.TxtPriceSell.TabIndex = 9;
             this.TxtPriceSell.Tag = "requiredProd";
             // 
             // TxtSuggestedPriceToSell
@@ -143,7 +143,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtSuggestedPriceToSell.Location = new System.Drawing.Point(627, 280);
             this.TxtSuggestedPriceToSell.Name = "TxtSuggestedPriceToSell";
             this.TxtSuggestedPriceToSell.Size = new System.Drawing.Size(70, 26);
-            this.TxtSuggestedPriceToSell.TabIndex = 43;
+            this.TxtSuggestedPriceToSell.TabIndex = 8;
             // 
             // TxtPricePurchase
             // 
@@ -151,7 +151,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtPricePurchase.Location = new System.Drawing.Point(424, 280);
             this.TxtPricePurchase.Name = "TxtPricePurchase";
             this.TxtPricePurchase.Size = new System.Drawing.Size(70, 26);
-            this.TxtPricePurchase.TabIndex = 42;
+            this.TxtPricePurchase.TabIndex = 7;
             this.TxtPricePurchase.Tag = "requiredProd";
             // 
             // lblPricePurchase
@@ -168,7 +168,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtFilterName.Location = new System.Drawing.Point(16, 349);
             this.TxtFilterName.Name = "TxtFilterName";
             this.TxtFilterName.Size = new System.Drawing.Size(193, 26);
-            this.TxtFilterName.TabIndex = 56;
+            this.TxtFilterName.TabIndex = 13;
             this.TxtFilterName.Tag = "required";
             // 
             // DgvGoods
@@ -197,7 +197,7 @@ namespace SIPOS.Presentation.Goods
             this.DgvGoods.RowTemplate.Height = 28;
             this.DgvGoods.ShowCellToolTips = false;
             this.DgvGoods.Size = new System.Drawing.Size(1253, 318);
-            this.DgvGoods.TabIndex = 53;
+            this.DgvGoods.TabIndex = 12;
             // 
             // ColGoodsDetailId
             // 
@@ -295,7 +295,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnAgregar.Location = new System.Drawing.Point(880, 247);
             this.BtnAgregar.Name = "BtnAgregar";
             this.BtnAgregar.Size = new System.Drawing.Size(69, 64);
-            this.BtnAgregar.TabIndex = 46;
+            this.BtnAgregar.TabIndex = 10;
             this.BtnAgregar.UseVisualStyleBackColor = true;
             this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
@@ -322,7 +322,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtInvoice.Location = new System.Drawing.Point(90, 61);
             this.TxtInvoice.Name = "TxtInvoice";
             this.TxtInvoice.Size = new System.Drawing.Size(248, 26);
-            this.TxtInvoice.TabIndex = 40;
+            this.TxtInvoice.TabIndex = 2;
             this.TxtInvoice.Tag = "requiredGoodsOrder";
             // 
             // label2
@@ -420,14 +420,14 @@ namespace SIPOS.Presentation.Goods
             this.CbSuppliers.Location = new System.Drawing.Point(90, 28);
             this.CbSuppliers.Name = "CbSuppliers";
             this.CbSuppliers.Size = new System.Drawing.Size(248, 27);
-            this.CbSuppliers.TabIndex = 59;
+            this.CbSuppliers.TabIndex = 1;
             // 
             // DtpInvoice
             // 
             this.DtpInvoice.Location = new System.Drawing.Point(473, 61);
             this.DtpInvoice.Name = "DtpInvoice";
             this.DtpInvoice.Size = new System.Drawing.Size(286, 26);
-            this.DtpInvoice.TabIndex = 54;
+            this.DtpInvoice.TabIndex = 3;
             // 
             // label8
             // 
@@ -445,7 +445,7 @@ namespace SIPOS.Presentation.Goods
             this.TxtNotes.Name = "TxtNotes";
             this.TxtNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TxtNotes.Size = new System.Drawing.Size(669, 54);
-            this.TxtNotes.TabIndex = 52;
+            this.TxtNotes.TabIndex = 4;
             this.TxtNotes.Tag = "required";
             // 
             // label7
@@ -463,7 +463,7 @@ namespace SIPOS.Presentation.Goods
             this.CbProducts.Location = new System.Drawing.Point(101, 247);
             this.CbProducts.Name = "CbProducts";
             this.CbProducts.Size = new System.Drawing.Size(560, 27);
-            this.CbProducts.TabIndex = 61;
+            this.CbProducts.TabIndex = 5;
             this.CbProducts.SelectedIndexChanged += new System.EventHandler(this.CbProducts_SelectedIndexChanged);
             // 
             // label1
@@ -479,10 +479,10 @@ namespace SIPOS.Presentation.Goods
             // 
             this.BtnSaveGoodsOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveGoodsOrder.Image = global::SIPOS.Properties.Resources.add_file_100;
-            this.BtnSaveGoodsOrder.Location = new System.Drawing.Point(1164, 280);
+            this.BtnSaveGoodsOrder.Location = new System.Drawing.Point(1168, 280);
             this.BtnSaveGoodsOrder.Name = "BtnSaveGoodsOrder";
-            this.BtnSaveGoodsOrder.Size = new System.Drawing.Size(101, 95);
-            this.BtnSaveGoodsOrder.TabIndex = 63;
+            this.BtnSaveGoodsOrder.Size = new System.Drawing.Size(97, 95);
+            this.BtnSaveGoodsOrder.TabIndex = 11;
             this.BtnSaveGoodsOrder.UseVisualStyleBackColor = true;
             this.BtnSaveGoodsOrder.Click += new System.EventHandler(this.BtnSaveGoodsOrder_Click);
             // 
