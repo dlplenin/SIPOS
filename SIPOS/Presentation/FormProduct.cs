@@ -48,7 +48,7 @@ namespace SIPOS.Presentation
             {
                 var investedMoney = item.Stock * item.PricePurchase;
                 var profitMoney = item.Stock * item.PriceToSell - investedMoney;
-                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.PriceSugestedToSell, item.PriceToSell, item.Stock, investedMoney, profitMoney, item.Activo);
+                DgvProducts.Rows.Add(item.Id, item.Name, item.Description, item.PricePurchase, item.PriceSugestedToSell, item.PriceToSell, item.Stock, investedMoney.ToString("N2"), profitMoney.ToString("N2"), item.Activo);
             }
         }
 

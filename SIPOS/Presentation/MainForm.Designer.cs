@@ -64,7 +64,7 @@ namespace SIPOS.Presentation
             this.ContainerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ContainerPanel.Location = new System.Drawing.Point(0, 0);
             this.ContainerPanel.Name = "ContainerPanel";
-            this.ContainerPanel.Size = new System.Drawing.Size(1024, 768);
+            this.ContainerPanel.Size = new System.Drawing.Size(1280, 1024);
             this.ContainerPanel.TabIndex = 0;
             // 
             // FormsPanel
@@ -72,9 +72,9 @@ namespace SIPOS.Presentation
             this.FormsPanel.BackColor = System.Drawing.SystemColors.Control;
             this.FormsPanel.Controls.Add(this.PbLogo);
             this.FormsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FormsPanel.Location = new System.Drawing.Point(240, 40);
+            this.FormsPanel.Location = new System.Drawing.Point(240, 42);
             this.FormsPanel.Name = "FormsPanel";
-            this.FormsPanel.Size = new System.Drawing.Size(784, 728);
+            this.FormsPanel.Size = new System.Drawing.Size(1040, 982);
             this.FormsPanel.TabIndex = 2;
             // 
             // PbLogo
@@ -83,7 +83,7 @@ namespace SIPOS.Presentation
             this.PbLogo.Image = ((System.Drawing.Image)(resources.GetObject("PbLogo.Image")));
             this.PbLogo.Location = new System.Drawing.Point(0, 0);
             this.PbLogo.Name = "PbLogo";
-            this.PbLogo.Size = new System.Drawing.Size(784, 728);
+            this.PbLogo.Size = new System.Drawing.Size(1040, 982);
             this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PbLogo.TabIndex = 0;
             this.PbLogo.TabStop = false;
@@ -96,9 +96,9 @@ namespace SIPOS.Presentation
             this.MenuPanel.Controls.Add(this.BtnSupplier);
             this.MenuPanel.Controls.Add(this.BtnUsermanagement);
             this.MenuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.MenuPanel.Location = new System.Drawing.Point(0, 40);
+            this.MenuPanel.Location = new System.Drawing.Point(0, 42);
             this.MenuPanel.Name = "MenuPanel";
-            this.MenuPanel.Size = new System.Drawing.Size(240, 728);
+            this.MenuPanel.Size = new System.Drawing.Size(240, 982);
             this.MenuPanel.TabIndex = 1;
             // 
             // BtnGoods
@@ -110,9 +110,9 @@ namespace SIPOS.Presentation
             this.BtnGoods.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGoods.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnGoods.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnGoods.Location = new System.Drawing.Point(0, 135);
+            this.BtnGoods.Location = new System.Drawing.Point(0, 141);
             this.BtnGoods.Name = "BtnGoods";
-            this.BtnGoods.Size = new System.Drawing.Size(240, 45);
+            this.BtnGoods.Size = new System.Drawing.Size(240, 47);
             this.BtnGoods.TabIndex = 3;
             this.BtnGoods.Text = "Recepción mercadería";
             this.BtnGoods.UseVisualStyleBackColor = true;
@@ -127,9 +127,9 @@ namespace SIPOS.Presentation
             this.BtnProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnProducto.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnProducto.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnProducto.Location = new System.Drawing.Point(0, 90);
+            this.BtnProducto.Location = new System.Drawing.Point(0, 94);
             this.BtnProducto.Name = "BtnProducto";
-            this.BtnProducto.Size = new System.Drawing.Size(240, 45);
+            this.BtnProducto.Size = new System.Drawing.Size(240, 47);
             this.BtnProducto.TabIndex = 2;
             this.BtnProducto.Text = "Producto";
             this.BtnProducto.UseVisualStyleBackColor = true;
@@ -144,9 +144,9 @@ namespace SIPOS.Presentation
             this.BtnSupplier.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSupplier.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSupplier.ForeColor = System.Drawing.Color.Gainsboro;
-            this.BtnSupplier.Location = new System.Drawing.Point(0, 45);
+            this.BtnSupplier.Location = new System.Drawing.Point(0, 47);
             this.BtnSupplier.Name = "BtnSupplier";
-            this.BtnSupplier.Size = new System.Drawing.Size(240, 45);
+            this.BtnSupplier.Size = new System.Drawing.Size(240, 47);
             this.BtnSupplier.TabIndex = 0;
             this.BtnSupplier.Text = "Proveedores";
             this.BtnSupplier.UseVisualStyleBackColor = true;
@@ -163,7 +163,7 @@ namespace SIPOS.Presentation
             this.BtnUsermanagement.ForeColor = System.Drawing.Color.Gainsboro;
             this.BtnUsermanagement.Location = new System.Drawing.Point(0, 0);
             this.BtnUsermanagement.Name = "BtnUsermanagement";
-            this.BtnUsermanagement.Size = new System.Drawing.Size(240, 45);
+            this.BtnUsermanagement.Size = new System.Drawing.Size(240, 47);
             this.BtnUsermanagement.TabIndex = 1;
             this.BtnUsermanagement.Text = "Usuarios";
             this.BtnUsermanagement.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@ namespace SIPOS.Presentation
             this.TopMenu.Dock = System.Windows.Forms.DockStyle.Top;
             this.TopMenu.Location = new System.Drawing.Point(0, 0);
             this.TopMenu.Name = "TopMenu";
-            this.TopMenu.Size = new System.Drawing.Size(1024, 40);
+            this.TopMenu.Size = new System.Drawing.Size(1280, 42);
             this.TopMenu.TabIndex = 0;
             this.TopMenu.MouseMove += new System.Windows.Forms.MouseEventHandler(this.TopMenu_MouseMove);
             // 
@@ -199,9 +199,9 @@ namespace SIPOS.Presentation
             this.PbRestart.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbRestart.Image = ((System.Drawing.Image)(resources.GetObject("PbRestart.Image")));
-            this.PbRestart.Location = new System.Drawing.Point(970, 12);
+            this.PbRestart.Location = new System.Drawing.Point(1226, 13);
             this.PbRestart.Name = "PbRestart";
-            this.PbRestart.Size = new System.Drawing.Size(16, 16);
+            this.PbRestart.Size = new System.Drawing.Size(16, 17);
             this.PbRestart.TabIndex = 3;
             this.PbRestart.TabStop = false;
             this.PbRestart.Visible = false;
@@ -212,9 +212,9 @@ namespace SIPOS.Presentation
             this.PbMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbMin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbMin.Image = ((System.Drawing.Image)(resources.GetObject("PbMin.Image")));
-            this.PbMin.Location = new System.Drawing.Point(944, 12);
+            this.PbMin.Location = new System.Drawing.Point(1200, 13);
             this.PbMin.Name = "PbMin";
-            this.PbMin.Size = new System.Drawing.Size(16, 16);
+            this.PbMin.Size = new System.Drawing.Size(16, 17);
             this.PbMin.TabIndex = 2;
             this.PbMin.TabStop = false;
             this.PbMin.Click += new System.EventHandler(this.PbMin_Click);
@@ -224,9 +224,9 @@ namespace SIPOS.Presentation
             this.PbMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbMax.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbMax.Image = ((System.Drawing.Image)(resources.GetObject("PbMax.Image")));
-            this.PbMax.Location = new System.Drawing.Point(970, 12);
+            this.PbMax.Location = new System.Drawing.Point(1226, 13);
             this.PbMax.Name = "PbMax";
-            this.PbMax.Size = new System.Drawing.Size(16, 16);
+            this.PbMax.Size = new System.Drawing.Size(16, 17);
             this.PbMax.TabIndex = 1;
             this.PbMax.TabStop = false;
             this.PbMax.Click += new System.EventHandler(this.PbMax_Click);
@@ -236,21 +236,21 @@ namespace SIPOS.Presentation
             this.PbClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.PbClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PbClose.Image = ((System.Drawing.Image)(resources.GetObject("PbClose.Image")));
-            this.PbClose.Location = new System.Drawing.Point(996, 12);
+            this.PbClose.Location = new System.Drawing.Point(1252, 13);
             this.PbClose.Name = "PbClose";
-            this.PbClose.Size = new System.Drawing.Size(16, 16);
+            this.PbClose.Size = new System.Drawing.Size(16, 17);
             this.PbClose.TabIndex = 0;
             this.PbClose.TabStop = false;
             this.PbClose.Click += new System.EventHandler(this.PbClose_Click);
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 768);
+            this.ClientSize = new System.Drawing.Size(1280, 1024);
             this.Controls.Add(this.ContainerPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MinimumSize = new System.Drawing.Size(680, 500);
+            this.MinimumSize = new System.Drawing.Size(680, 526);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
