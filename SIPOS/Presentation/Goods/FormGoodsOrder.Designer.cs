@@ -83,13 +83,11 @@ namespace SIPOS.Presentation.Goods
             this.label5 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderGoods = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGoods)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFiltrar
@@ -367,7 +365,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCerrar.ForeColor = System.Drawing.Color.LightGray;
             this.BtnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("BtnCerrar.Image")));
-            this.BtnCerrar.Location = new System.Drawing.Point(864, 13);
+            this.BtnCerrar.Location = new System.Drawing.Point(993, 12);
             this.BtnCerrar.Name = "BtnCerrar";
             this.BtnCerrar.Size = new System.Drawing.Size(30, 29);
             this.BtnCerrar.TabIndex = 47;
@@ -549,10 +547,6 @@ namespace SIPOS.Presentation.Goods
             this.errorProvider2.BlinkRate = 200;
             this.errorProvider2.ContainerControl = this;
             // 
-            // errorProviderGoods
-            // 
-            this.errorProviderGoods.ContainerControl = this;
-            // 
             // FormGoodsOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -589,7 +583,6 @@ namespace SIPOS.Presentation.Goods
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderGoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -633,7 +626,6 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.Label LblTotalProfit;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
-        private System.Windows.Forms.ErrorProvider errorProviderGoods;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsDetailId;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColGoodsProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPricePurchase;
