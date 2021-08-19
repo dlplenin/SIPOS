@@ -286,7 +286,7 @@ namespace SIPOS.Presentation
             // 
             // ColProductDescription
             // 
-            this.ColProductDescription.HeaderText = "Decripción";
+            this.ColProductDescription.HeaderText = "Descripción";
             this.ColProductDescription.MinimumWidth = 6;
             this.ColProductDescription.Name = "ColProductDescription";
             this.ColProductDescription.Width = 120;
