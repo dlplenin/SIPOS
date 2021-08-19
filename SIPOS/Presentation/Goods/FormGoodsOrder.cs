@@ -51,8 +51,10 @@ namespace SIPOS.Presentation.Goods
             CbProducts.DisplayMember = "FullDescription";
             CbProducts.ValueMember = "Id";
 
-
-            ColGoodsProduct.DataSource = products;
+            var productsToDetail = repositoryWrapper.ProductRepository
+                .GetAll()
+                .ToList();
+            ColGoodsProduct.DataSource = productsToDetail;
             ColGoodsProduct.DisplayMember = "FullDescription";
             ColGoodsProduct.ValueMember = "Id";
         }
@@ -68,6 +70,8 @@ namespace SIPOS.Presentation.Goods
             TxtQty.Focus();
             TxtQty.Text = "1";
             TxtQty.SelectAll();
+
+            TxtPricePurchase.Text = string.Empty;
         }
 
         private void BtnAgregar_Click(object sender, EventArgs e)
@@ -189,7 +193,6 @@ namespace SIPOS.Presentation.Goods
             }
             catch(Exception ex)
             {
-
                 repositoryWrapper.RollbackTransaction();
             }
         }
@@ -206,6 +209,35 @@ namespace SIPOS.Presentation.Goods
             foreach (var box in boxesToClear)
             {
                 box.Text = string.Empty;
+            }
+        }
+
+        private void DgvGoods_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                if (e.ColumnIndex == this.ColGoodsDelete.Index)
+                {
+                    var productCell = this.DgvGoods.Rows[e.RowIndex].Cells[ColGoodsProduct.Name];
+                    var confirmResult = MessageBox.Show($"Está seguro de eliminar el registro: {productCell.FormattedValue}?",
+                                     "Confirmación",
+                                     MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        DgvGoods.Rows.RemoveAt(e.RowIndex);
+                    }
+                }
+            }
+        }
+
+        private void DgvGoods_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            DgvGoods.Cursor = Cursors.Default;
+
+            if (e.ColumnIndex == ColGoodsDelete.Index)
+            {
+                DgvGoods.Cursor = Cursors.Hand;
             }
         }
     }

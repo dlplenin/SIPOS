@@ -30,13 +30,13 @@ namespace SIPOS.Presentation.Goods
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGoodsOrder));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             this.BtnFiltrar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.TxtQty = new SIPOS.Presentation.UserControls.DecimalTextBox();
@@ -47,16 +47,6 @@ namespace SIPOS.Presentation.Goods
             this.lblPricePurchase = new System.Windows.Forms.Label();
             this.TxtFilterName = new System.Windows.Forms.TextBox();
             this.DgvGoods = new System.Windows.Forms.DataGridView();
-            this.ColGoodsDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.ColGoodsPricePurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsSuggestedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsPVP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsInvested = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColGoodsUpdate = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColGoodsDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -84,6 +74,16 @@ namespace SIPOS.Presentation.Goods
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderGoods = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ColGoodsDetailId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsProduct = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ColGoodsPricePurchase = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsSuggestedPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsPVP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsInvested = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColGoodsUpdate = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColGoodsDelete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -193,99 +193,14 @@ namespace SIPOS.Presentation.Goods
             this.ColGoodsDelete});
             this.DgvGoods.Location = new System.Drawing.Point(12, 381);
             this.DgvGoods.Name = "DgvGoods";
+            this.DgvGoods.ReadOnly = true;
             this.DgvGoods.RowHeadersWidth = 49;
             this.DgvGoods.RowTemplate.Height = 28;
             this.DgvGoods.ShowCellToolTips = false;
             this.DgvGoods.Size = new System.Drawing.Size(1253, 318);
             this.DgvGoods.TabIndex = 12;
-            // 
-            // ColGoodsDetailId
-            // 
-            this.ColGoodsDetailId.HeaderText = "GoodsDetailId";
-            this.ColGoodsDetailId.MinimumWidth = 6;
-            this.ColGoodsDetailId.Name = "ColGoodsDetailId";
-            this.ColGoodsDetailId.Visible = false;
-            this.ColGoodsDetailId.Width = 120;
-            // 
-            // ColGoodsProduct
-            // 
-            this.ColGoodsProduct.HeaderText = "Producto";
-            this.ColGoodsProduct.MinimumWidth = 6;
-            this.ColGoodsProduct.Name = "ColGoodsProduct";
-            this.ColGoodsProduct.Width = 120;
-            // 
-            // ColGoodsPricePurchase
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsPricePurchase.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ColGoodsPricePurchase.HeaderText = "Precio compra";
-            this.ColGoodsPricePurchase.MinimumWidth = 6;
-            this.ColGoodsPricePurchase.Name = "ColGoodsPricePurchase";
-            this.ColGoodsPricePurchase.Width = 120;
-            // 
-            // ColGoodsSuggestedPrice
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsSuggestedPrice.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ColGoodsSuggestedPrice.HeaderText = "PVP sugerido";
-            this.ColGoodsSuggestedPrice.MinimumWidth = 6;
-            this.ColGoodsSuggestedPrice.Name = "ColGoodsSuggestedPrice";
-            this.ColGoodsSuggestedPrice.Width = 120;
-            // 
-            // ColGoodsPVP
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsPVP.DefaultCellStyle = dataGridViewCellStyle3;
-            this.ColGoodsPVP.HeaderText = "PVP";
-            this.ColGoodsPVP.MinimumWidth = 6;
-            this.ColGoodsPVP.Name = "ColGoodsPVP";
-            this.ColGoodsPVP.Width = 120;
-            // 
-            // ColGoodsQty
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsQty.DefaultCellStyle = dataGridViewCellStyle4;
-            this.ColGoodsQty.HeaderText = "Cantidad";
-            this.ColGoodsQty.MinimumWidth = 6;
-            this.ColGoodsQty.Name = "ColGoodsQty";
-            this.ColGoodsQty.ReadOnly = true;
-            this.ColGoodsQty.Width = 120;
-            // 
-            // ColGoodsInvested
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsInvested.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ColGoodsInvested.HeaderText = "Invertido";
-            this.ColGoodsInvested.MinimumWidth = 6;
-            this.ColGoodsInvested.Name = "ColGoodsInvested";
-            this.ColGoodsInvested.ReadOnly = true;
-            this.ColGoodsInvested.Width = 120;
-            // 
-            // ColGoodsProfit
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.ColGoodsProfit.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ColGoodsProfit.HeaderText = "Ganancia";
-            this.ColGoodsProfit.MinimumWidth = 6;
-            this.ColGoodsProfit.Name = "ColGoodsProfit";
-            this.ColGoodsProfit.ReadOnly = true;
-            this.ColGoodsProfit.Width = 120;
-            // 
-            // ColGoodsUpdate
-            // 
-            this.ColGoodsUpdate.HeaderText = "Actualizar";
-            this.ColGoodsUpdate.Image = global::SIPOS.Properties.Resources.save_16px;
-            this.ColGoodsUpdate.MinimumWidth = 6;
-            this.ColGoodsUpdate.Name = "ColGoodsUpdate";
-            this.ColGoodsUpdate.Width = 120;
-            // 
-            // ColGoodsDelete
-            // 
-            this.ColGoodsDelete.HeaderText = "Eliminar";
-            this.ColGoodsDelete.Image = global::SIPOS.Properties.Resources.eraser_16px;
-            this.ColGoodsDelete.MinimumWidth = 6;
-            this.ColGoodsDelete.Name = "ColGoodsDelete";
-            this.ColGoodsDelete.Width = 120;
+            this.DgvGoods.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGoods_CellContentClick);
+            this.DgvGoods.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvGoods_CellMouseEnter);
             // 
             // BtnAgregar
             // 
@@ -540,6 +455,102 @@ namespace SIPOS.Presentation.Goods
             // 
             this.errorProviderGoods.ContainerControl = this;
             // 
+            // ColGoodsDetailId
+            // 
+            this.ColGoodsDetailId.HeaderText = "GoodsDetailId";
+            this.ColGoodsDetailId.MinimumWidth = 6;
+            this.ColGoodsDetailId.Name = "ColGoodsDetailId";
+            this.ColGoodsDetailId.ReadOnly = true;
+            this.ColGoodsDetailId.Visible = false;
+            this.ColGoodsDetailId.Width = 120;
+            // 
+            // ColGoodsProduct
+            // 
+            this.ColGoodsProduct.HeaderText = "Producto";
+            this.ColGoodsProduct.MinimumWidth = 6;
+            this.ColGoodsProduct.Name = "ColGoodsProduct";
+            this.ColGoodsProduct.ReadOnly = true;
+            this.ColGoodsProduct.Width = 120;
+            // 
+            // ColGoodsPricePurchase
+            // 
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsPricePurchase.DefaultCellStyle = dataGridViewCellStyle13;
+            this.ColGoodsPricePurchase.HeaderText = "Precio compra";
+            this.ColGoodsPricePurchase.MinimumWidth = 6;
+            this.ColGoodsPricePurchase.Name = "ColGoodsPricePurchase";
+            this.ColGoodsPricePurchase.ReadOnly = true;
+            this.ColGoodsPricePurchase.Width = 120;
+            // 
+            // ColGoodsSuggestedPrice
+            // 
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsSuggestedPrice.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ColGoodsSuggestedPrice.HeaderText = "PVP sugerido";
+            this.ColGoodsSuggestedPrice.MinimumWidth = 6;
+            this.ColGoodsSuggestedPrice.Name = "ColGoodsSuggestedPrice";
+            this.ColGoodsSuggestedPrice.ReadOnly = true;
+            this.ColGoodsSuggestedPrice.Width = 120;
+            // 
+            // ColGoodsPVP
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsPVP.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ColGoodsPVP.HeaderText = "PVP";
+            this.ColGoodsPVP.MinimumWidth = 6;
+            this.ColGoodsPVP.Name = "ColGoodsPVP";
+            this.ColGoodsPVP.ReadOnly = true;
+            this.ColGoodsPVP.Width = 120;
+            // 
+            // ColGoodsQty
+            // 
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsQty.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ColGoodsQty.HeaderText = "Cantidad";
+            this.ColGoodsQty.MinimumWidth = 6;
+            this.ColGoodsQty.Name = "ColGoodsQty";
+            this.ColGoodsQty.ReadOnly = true;
+            this.ColGoodsQty.Width = 120;
+            // 
+            // ColGoodsInvested
+            // 
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsInvested.DefaultCellStyle = dataGridViewCellStyle17;
+            this.ColGoodsInvested.HeaderText = "Invertido";
+            this.ColGoodsInvested.MinimumWidth = 6;
+            this.ColGoodsInvested.Name = "ColGoodsInvested";
+            this.ColGoodsInvested.ReadOnly = true;
+            this.ColGoodsInvested.Width = 120;
+            // 
+            // ColGoodsProfit
+            // 
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.ColGoodsProfit.DefaultCellStyle = dataGridViewCellStyle18;
+            this.ColGoodsProfit.HeaderText = "Ganancia";
+            this.ColGoodsProfit.MinimumWidth = 6;
+            this.ColGoodsProfit.Name = "ColGoodsProfit";
+            this.ColGoodsProfit.ReadOnly = true;
+            this.ColGoodsProfit.Width = 120;
+            // 
+            // ColGoodsUpdate
+            // 
+            this.ColGoodsUpdate.HeaderText = "Actualizar";
+            this.ColGoodsUpdate.Image = global::SIPOS.Properties.Resources.save_16px;
+            this.ColGoodsUpdate.MinimumWidth = 6;
+            this.ColGoodsUpdate.Name = "ColGoodsUpdate";
+            this.ColGoodsUpdate.ReadOnly = true;
+            this.ColGoodsUpdate.Visible = false;
+            this.ColGoodsUpdate.Width = 120;
+            // 
+            // ColGoodsDelete
+            // 
+            this.ColGoodsDelete.HeaderText = "Eliminar";
+            this.ColGoodsDelete.Image = global::SIPOS.Properties.Resources.eraser_16px;
+            this.ColGoodsDelete.MinimumWidth = 6;
+            this.ColGoodsDelete.Name = "ColGoodsDelete";
+            this.ColGoodsDelete.ReadOnly = true;
+            this.ColGoodsDelete.Width = 120;
+            // 
             // FormGoodsOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
@@ -611,16 +622,6 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.ComboBox CbProducts;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnSaveGoodsOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsDetailId;
-        private System.Windows.Forms.DataGridViewComboBoxColumn ColGoodsProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPricePurchase;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsSuggestedPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPVP;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsInvested;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsProfit;
-        private System.Windows.Forms.DataGridViewImageColumn ColGoodsUpdate;
-        private System.Windows.Forms.DataGridViewImageColumn ColGoodsDelete;
         private System.Windows.Forms.ToolTip toolTip;
         private UserControls.DecimalTextBox TxtCurrentPricePurchase;
         private System.Windows.Forms.Label LblCurrentPricePurchace;
@@ -631,5 +632,15 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.ErrorProvider errorProviderGoods;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsDetailId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn ColGoodsProduct;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPricePurchase;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsSuggestedPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPVP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsQty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsInvested;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsProfit;
+        private System.Windows.Forms.DataGridViewImageColumn ColGoodsUpdate;
+        private System.Windows.Forms.DataGridViewImageColumn ColGoodsDelete;
     }
 }
