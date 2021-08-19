@@ -34,6 +34,7 @@ namespace SIPOS.Presentation
             this.FormsPanel = new System.Windows.Forms.Panel();
             this.PbLogo = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
+            this.BtnSalesRegister = new System.Windows.Forms.Button();
             this.BtnGoods = new System.Windows.Forms.Button();
             this.BtnProducto = new System.Windows.Forms.Button();
             this.BtnSupplier = new System.Windows.Forms.Button();
@@ -91,6 +92,7 @@ namespace SIPOS.Presentation
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.MenuPanel.Controls.Add(this.BtnSalesRegister);
             this.MenuPanel.Controls.Add(this.BtnGoods);
             this.MenuPanel.Controls.Add(this.BtnProducto);
             this.MenuPanel.Controls.Add(this.BtnSupplier);
@@ -100,6 +102,23 @@ namespace SIPOS.Presentation
             this.MenuPanel.Name = "MenuPanel";
             this.MenuPanel.Size = new System.Drawing.Size(240, 982);
             this.MenuPanel.TabIndex = 1;
+            // 
+            // BtnSalesRegister
+            // 
+            this.BtnSalesRegister.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BtnSalesRegister.FlatAppearance.BorderSize = 0;
+            this.BtnSalesRegister.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnSalesRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnSalesRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSalesRegister.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnSalesRegister.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnSalesRegister.Location = new System.Drawing.Point(0, 188);
+            this.BtnSalesRegister.Name = "BtnSalesRegister";
+            this.BtnSalesRegister.Size = new System.Drawing.Size(240, 47);
+            this.BtnSalesRegister.TabIndex = 4;
+            this.BtnSalesRegister.Text = "Registro de Ventas";
+            this.BtnSalesRegister.UseVisualStyleBackColor = true;
+            this.BtnSalesRegister.Click += new System.EventHandler(this.BtnSalesRegister_Click);
             // 
             // BtnGoods
             // 
@@ -114,7 +133,7 @@ namespace SIPOS.Presentation
             this.BtnGoods.Name = "BtnGoods";
             this.BtnGoods.Size = new System.Drawing.Size(240, 47);
             this.BtnGoods.TabIndex = 3;
-            this.BtnGoods.Text = "Recepción mercadería";
+            this.BtnGoods.Text = "Recepción Mercadería";
             this.BtnGoods.UseVisualStyleBackColor = true;
             this.BtnGoods.Click += new System.EventHandler(this.BtnGoods_Click);
             // 
@@ -187,10 +206,11 @@ namespace SIPOS.Presentation
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.GreenYellow;
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(196, 20);
+            this.label2.Size = new System.Drawing.Size(205, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "Abarrotes San Ignacio - POS";
             // 
@@ -285,5 +305,6 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.Button BtnUsermanagement;
         private System.Windows.Forms.Button BtnProducto;
         private System.Windows.Forms.Button BtnGoods;
+        private System.Windows.Forms.Button BtnSalesRegister;
     }
 }

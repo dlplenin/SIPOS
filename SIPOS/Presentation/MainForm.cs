@@ -168,6 +168,11 @@ namespace SIPOS.Presentation
             OpenFormAsChild(formGoodsOrder);
         }
 
+        private void BtnSalesRegister_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtnSupplier_Click(object sender, EventArgs e)
         {
             OpenFormAsChild(formSupplier);
