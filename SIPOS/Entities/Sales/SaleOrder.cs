@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SIPOS.Entities
+namespace SIPOS.Entities.Sales
 {
-    public class Order : EntityBase<Guid>
+    public class SaleOrder : EntityBase<Guid>
     {
         public string Invoice {  get; set; }
         public DateTime ModificationDate {  get; set; } = DateTime.Now;
@@ -13,6 +13,6 @@ namespace SIPOS.Entities
         [Column(TypeName = "decimal(18, 4)")]
         public decimal Total { get; set; }
 
-        public virtual ICollection<OrderDetail> OrderDetail { get; set; }
+        public virtual ICollection<SaleOrderDetail> OrderDetail { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage;
 using SIPOS.Entities;
 using SIPOS.Entities.Goods;
+using SIPOS.Entities.Sales;
 using SIPOS.Entities.User;
 using SIPOS.Persistence.Seed;
 
@@ -44,7 +45,7 @@ namespace SIPOS.Persistence
                 .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
             });
 
-            modelBuilder.Entity<Order>(entity =>
+            modelBuilder.Entity<SaleOrder>(entity =>
             {
                 entity
                 .Property(x => x.CreationDate)
@@ -52,7 +53,7 @@ namespace SIPOS.Persistence
                 .ValueGeneratedOnAddOrUpdate()
                 .Metadata.SetAfterSaveBehavior(PropertySaveBehavior.Ignore);
             });
-            modelBuilder.Entity<OrderDetail>(entity =>
+            modelBuilder.Entity<SaleOrderDetail>(entity =>
             {
                 entity
                 .Property(x => x.CreationDate)
@@ -132,8 +133,8 @@ namespace SIPOS.Persistence
         public DbSet<SiposUser> SiposUser { get; set; }
         public DbSet<SiposRol> SiposRol { get; set; }
 
-        public DbSet<Order> Order { get; set; }
-        public DbSet<OrderDetail> OrderDetail { get; set; }
+        public DbSet<SaleOrder> SaleOrder { get; set; }
+        public DbSet<SaleOrderDetail> SaleOrderDetail { get; set; }
         public DbSet<Product> Product { get; set; }
 
         public DbSet<Supplier> Supplier { get; set; }

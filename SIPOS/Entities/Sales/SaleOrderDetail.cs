@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace SIPOS.Entities
+namespace SIPOS.Entities.Sales
 {
-    public class OrderDetail : EntityBase<Guid>
+    public class SaleOrderDetail : EntityBase<Guid>
     {
         [Required]
         [Column(TypeName = "decimal(18, 2)")]
@@ -19,7 +19,7 @@ namespace SIPOS.Entities
 
         [ForeignKey("Order")]
         public Guid OrderId { get; set; }
-        public virtual Order Order { get; set; }
+        public virtual SaleOrder Order { get; set; }
 
         [ForeignKey("Product")]
         public Guid ProductId { get; set; }
