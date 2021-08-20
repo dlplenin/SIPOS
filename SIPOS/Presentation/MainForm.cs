@@ -14,13 +14,15 @@ namespace SIPOS.Presentation
         private readonly FormSupplier formSupplier;
         private readonly FormProduct formProduct;
         private readonly FormGoodsOrder formGoodsOrder;
+        private readonly FormSales formSales;
 
         public MainForm(
             IServiceCollection services, 
             FormUserManagement formUserManagement,
             FormSupplier formSupplier,
             FormProduct formProduct,
-            FormGoodsOrder formGoodsOrder
+            FormGoodsOrder formGoodsOrder,
+            FormSales formSales
             )
         {
             this.services = services;
@@ -28,6 +30,7 @@ namespace SIPOS.Presentation
             this.formSupplier = formSupplier;
             this.formProduct = formProduct;
             this.formGoodsOrder = formGoodsOrder;
+            this.formSales = formSales;
             //this.services = services;
 
             InitializeComponent();
@@ -170,7 +173,7 @@ namespace SIPOS.Presentation
 
         private void BtnSalesRegister_Click(object sender, EventArgs e)
         {
-
+            OpenFormAsChild(formSales);
         }
 
         private void BtnSupplier_Click(object sender, EventArgs e)

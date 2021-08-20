@@ -81,13 +81,9 @@ namespace SIPOS.Presentation.Goods
             this.LblCurrentPricePurchace = new System.Windows.Forms.Label();
             this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider2 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderProd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnFiltrar
@@ -537,16 +533,6 @@ namespace SIPOS.Presentation.Goods
             this.label5.TabIndex = 67;
             this.label5.Text = "Stock";
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.BlinkRate = 200;
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // errorProvider2
-            // 
-            this.errorProvider2.BlinkRate = 200;
-            this.errorProvider2.ContainerControl = this;
-            // 
             // FormGoodsOrder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -581,8 +567,6 @@ namespace SIPOS.Presentation.Goods
             ((System.ComponentModel.ISupportInitialize)(this.DgvGoods)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -624,8 +608,6 @@ namespace SIPOS.Presentation.Goods
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label LblTotalInvested;
         private System.Windows.Forms.Label LblTotalProfit;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ErrorProvider errorProvider2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsDetailId;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColGoodsProduct;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColGoodsPricePurchase;
