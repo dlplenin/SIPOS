@@ -294,6 +294,7 @@ namespace SIPOS.Presentation.Goods
             // 
             // BtnAgregar
             // 
+            this.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnAgregar.FlatAppearance.BorderSize = 0;
             this.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnAgregar.Image = global::SIPOS.Properties.Resources.add_64px;
@@ -484,6 +485,7 @@ namespace SIPOS.Presentation.Goods
             // 
             // BtnSaveGoodsOrder
             // 
+            this.BtnSaveGoodsOrder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSaveGoodsOrder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveGoodsOrder.Image = global::SIPOS.Properties.Resources.add_file_100;
             this.BtnSaveGoodsOrder.Location = new System.Drawing.Point(926, 298);
