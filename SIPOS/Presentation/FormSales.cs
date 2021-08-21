@@ -132,13 +132,42 @@ namespace SIPOS.Presentation
                     InvoiceDate = DtpInvoice.Value,
                     Total = TotalSales
                 };
+                repositoryWrapper.SaleOrderRepository.Create(order);
 
+                foreach (DataGridViewRow row in DgvSaleDetail.Rows)
+                {
+                    var productId = row.Cells[ColSalesProduct.Name].Value.ToString();
+                    var qty = Convert.ToDecimal(row.Cells[ColSalesQty.Name].Value);
 
+                    var detail = new SaleOrderDetail
+                    {
+
+                    };
+                    repositoryWrapper.SaleOrderDetailRepository.Create(detail);
+
+                    // Update Product stock & prices
+                    var productoToUpdate = repositoryWrapper.ProductRepository.GetById(new Guid(productId));
+                    productoToUpdate.Stock += qty;
+
+                    repositoryWrapper.ProductRepository.Update(productoToUpdate);
+                }
+
+                ClearTextBox();
+                LoadProducts();
+                DgvSaleDetail.Rows.Clear();
+
+                TotalSales = 0;
+                LblTotalSales.Text = "$";
+                LblTotalInvested.Text = "$";
+                LblTotalProfit.Text = "$";
+
+                repositoryWrapper.CommitTransaction();
+
+                MessageBox.Show("La venta se ingresó correctamente", "Registro de venta");
             }
             catch (Exception)
             {
-
-                throw;
+                repositoryWrapper.RollbackTransaction();
             }
         }
 

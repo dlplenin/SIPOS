@@ -9,6 +9,8 @@
         IProductRepository ProductRepository { get; }
         IGoodsOrderRepository GoodsOrderRepository { get; }
         IGoodsOrderDetailRepository GoodsOrderDetailRepository { get; }
+        ISaleOrderRepository SaleOrderRepository { get; }
+        ISaleOrderDetailRepository SaleOrderDetailRepository { get; }
 
         void BeginTransaction();
         void CommitTransaction();

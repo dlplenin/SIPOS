@@ -176,7 +176,6 @@ namespace SIPOS.Presentation.Goods
                     productoToUpdate.Stock += qty;
 
                     repositoryWrapper.ProductRepository.Update(productoToUpdate);
-
                 }
 
                 ClearTextBox();
