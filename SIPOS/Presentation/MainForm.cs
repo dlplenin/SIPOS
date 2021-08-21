@@ -41,7 +41,19 @@ namespace SIPOS.Presentation
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            //System.Drawing.Drawing2D.GraphicsPath gp = new();
+            //gp.AddEllipse(0, 0, PbLogo.Width - 3, PbLogo.Height - 3);
+            //Region rg = new(gp);
+            //PbLogo.Region = rg;
 
+            //Rectangle r = new Rectangle(0, 0, PbLogo.Width, PbLogo.Height);
+            //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            //int d = 50;
+            //gp.AddArc(r.X, r.Y, d, d, 180, 90);
+            //gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
+            //gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
+            //gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
+            //PbLogo.Region = new Region(gp);
         }
 
         private void OpenFormAsChild<ChildForm>(ChildForm formUserManagement) where ChildForm : Form
