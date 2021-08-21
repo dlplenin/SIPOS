@@ -17,9 +17,9 @@ namespace SIPOS.Entities.Sales
         [Column(TypeName = "decimal(18, 4)")]
         public decimal Total { get; set; }
 
-        [ForeignKey("Order")]
-        public Guid OrderId { get; set; }
-        public virtual SaleOrder Order { get; set; }
+        [ForeignKey("SaleOrder")]
+        public Guid SaleOrderId { get; set; }
+        public virtual SaleOrder SaleOrder { get; set; }
 
         [ForeignKey("Product")]
         public Guid ProductId { get; set; }

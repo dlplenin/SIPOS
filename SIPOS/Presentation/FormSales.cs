@@ -138,16 +138,22 @@ namespace SIPOS.Presentation
                 {
                     var productId = row.Cells[ColSalesProduct.Name].Value.ToString();
                     var qty = Convert.ToDecimal(row.Cells[ColSalesQty.Name].Value);
+                    var priceToSell = Convert.ToDecimal(row.Cells[ColSalesPVP.Name].Value);
+                    var totalSale = Convert.ToDecimal(row.Cells[ColSalesTotal.Name].Value);
 
                     var detail = new SaleOrderDetail
                     {
-
+                        SaleOrderId = order.Id,
+                        ProductId = new Guid(productId),
+                        Quantity = qty,
+                        PriceToSell = priceToSell,
+                        Total = totalSale
                     };
                     repositoryWrapper.SaleOrderDetailRepository.Create(detail);
 
                     // Update Product stock & prices
                     var productoToUpdate = repositoryWrapper.ProductRepository.GetById(new Guid(productId));
-                    productoToUpdate.Stock += qty;
+                    productoToUpdate.Stock -= qty;
 
                     repositoryWrapper.ProductRepository.Update(productoToUpdate);
                 }
