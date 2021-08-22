@@ -73,6 +73,8 @@ namespace SIPOS.Presentation.Security
                     var validUser = siposUserService.Login(Txt_userName.Text, Txt_password.Text);
                     if(validUser is not null)
                     {
+                        Global.CurrentUser = Txt_userName.Text;
+                        Global.CurrentPassword = Txt_password.Text;
                         //MDIParent mDIParent= new();
                         //mDIParent.Show();
                         //MainForm mForm = new();

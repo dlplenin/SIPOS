@@ -45,6 +45,7 @@ namespace SIPOS.Presentation
             this.PbMin = new System.Windows.Forms.PictureBox();
             this.PbMax = new System.Windows.Forms.PictureBox();
             this.PbClose = new System.Windows.Forms.PictureBox();
+            this.BtnChangePassword = new System.Windows.Forms.Button();
             this.ContainerPanel.SuspendLayout();
             this.FormsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
@@ -77,22 +78,23 @@ namespace SIPOS.Presentation
             this.FormsPanel.Name = "FormsPanel";
             this.FormsPanel.Size = new System.Drawing.Size(1040, 982);
             this.FormsPanel.TabIndex = 2;
-            this.FormsPanel.SizeChanged += new System.EventHandler(this.FormsPanel_SizeChanged);
             // 
             // PbLogo
             // 
-            this.PbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbLogo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PbLogo.Image = ((System.Drawing.Image)(resources.GetObject("PbLogo.Image")));
-            this.PbLogo.Location = new System.Drawing.Point(140, 109);
+            this.PbLogo.Location = new System.Drawing.Point(0, 0);
             this.PbLogo.Name = "PbLogo";
-            this.PbLogo.Size = new System.Drawing.Size(768, 768);
-            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbLogo.Size = new System.Drawing.Size(1040, 982);
+            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbLogo.TabIndex = 0;
             this.PbLogo.TabStop = false;
             // 
             // MenuPanel
             // 
             this.MenuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(54)))), ((int)(((byte)(75)))));
+            this.MenuPanel.Controls.Add(this.BtnChangePassword);
             this.MenuPanel.Controls.Add(this.BtnSalesRegister);
             this.MenuPanel.Controls.Add(this.BtnGoods);
             this.MenuPanel.Controls.Add(this.BtnProducto);
@@ -207,11 +209,11 @@ namespace SIPOS.Presentation
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.GreenYellow;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(12, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(205, 20);
+            this.label2.Size = new System.Drawing.Size(337, 32);
             this.label2.TabIndex = 4;
             this.label2.Text = "Abarrotes San Ignacio - POS";
             // 
@@ -264,6 +266,23 @@ namespace SIPOS.Presentation
             this.PbClose.TabStop = false;
             this.PbClose.Click += new System.EventHandler(this.PbClose_Click);
             // 
+            // BtnChangePassword
+            // 
+            this.BtnChangePassword.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.BtnChangePassword.FlatAppearance.BorderSize = 0;
+            this.BtnChangePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(50)))), ((int)(((byte)(70)))));
+            this.BtnChangePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(61)))), ((int)(((byte)(92)))));
+            this.BtnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnChangePassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnChangePassword.ForeColor = System.Drawing.Color.Gainsboro;
+            this.BtnChangePassword.Location = new System.Drawing.Point(0, 935);
+            this.BtnChangePassword.Name = "BtnChangePassword";
+            this.BtnChangePassword.Size = new System.Drawing.Size(240, 47);
+            this.BtnChangePassword.TabIndex = 5;
+            this.BtnChangePassword.Text = "Cambiar mi contraseña";
+            this.BtnChangePassword.UseVisualStyleBackColor = true;
+            this.BtnChangePassword.Click += new System.EventHandler(this.BtnChangePassword_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -279,7 +298,6 @@ namespace SIPOS.Presentation
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContainerPanel.ResumeLayout(false);
             this.FormsPanel.ResumeLayout(false);
-            this.FormsPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             this.MenuPanel.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
@@ -309,5 +327,6 @@ namespace SIPOS.Presentation
         private System.Windows.Forms.Button BtnGoods;
         private System.Windows.Forms.Button BtnSalesRegister;
         private System.Windows.Forms.PictureBox PbLogo;
+        private System.Windows.Forms.Button BtnChangePassword;
     }
 }

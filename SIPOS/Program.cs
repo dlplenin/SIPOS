@@ -49,6 +49,7 @@ namespace SIPOS
                 .AddScoped<FormProduct>()
                 .AddScoped<FormGoodsOrder>()
                 .AddScoped<FormSales>()
+                .AddScoped<FormChangeMyPassword>()
                 ;
 
             services.AddSingleton<SiposContext>()

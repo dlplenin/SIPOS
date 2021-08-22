@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SIPOS.Presentation.Goods;
 using SIPOS.Presentation.Security;
-using System.Diagnostics;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -16,6 +15,7 @@ namespace SIPOS.Presentation
         private readonly FormProduct formProduct;
         private readonly FormGoodsOrder formGoodsOrder;
         private readonly FormSales formSales;
+        private readonly FormChangeMyPassword formChangeMyPassword;
 
         public MainForm(
             IServiceCollection services, 
@@ -23,7 +23,8 @@ namespace SIPOS.Presentation
             FormSupplier formSupplier,
             FormProduct formProduct,
             FormGoodsOrder formGoodsOrder,
-            FormSales formSales
+            FormSales formSales,
+            FormChangeMyPassword formChangeMyPassword
             )
         {
             this.services = services;
@@ -32,6 +33,7 @@ namespace SIPOS.Presentation
             this.formProduct = formProduct;
             this.formGoodsOrder = formGoodsOrder;
             this.formSales = formSales;
+            this.formChangeMyPassword = formChangeMyPassword;
             //this.services = services;
 
             InitializeComponent();
@@ -47,14 +49,14 @@ namespace SIPOS.Presentation
             //Region rg = new(gp);
             //PbLogo.Region = rg;
 
-            Rectangle r = new Rectangle(0, 0, PbLogo.Width, PbLogo.Height);
-            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            int d = 50;
-            gp.AddArc(r.X, r.Y, d, d, 180, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
-            gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
-            gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
-            PbLogo.Region = new Region(gp);
+            //Rectangle r = new Rectangle(0, 0, PbLogo.Width, PbLogo.Height);
+            //System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            //int d = 50;
+            //gp.AddArc(r.X, r.Y, d, d, 180, 90);
+            //gp.AddArc(r.X + r.Width - d, r.Y, d, d, 270, 90);
+            //gp.AddArc(r.X + r.Width - d, r.Y + r.Height - d, d, d, 0, 90);
+            //gp.AddArc(r.X, r.Y + r.Height - d, d, d, 90, 90);
+            //PbLogo.Region = new Region(gp);
         }
 
         private void OpenFormAsChild<ChildForm>(ChildForm formUserManagement) where ChildForm : Form
@@ -189,13 +191,9 @@ namespace SIPOS.Presentation
             OpenFormAsChild(formSales);
         }
 
-        private void FormsPanel_SizeChanged(object sender, EventArgs e)
+        private void BtnChangePassword_Click(object sender, EventArgs e)
         {
-            var formWidth = FormsPanel.Width;
-            var pictureWidth = PbLogo.Width;
-
-            Debug.WriteLine("formWidth: " + formWidth);
-            Debug.WriteLine("pictureWidth: " + pictureWidth);
+            OpenFormAsChild(formChangeMyPassword);
         }
 
         private void BtnSupplier_Click(object sender, EventArgs e)
