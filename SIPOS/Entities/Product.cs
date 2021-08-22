@@ -10,11 +10,6 @@ namespace SIPOS.Entities
 
         public string Description {  get; set; }
 
-        public string FullDescription
-        {
-            get { return $"{Name} || {Description}"; }
-        }
-
         [Required]
         [Column(TypeName = "decimal(18, 4)")]
         public decimal PriceSugestedToSell { get; set; }
@@ -30,5 +25,10 @@ namespace SIPOS.Entities
         [Required]
         [Column(TypeName = "decimal(18, 2)")]
         public decimal Stock { get; set; }
+
+        public string FullDescription
+        {
+            get { return $"{Name} || {Description}"; }
+        }
     }
 }
