@@ -32,6 +32,7 @@ namespace SIPOS.Presentation
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ContainerPanel = new System.Windows.Forms.Panel();
             this.FormsPanel = new System.Windows.Forms.Panel();
+            this.PbLogo = new System.Windows.Forms.PictureBox();
             this.MenuPanel = new System.Windows.Forms.Panel();
             this.BtnSalesRegister = new System.Windows.Forms.Button();
             this.BtnGoods = new System.Windows.Forms.Button();
@@ -44,16 +45,15 @@ namespace SIPOS.Presentation
             this.PbMin = new System.Windows.Forms.PictureBox();
             this.PbMax = new System.Windows.Forms.PictureBox();
             this.PbClose = new System.Windows.Forms.PictureBox();
-            this.PbLogo = new System.Windows.Forms.PictureBox();
             this.ContainerPanel.SuspendLayout();
             this.FormsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
             this.MenuPanel.SuspendLayout();
             this.TopMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbRestart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbClose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // ContainerPanel
@@ -77,6 +77,18 @@ namespace SIPOS.Presentation
             this.FormsPanel.Name = "FormsPanel";
             this.FormsPanel.Size = new System.Drawing.Size(1040, 982);
             this.FormsPanel.TabIndex = 2;
+            this.FormsPanel.SizeChanged += new System.EventHandler(this.FormsPanel_SizeChanged);
+            // 
+            // PbLogo
+            // 
+            this.PbLogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.PbLogo.Image = ((System.Drawing.Image)(resources.GetObject("PbLogo.Image")));
+            this.PbLogo.Location = new System.Drawing.Point(140, 109);
+            this.PbLogo.Name = "PbLogo";
+            this.PbLogo.Size = new System.Drawing.Size(768, 768);
+            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.PbLogo.TabIndex = 0;
+            this.PbLogo.TabStop = false;
             // 
             // MenuPanel
             // 
@@ -252,17 +264,6 @@ namespace SIPOS.Presentation
             this.PbClose.TabStop = false;
             this.PbClose.Click += new System.EventHandler(this.PbClose_Click);
             // 
-            // PbLogo
-            // 
-            this.PbLogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PbLogo.Image = ((System.Drawing.Image)(resources.GetObject("PbLogo.Image")));
-            this.PbLogo.Location = new System.Drawing.Point(0, 0);
-            this.PbLogo.Name = "PbLogo";
-            this.PbLogo.Size = new System.Drawing.Size(1040, 982);
-            this.PbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.PbLogo.TabIndex = 0;
-            this.PbLogo.TabStop = false;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -278,6 +279,8 @@ namespace SIPOS.Presentation
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.ContainerPanel.ResumeLayout(false);
             this.FormsPanel.ResumeLayout(false);
+            this.FormsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             this.MenuPanel.ResumeLayout(false);
             this.TopMenu.ResumeLayout(false);
             this.TopMenu.PerformLayout();
@@ -285,7 +288,6 @@ namespace SIPOS.Presentation
             ((System.ComponentModel.ISupportInitialize)(this.PbMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbMax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbClose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PbLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
