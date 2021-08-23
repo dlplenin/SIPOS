@@ -239,10 +239,5 @@ namespace SIPOS.Presentation.Goods
                 DgvGoods.Cursor = Cursors.Hand;
             }
         }
-
-        private void BtnFiltrar_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

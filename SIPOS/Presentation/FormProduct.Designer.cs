@@ -357,7 +357,7 @@ namespace SIPOS.Presentation
             this.TxtFilterName.Name = "TxtFilterName";
             this.TxtFilterName.Size = new System.Drawing.Size(181, 27);
             this.TxtFilterName.TabIndex = 38;
-            this.TxtFilterName.Tag = "requiredToFilter";
+            this.TxtFilterName.Tag = "";
             // 
             // BtnFiltrar
             // 

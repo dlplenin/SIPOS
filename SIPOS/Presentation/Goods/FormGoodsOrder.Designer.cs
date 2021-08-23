@@ -97,7 +97,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnFiltrar.Size = new System.Drawing.Size(44, 27);
             this.BtnFiltrar.TabIndex = 14;
             this.BtnFiltrar.UseVisualStyleBackColor = true;
-            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
+            this.BtnFiltrar.Visible = false;
             // 
             // label6
             // 
@@ -164,7 +164,8 @@ namespace SIPOS.Presentation.Goods
             this.TxtFilterName.Name = "TxtFilterName";
             this.TxtFilterName.Size = new System.Drawing.Size(193, 27);
             this.TxtFilterName.TabIndex = 13;
-            this.TxtFilterName.Tag = "required";
+            this.TxtFilterName.Tag = "";
+            this.TxtFilterName.Visible = false;
             // 
             // DgvGoods
             // 
