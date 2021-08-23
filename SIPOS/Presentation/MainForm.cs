@@ -18,7 +18,7 @@ namespace SIPOS.Presentation
         private readonly FormChangeMyPassword formChangeMyPassword;
 
         public MainForm(
-            IServiceCollection services, 
+            //IServiceCollection services, 
             FormUserManagement formUserManagement,
             FormSupplier formSupplier,
             FormProduct formProduct,
@@ -27,14 +27,13 @@ namespace SIPOS.Presentation
             FormChangeMyPassword formChangeMyPassword
             )
         {
-            this.services = services;
+            //this.services = services;
             this.formUserManagement = formUserManagement;
             this.formSupplier = formSupplier;
             this.formProduct = formProduct;
             this.formGoodsOrder = formGoodsOrder;
             this.formSales = formSales;
             this.formChangeMyPassword = formChangeMyPassword;
-            //this.services = services;
 
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)
@@ -89,7 +88,7 @@ namespace SIPOS.Presentation
         private int tolerance = 12;
         private const int WM_NCHITTEST = 132;
         private const int HTBOTTOMRIGHT = 17;
-        private readonly IServiceCollection services;
+        //private readonly IServiceCollection services;
         private Rectangle sizeGripRectangle;
 
         protected override void WndProc(ref Message m)

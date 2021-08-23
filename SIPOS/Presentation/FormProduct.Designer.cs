@@ -47,15 +47,6 @@ namespace SIPOS.Presentation
             this.label4 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
             this.DgvProducts = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.TxtSugestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.TxtFilterName = new System.Windows.Forms.TextBox();
-            this.BtnFiltrar = new System.Windows.Forms.Button();
             this.ColProductId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColProductDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +58,15 @@ namespace SIPOS.Presentation
             this.ColProductProfit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColproductActive = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColProductUpdate = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TxtPricePurchase = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtSugestedPriceToSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.TxtPriceSell = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.TxtStock = new SIPOS.Presentation.UserControls.DecimalTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TxtFilterName = new System.Windows.Forms.TextBox();
+            this.BtnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvProducts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
@@ -192,83 +192,6 @@ namespace SIPOS.Presentation
             this.DgvProducts.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellContentClick);
             this.DgvProducts.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvProduct_CellMouseEnter);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(54, 182);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(126, 20);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Precio de compra";
-            // 
-            // TxtPricePurchase
-            // 
-            this.TxtPricePurchase.DecimalPlaces = 4;
-            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 176);
-            this.TxtPricePurchase.Name = "TxtPricePurchase";
-            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 27);
-            this.TxtPricePurchase.TabIndex = 2;
-            this.TxtPricePurchase.Tag = "required";
-            // 
-            // TxtSugestedPriceToSell
-            // 
-            this.TxtSugestedPriceToSell.DecimalPlaces = 4;
-            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 209);
-            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
-            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 27);
-            this.TxtSugestedPriceToSell.TabIndex = 3;
-            // 
-            // TxtPriceSell
-            // 
-            this.TxtPriceSell.DecimalPlaces = 4;
-            this.TxtPriceSell.Location = new System.Drawing.Point(201, 243);
-            this.TxtPriceSell.Name = "TxtPriceSell";
-            this.TxtPriceSell.Size = new System.Drawing.Size(248, 27);
-            this.TxtPriceSell.TabIndex = 4;
-            this.TxtPriceSell.Tag = "required";
-            // 
-            // errorProvider
-            // 
-            this.errorProvider.BlinkRate = 200;
-            this.errorProvider.ContainerControl = this;
-            // 
-            // TxtStock
-            // 
-            this.TxtStock.DecimalPlaces = 4;
-            this.TxtStock.Location = new System.Drawing.Point(201, 277);
-            this.TxtStock.Name = "TxtStock";
-            this.TxtStock.Size = new System.Drawing.Size(248, 27);
-            this.TxtStock.TabIndex = 5;
-            this.TxtStock.Tag = "";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(54, 280);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(69, 20);
-            this.label6.TabIndex = 37;
-            this.label6.Text = "Cantidad";
-            // 
-            // TxtFilterName
-            // 
-            this.TxtFilterName.Location = new System.Drawing.Point(54, 386);
-            this.TxtFilterName.Name = "TxtFilterName";
-            this.TxtFilterName.Size = new System.Drawing.Size(181, 27);
-            this.TxtFilterName.TabIndex = 38;
-            this.TxtFilterName.Tag = "required";
-            // 
-            // BtnFiltrar
-            // 
-            this.BtnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnFiltrar.Image = global::SIPOS.Properties.Resources.filter_16px;
-            this.BtnFiltrar.Location = new System.Drawing.Point(241, 387);
-            this.BtnFiltrar.Name = "BtnFiltrar";
-            this.BtnFiltrar.Size = new System.Drawing.Size(44, 27);
-            this.BtnFiltrar.TabIndex = 39;
-            this.BtnFiltrar.UseVisualStyleBackColor = true;
-            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
-            // 
             // ColProductId
             // 
             this.ColProductId.HeaderText = "SupplierId";
@@ -369,6 +292,83 @@ namespace SIPOS.Presentation
             this.ColProductUpdate.MinimumWidth = 6;
             this.ColProductUpdate.Name = "ColProductUpdate";
             this.ColProductUpdate.Width = 50;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(54, 182);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(126, 20);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Precio de compra";
+            // 
+            // TxtPricePurchase
+            // 
+            this.TxtPricePurchase.DecimalPlaces = 4;
+            this.TxtPricePurchase.Location = new System.Drawing.Point(201, 176);
+            this.TxtPricePurchase.Name = "TxtPricePurchase";
+            this.TxtPricePurchase.Size = new System.Drawing.Size(248, 27);
+            this.TxtPricePurchase.TabIndex = 2;
+            this.TxtPricePurchase.Tag = "required";
+            // 
+            // TxtSugestedPriceToSell
+            // 
+            this.TxtSugestedPriceToSell.DecimalPlaces = 4;
+            this.TxtSugestedPriceToSell.Location = new System.Drawing.Point(201, 209);
+            this.TxtSugestedPriceToSell.Name = "TxtSugestedPriceToSell";
+            this.TxtSugestedPriceToSell.Size = new System.Drawing.Size(248, 27);
+            this.TxtSugestedPriceToSell.TabIndex = 3;
+            // 
+            // TxtPriceSell
+            // 
+            this.TxtPriceSell.DecimalPlaces = 4;
+            this.TxtPriceSell.Location = new System.Drawing.Point(201, 243);
+            this.TxtPriceSell.Name = "TxtPriceSell";
+            this.TxtPriceSell.Size = new System.Drawing.Size(248, 27);
+            this.TxtPriceSell.TabIndex = 4;
+            this.TxtPriceSell.Tag = "required";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkRate = 200;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // TxtStock
+            // 
+            this.TxtStock.DecimalPlaces = 4;
+            this.TxtStock.Location = new System.Drawing.Point(201, 277);
+            this.TxtStock.Name = "TxtStock";
+            this.TxtStock.Size = new System.Drawing.Size(248, 27);
+            this.TxtStock.TabIndex = 5;
+            this.TxtStock.Tag = "";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(54, 280);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 37;
+            this.label6.Text = "Cantidad";
+            // 
+            // TxtFilterName
+            // 
+            this.TxtFilterName.Location = new System.Drawing.Point(54, 386);
+            this.TxtFilterName.Name = "TxtFilterName";
+            this.TxtFilterName.Size = new System.Drawing.Size(181, 27);
+            this.TxtFilterName.TabIndex = 38;
+            this.TxtFilterName.Tag = "requiredToFilter";
+            // 
+            // BtnFiltrar
+            // 
+            this.BtnFiltrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnFiltrar.Image = global::SIPOS.Properties.Resources.filter_16px;
+            this.BtnFiltrar.Location = new System.Drawing.Point(241, 387);
+            this.BtnFiltrar.Name = "BtnFiltrar";
+            this.BtnFiltrar.Size = new System.Drawing.Size(44, 27);
+            this.BtnFiltrar.TabIndex = 39;
+            this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // FormProduct
             // 

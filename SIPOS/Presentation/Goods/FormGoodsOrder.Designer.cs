@@ -97,6 +97,7 @@ namespace SIPOS.Presentation.Goods
             this.BtnFiltrar.Size = new System.Drawing.Size(44, 27);
             this.BtnFiltrar.TabIndex = 14;
             this.BtnFiltrar.UseVisualStyleBackColor = true;
+            this.BtnFiltrar.Click += new System.EventHandler(this.BtnFiltrar_Click);
             // 
             // label6
             // 

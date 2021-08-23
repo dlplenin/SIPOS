@@ -30,6 +30,7 @@ namespace SIPOS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Dependency injection
             var services = new ServiceCollection();
             ConfigureServices(services);
 

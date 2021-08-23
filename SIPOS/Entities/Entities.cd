@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SIPOS.Entities.Goods.GoodsOrder">
+    <Position X="1.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAoAAAAAAAAAAAQACAAAEAAAAEAQA=</HashCode>
+      <FileName>Entities\Goods\GoodsOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.Goods.GoodsOrderDetail" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAACAAAACAAABIAAAAAAAAAAAAAAQAAAAABAgAAAAAA=</HashCode>
+      <FileName>Entities\Goods\GoodsOrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.Goods.Supplier" Collapsed="true">
+    <Position X="13" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABACAAAIAAAAAAAAQAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Entities\Goods\Supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.User.SiposRol">
+    <Position X="4" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\SiposRol.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.User.SiposUser">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAAAgAAAAACAQAAAAAAAAA=</HashCode>
+      <FileName>Entities\User\SiposUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.Sales.SaleOrder" Collapsed="true">
+    <Position X="15.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgBAAAAAAAAAAQACAAAAAAAAAAQA=</HashCode>
+      <FileName>Entities\Sales\SaleOrder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.Sales.SaleOrderDetail" Collapsed="true">
+    <Position X="6.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAABAAAAAAAAAAAAQAAQAAAAAAAoAAAAAA=</HashCode>
+      <FileName>Entities\Sales\SaleOrderDetail.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.EntityBase&lt;T&gt;">
+    <Position X="9.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\EntityBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SIPOS.Entities.Product" Collapsed="true">
+    <Position X="17.5" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="SIPOS.Entities.EntityBase&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="10.438" Y="1.988" />
+        <Point X="10.438" Y="3.375" />
+        <Point X="18.25" Y="3.375" />
+        <Point X="18.25" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAACAAgBAAAAAAAAAQAgBAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

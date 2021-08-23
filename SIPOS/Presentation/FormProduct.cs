@@ -61,8 +61,8 @@ namespace SIPOS.Presentation
             {
                 Name = TxtName.Text,
                 Description = TxtDescription.Text,
-                PricePurchase = Convert.ToDecimal(TxtPricePurchase.TextOrDefault),
-                PriceSugestedToSell = Convert.ToDecimal(TxtSugestedPriceToSell.TextOrDefault),
+                PricePurchase = TxtPricePurchase.DecimalValue,
+                PriceSugestedToSell = TxtSugestedPriceToSell.DecimalValue,
                 PriceToSell = Convert.ToDecimal(TxtPriceSell.TextOrDefault),
                 Stock = Convert.ToDecimal(TxtStock.TextOrDefault),
             };
