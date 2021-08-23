@@ -1,6 +1,7 @@
 ﻿using SIPOS.Persistence.Repository.Contracts;
 using SIPOS.Services;
 using System.Windows.Forms;
+using BC = BCrypt.Net.BCrypt;
 
 namespace SIPOS.Presentation.Security
 {
@@ -23,8 +24,8 @@ namespace SIPOS.Presentation.Security
 
         private void BtnActualizar_Click(object sender, EventArgs e)
         {
-            var user = siposUserService.Login(Global.CurrentUser, Global.CurrentPassword);
-            user.Password = TxtPassword.Text;
+            var user = siposUserService.Login(Global.CurrentUser);
+            user.Password = BC.HashPassword(TxtPassword.Text);
             repositoryWrapper.UserRepository.Update(user);
             repositoryWrapper.Save();
         }

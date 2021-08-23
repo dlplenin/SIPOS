@@ -1,6 +1,7 @@
 ﻿using SIPOS.Entities.User;
 using SIPOS.Persistence.Repository.Contracts;
 using System.Windows.Forms;
+using BC = BCrypt.Net.BCrypt;
 
 namespace SIPOS.Presentation.Security
 {
@@ -28,12 +29,12 @@ namespace SIPOS.Presentation.Security
         private void LoadUsers()
         {
             var rols = repositoryWrapper.RolRepository.GetAll().ToList();
-
             DgvcRol.DataSource = rols;
             DgvcRol.DisplayMember = "Name";
             DgvcRol.ValueMember = "Id";
 
             var usersInDB = repositoryWrapper.UserRepository.GetAll().ToList();
+            DgvUsuarios.Rows.Clear();
             foreach (var user in usersInDB)
             {
                 DgvUsuarios.Rows.Add(user.Id, user.UserName, user.Password, user.SiposRol.Id, user.Activo);
@@ -53,7 +54,7 @@ namespace SIPOS.Presentation.Security
             var newUser = new SiposUser
             {
                 UserName = TxtUserName.Text,
-                Password = TxtPassword.Text,
+                Password = BC.HashPassword(TxtPassword.Text),
                 SiposRolId = new Guid(CbRol.SelectedValue.ToString())
             };
             repositoryWrapper.UserRepository.Create(newUser);
@@ -106,12 +107,14 @@ namespace SIPOS.Presentation.Security
 
                     var userToUpdate = repositoryWrapper.UserRepository.GetById(new Guid(userId));
                     userToUpdate.UserName = userName;
-                    userToUpdate.Password = password;
+                    userToUpdate.Password = BC.HashPassword(password);
                     userToUpdate.Activo = active;
                     userToUpdate.SiposRolId = new Guid(rol);
 
                     repositoryWrapper.UserRepository.Update(userToUpdate);
                     repositoryWrapper.Save();
+
+                    MessageBox.Show("El registro se actualizó correctamente.", "Actualización");
                 }
             }
         }

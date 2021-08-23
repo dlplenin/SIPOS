@@ -12,10 +12,10 @@ namespace SIPOS.Services
             this.repoWrapper = repoWrapper;
         }
 
-        public SiposUser Login(string user, string password)
+        public SiposUser Login(string user)
         {
             return repoWrapper.UserRepository
-                .FindByCondition(x => x.UserName == user && x.Password == password)
+                .FindByCondition(x => x.UserName == user)
                 .FirstOrDefault();
         }
     }

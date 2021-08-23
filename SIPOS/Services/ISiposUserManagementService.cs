@@ -4,6 +4,6 @@ namespace SIPOS.Services
 {
     public interface ISiposUserManagementService
     {
-        SiposUser Login(string userName, string password);
+        SiposUser Login(string userName);
     }
 }

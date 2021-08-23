@@ -3,6 +3,7 @@ using SIPOS.Persistence;
 using SIPOS.Services;
 using System.Drawing;
 using System.Windows.Forms;
+using BC = BCrypt.Net.BCrypt;
 
 namespace SIPOS.Presentation.Security
 {
@@ -63,26 +64,33 @@ namespace SIPOS.Presentation.Security
 
         private void Btn_login_Click(object sender, EventArgs e)
         {
-            Txt_userName.Text = "diego";
-            Txt_password.Text = "diego";
+            //Txt_userName.Text = "diego";
+            //Txt_password.Text = "diego";
 
             if (Txt_userName.Text.ToLower() != "usuario")
             {
                 if (Txt_password.Text.ToLower() != "contraseña")
                 {
-                    var validUser = siposUserService.Login(Txt_userName.Text, Txt_password.Text);
-                    if(validUser is not null)
+                    var validUser = siposUserService.Login(Txt_userName.Text);
+                    try
                     {
-                        Global.CurrentUser = Txt_userName.Text;
-                        Global.CurrentPassword = Txt_password.Text;
-                        //MDIParent mDIParent= new();
-                        //mDIParent.Show();
-                        //MainForm mForm = new();
-                        MainForm mForm = mainForm;
-                        mForm.Show();
-                        this.Hide();
+                        if (validUser is null || !BC.Verify(Txt_password.Text, validUser.Password))
+                        {
+                            SetErrorMessage("Credenciales incorrectas");
+                            ClearPassword();
+                        }
+                        else
+                        {
+                            Global.CurrentUser = Txt_userName.Text;
+                            //MDIParent mDIParent= new();
+                            //mDIParent.Show();
+                            //MainForm mForm = new();
+                            MainForm mForm = mainForm;
+                            mForm.Show();
+                            this.Hide();
+                        }
                     }
-                    else
+                    catch
                     {
                         SetErrorMessage("Credenciales incorrectas");
                         ClearPassword();
